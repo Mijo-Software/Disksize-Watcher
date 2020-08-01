@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DisksizeWatcher
@@ -33,8 +26,10 @@ namespace DisksizeWatcher
 		{
       if (driveC.IsReady)
       {
-        //double freeSpacePerc = (;
-        progressBarPercentage.Value = (int)(100 - (driveC.AvailableFreeSpace / (float)driveC.TotalSize * 100));
+        double freeSpacePerc = driveC.AvailableFreeSpace / (float)driveC.TotalSize * 100;
+        double SpacePerc = 100 - freeSpacePerc;
+        progressBarPercentage.Value = (int)(SpacePerc);
+        labelSpacePercentageValue.Text = SpacePerc.ToString("G6") + " %";
         textBoxDisksizeCurrent.Text = driveC.TotalFreeSpace.ToString();
       }
     }

@@ -38,9 +38,9 @@
 			this.labelDisksizeTotal = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.labelPercentage = new System.Windows.Forms.Label();
+			this.labelSpacePercentage = new System.Windows.Forms.Label();
 			this.progressBarPercentage = new System.Windows.Forms.ProgressBar();
-			this.label3 = new System.Windows.Forms.Label();
+			this.labelSpacePercentageValue = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -69,18 +69,18 @@
 			// 
 			// textBoxDisksizeCurrent
 			// 
-			this.textBoxDisksizeCurrent.Enabled = false;
 			this.textBoxDisksizeCurrent.Location = new System.Drawing.Point(102, 6);
 			this.textBoxDisksizeCurrent.Name = "textBoxDisksizeCurrent";
+			this.textBoxDisksizeCurrent.ReadOnly = true;
 			this.textBoxDisksizeCurrent.Size = new System.Drawing.Size(149, 20);
 			this.textBoxDisksizeCurrent.TabIndex = 1;
 			this.textBoxDisksizeCurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// textBoxDisksizeTotal
 			// 
-			this.textBoxDisksizeTotal.Enabled = false;
 			this.textBoxDisksizeTotal.Location = new System.Drawing.Point(102, 32);
 			this.textBoxDisksizeTotal.Name = "textBoxDisksizeTotal";
+			this.textBoxDisksizeTotal.ReadOnly = true;
 			this.textBoxDisksizeTotal.Size = new System.Drawing.Size(149, 20);
 			this.textBoxDisksizeTotal.TabIndex = 3;
 			this.textBoxDisksizeTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -112,14 +112,14 @@
 			this.label2.TabIndex = 5;
 			this.label2.Text = "bytes";
 			// 
-			// labelPercentage
+			// labelSpacePercentage
 			// 
-			this.labelPercentage.AutoSize = true;
-			this.labelPercentage.Location = new System.Drawing.Point(12, 58);
-			this.labelPercentage.Name = "labelPercentage";
-			this.labelPercentage.Size = new System.Drawing.Size(65, 13);
-			this.labelPercentage.TabIndex = 6;
-			this.labelPercentage.Text = "Percentage:";
+			this.labelSpacePercentage.AutoSize = true;
+			this.labelSpacePercentage.Location = new System.Drawing.Point(12, 58);
+			this.labelSpacePercentage.Name = "labelSpacePercentage";
+			this.labelSpacePercentage.Size = new System.Drawing.Size(65, 13);
+			this.labelSpacePercentage.TabIndex = 6;
+			this.labelSpacePercentage.Text = "Percentage:";
 			// 
 			// progressBarPercentage
 			// 
@@ -130,23 +130,23 @@
 			this.progressBarPercentage.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
 			this.progressBarPercentage.TabIndex = 7;
 			// 
-			// label3
+			// labelSpacePercentageValue
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(257, 58);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(15, 13);
-			this.label3.TabIndex = 8;
-			this.label3.Text = "%";
+			this.labelSpacePercentageValue.AutoSize = true;
+			this.labelSpacePercentageValue.Location = new System.Drawing.Point(257, 58);
+			this.labelSpacePercentageValue.Name = "labelSpacePercentageValue";
+			this.labelSpacePercentageValue.Size = new System.Drawing.Size(15, 13);
+			this.labelSpacePercentageValue.TabIndex = 8;
+			this.labelSpacePercentageValue.Text = "%";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(325, 85);
-			this.Controls.Add(this.label3);
+			this.Controls.Add(this.labelSpacePercentageValue);
 			this.Controls.Add(this.progressBarPercentage);
-			this.Controls.Add(this.labelPercentage);
+			this.Controls.Add(this.labelSpacePercentage);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBoxDisksizeTotal);
@@ -176,9 +176,9 @@
 		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label labelSpacePercentageValue;
 		private System.Windows.Forms.ProgressBar progressBarPercentage;
-		private System.Windows.Forms.Label labelPercentage;
+		private System.Windows.Forms.Label labelSpacePercentage;
 	}
 }
 
