@@ -31,16 +31,19 @@
 			this.components = new System.ComponentModel.Container();
 			this.fileSystemWatcher = new System.IO.FileSystemWatcher();
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.labelDisksizeCurrent = new System.Windows.Forms.Label();
+			this.labelSpaceFree = new System.Windows.Forms.Label();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-			this.textBoxDisksizeCurrent = new System.Windows.Forms.TextBox();
-			this.textBoxDisksizeTotal = new System.Windows.Forms.TextBox();
-			this.labelDisksizeTotal = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.textBoxSpaceFree = new System.Windows.Forms.TextBox();
+			this.textBoxSpaceTotal = new System.Windows.Forms.TextBox();
+			this.labelSpaceTotal = new System.Windows.Forms.Label();
+			this.labelSpaceFreeUnit = new System.Windows.Forms.Label();
+			this.labelSpaceTotalUnit = new System.Windows.Forms.Label();
 			this.labelSpacePercentage = new System.Windows.Forms.Label();
 			this.progressBarPercentage = new System.Windows.Forms.ProgressBar();
 			this.labelSpacePercentageValue = new System.Windows.Forms.Label();
+			this.labelSpaceUsedUnit = new System.Windows.Forms.Label();
+			this.textBoxSpaceUsed = new System.Windows.Forms.TextBox();
+			this.labelSpaceUsed = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -53,106 +56,136 @@
 			// 
 			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
 			// 
-			// labelDisksizeCurrent
+			// labelSpaceFree
 			// 
-			this.labelDisksizeCurrent.AutoSize = true;
-			this.labelDisksizeCurrent.Location = new System.Drawing.Point(12, 9);
-			this.labelDisksizeCurrent.Name = "labelDisksizeCurrent";
-			this.labelDisksizeCurrent.Size = new System.Drawing.Size(84, 13);
-			this.labelDisksizeCurrent.TabIndex = 0;
-			this.labelDisksizeCurrent.Text = "Current disksize:";
+			this.labelSpaceFree.AutoSize = true;
+			this.labelSpaceFree.Location = new System.Drawing.Point(11, 41);
+			this.labelSpaceFree.Name = "labelSpaceFree";
+			this.labelSpaceFree.Size = new System.Drawing.Size(63, 13);
+			this.labelSpaceFree.TabIndex = 3;
+			this.labelSpaceFree.Text = "&Free space:";
 			// 
 			// notifyIcon
 			// 
 			this.notifyIcon.Text = "notify";
 			this.notifyIcon.Visible = true;
 			// 
-			// textBoxDisksizeCurrent
+			// textBoxSpaceFree
 			// 
-			this.textBoxDisksizeCurrent.Location = new System.Drawing.Point(102, 6);
-			this.textBoxDisksizeCurrent.Name = "textBoxDisksizeCurrent";
-			this.textBoxDisksizeCurrent.ReadOnly = true;
-			this.textBoxDisksizeCurrent.Size = new System.Drawing.Size(149, 20);
-			this.textBoxDisksizeCurrent.TabIndex = 1;
-			this.textBoxDisksizeCurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.textBoxSpaceFree.Location = new System.Drawing.Point(82, 38);
+			this.textBoxSpaceFree.Name = "textBoxSpaceFree";
+			this.textBoxSpaceFree.ReadOnly = true;
+			this.textBoxSpaceFree.Size = new System.Drawing.Size(111, 20);
+			this.textBoxSpaceFree.TabIndex = 4;
+			this.textBoxSpaceFree.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
-			// textBoxDisksizeTotal
+			// textBoxSpaceTotal
 			// 
-			this.textBoxDisksizeTotal.Location = new System.Drawing.Point(102, 32);
-			this.textBoxDisksizeTotal.Name = "textBoxDisksizeTotal";
-			this.textBoxDisksizeTotal.ReadOnly = true;
-			this.textBoxDisksizeTotal.Size = new System.Drawing.Size(149, 20);
-			this.textBoxDisksizeTotal.TabIndex = 3;
-			this.textBoxDisksizeTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.textBoxSpaceTotal.Location = new System.Drawing.Point(82, 64);
+			this.textBoxSpaceTotal.Name = "textBoxSpaceTotal";
+			this.textBoxSpaceTotal.ReadOnly = true;
+			this.textBoxSpaceTotal.Size = new System.Drawing.Size(111, 20);
+			this.textBoxSpaceTotal.TabIndex = 7;
+			this.textBoxSpaceTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
-			// labelDisksizeTotal
+			// labelSpaceTotal
 			// 
-			this.labelDisksizeTotal.AutoSize = true;
-			this.labelDisksizeTotal.Location = new System.Drawing.Point(12, 35);
-			this.labelDisksizeTotal.Name = "labelDisksizeTotal";
-			this.labelDisksizeTotal.Size = new System.Drawing.Size(74, 13);
-			this.labelDisksizeTotal.TabIndex = 2;
-			this.labelDisksizeTotal.Text = "Total disksize:";
+			this.labelSpaceTotal.AutoSize = true;
+			this.labelSpaceTotal.Location = new System.Drawing.Point(11, 67);
+			this.labelSpaceTotal.Name = "labelSpaceTotal";
+			this.labelSpaceTotal.Size = new System.Drawing.Size(66, 13);
+			this.labelSpaceTotal.TabIndex = 6;
+			this.labelSpaceTotal.Text = "&Total space:";
 			// 
-			// label1
+			// labelSpaceFreeUnit
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(257, 9);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(32, 13);
-			this.label1.TabIndex = 4;
-			this.label1.Text = "bytes";
+			this.labelSpaceFreeUnit.AutoSize = true;
+			this.labelSpaceFreeUnit.Location = new System.Drawing.Point(199, 41);
+			this.labelSpaceFreeUnit.Name = "labelSpaceFreeUnit";
+			this.labelSpaceFreeUnit.Size = new System.Drawing.Size(32, 13);
+			this.labelSpaceFreeUnit.TabIndex = 5;
+			this.labelSpaceFreeUnit.Text = "bytes";
 			// 
-			// label2
+			// labelSpaceTotalUnit
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(257, 35);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(32, 13);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "bytes";
+			this.labelSpaceTotalUnit.AutoSize = true;
+			this.labelSpaceTotalUnit.Location = new System.Drawing.Point(199, 67);
+			this.labelSpaceTotalUnit.Name = "labelSpaceTotalUnit";
+			this.labelSpaceTotalUnit.Size = new System.Drawing.Size(32, 13);
+			this.labelSpaceTotalUnit.TabIndex = 8;
+			this.labelSpaceTotalUnit.Text = "bytes";
 			// 
 			// labelSpacePercentage
 			// 
 			this.labelSpacePercentage.AutoSize = true;
-			this.labelSpacePercentage.Location = new System.Drawing.Point(12, 58);
+			this.labelSpacePercentage.Location = new System.Drawing.Point(11, 90);
 			this.labelSpacePercentage.Name = "labelSpacePercentage";
 			this.labelSpacePercentage.Size = new System.Drawing.Size(65, 13);
-			this.labelSpacePercentage.TabIndex = 6;
+			this.labelSpacePercentage.TabIndex = 9;
 			this.labelSpacePercentage.Text = "Percentage:";
 			// 
 			// progressBarPercentage
 			// 
-			this.progressBarPercentage.Location = new System.Drawing.Point(102, 58);
+			this.progressBarPercentage.Location = new System.Drawing.Point(82, 90);
 			this.progressBarPercentage.Name = "progressBarPercentage";
-			this.progressBarPercentage.Size = new System.Drawing.Size(149, 13);
+			this.progressBarPercentage.Size = new System.Drawing.Size(111, 13);
 			this.progressBarPercentage.Step = 1;
 			this.progressBarPercentage.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-			this.progressBarPercentage.TabIndex = 7;
+			this.progressBarPercentage.TabIndex = 10;
 			// 
 			// labelSpacePercentageValue
 			// 
 			this.labelSpacePercentageValue.AutoSize = true;
-			this.labelSpacePercentageValue.Location = new System.Drawing.Point(257, 58);
+			this.labelSpacePercentageValue.Location = new System.Drawing.Point(199, 90);
 			this.labelSpacePercentageValue.Name = "labelSpacePercentageValue";
 			this.labelSpacePercentageValue.Size = new System.Drawing.Size(15, 13);
-			this.labelSpacePercentageValue.TabIndex = 8;
+			this.labelSpacePercentageValue.TabIndex = 11;
 			this.labelSpacePercentageValue.Text = "%";
+			// 
+			// labelSpaceUsedUnit
+			// 
+			this.labelSpaceUsedUnit.AutoSize = true;
+			this.labelSpaceUsedUnit.Location = new System.Drawing.Point(199, 15);
+			this.labelSpaceUsedUnit.Name = "labelSpaceUsedUnit";
+			this.labelSpaceUsedUnit.Size = new System.Drawing.Size(32, 13);
+			this.labelSpaceUsedUnit.TabIndex = 2;
+			this.labelSpaceUsedUnit.Text = "bytes";
+			// 
+			// textBoxSpaceUsed
+			// 
+			this.textBoxSpaceUsed.Location = new System.Drawing.Point(82, 12);
+			this.textBoxSpaceUsed.Name = "textBoxSpaceUsed";
+			this.textBoxSpaceUsed.ReadOnly = true;
+			this.textBoxSpaceUsed.Size = new System.Drawing.Size(111, 20);
+			this.textBoxSpaceUsed.TabIndex = 1;
+			this.textBoxSpaceUsed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
+			// labelSpaceUsed
+			// 
+			this.labelSpaceUsed.AutoSize = true;
+			this.labelSpaceUsed.Location = new System.Drawing.Point(11, 15);
+			this.labelSpaceUsed.Name = "labelSpaceUsed";
+			this.labelSpaceUsed.Size = new System.Drawing.Size(67, 13);
+			this.labelSpaceUsed.TabIndex = 0;
+			this.labelSpaceUsed.Text = "&Used space:";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(325, 85);
+			this.ClientSize = new System.Drawing.Size(272, 116);
+			this.Controls.Add(this.labelSpaceUsedUnit);
+			this.Controls.Add(this.textBoxSpaceUsed);
+			this.Controls.Add(this.labelSpaceUsed);
 			this.Controls.Add(this.labelSpacePercentageValue);
 			this.Controls.Add(this.progressBarPercentage);
 			this.Controls.Add(this.labelSpacePercentage);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.textBoxDisksizeTotal);
-			this.Controls.Add(this.labelDisksizeTotal);
-			this.Controls.Add(this.textBoxDisksizeCurrent);
-			this.Controls.Add(this.labelDisksizeCurrent);
+			this.Controls.Add(this.labelSpaceTotalUnit);
+			this.Controls.Add(this.labelSpaceFreeUnit);
+			this.Controls.Add(this.textBoxSpaceTotal);
+			this.Controls.Add(this.labelSpaceTotal);
+			this.Controls.Add(this.textBoxSpaceFree);
+			this.Controls.Add(this.labelSpaceFree);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
@@ -168,17 +201,20 @@
 		#endregion
 
 		private System.IO.FileSystemWatcher fileSystemWatcher;
-		private System.Windows.Forms.TextBox textBoxDisksizeTotal;
-		private System.Windows.Forms.Label labelDisksizeTotal;
-		private System.Windows.Forms.TextBox textBoxDisksizeCurrent;
-		private System.Windows.Forms.Label labelDisksizeCurrent;
+		private System.Windows.Forms.TextBox textBoxSpaceTotal;
+		private System.Windows.Forms.Label labelSpaceTotal;
+		private System.Windows.Forms.TextBox textBoxSpaceFree;
+		private System.Windows.Forms.Label labelSpaceFree;
 		private System.Windows.Forms.Timer timer;
 		private System.Windows.Forms.NotifyIcon notifyIcon;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label labelSpaceTotalUnit;
+		private System.Windows.Forms.Label labelSpaceFreeUnit;
 		private System.Windows.Forms.Label labelSpacePercentageValue;
 		private System.Windows.Forms.ProgressBar progressBarPercentage;
 		private System.Windows.Forms.Label labelSpacePercentage;
+		private System.Windows.Forms.Label labelSpaceUsedUnit;
+		private System.Windows.Forms.TextBox textBoxSpaceUsed;
+		private System.Windows.Forms.Label labelSpaceUsed;
 	}
 }
 
