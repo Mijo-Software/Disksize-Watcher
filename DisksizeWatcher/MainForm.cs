@@ -13,6 +13,16 @@ namespace DisksizeWatcher
 		private readonly DriveInfo driveC = new DriveInfo(driveName: "C");
 
 		/// <summary>
+		/// Set a specific text to the status bar
+		/// </summary>
+		/// <param name="text">text with some information</param>
+		private void SetStatusbarText(string text)
+		{
+			labelInformation.Enabled = !string.IsNullOrEmpty(value: text);
+			labelInformation.Text = text;
+		}
+
+		/// <summary>
 		/// Construtor
 		/// </summary>
 		public MainForm() => InitializeComponent();
@@ -25,6 +35,7 @@ namespace DisksizeWatcher
 		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
 		private void MainForm_Load(object sender, EventArgs e)
 		{
+			notifyIcon.Visible = false;
 			if (driveC.IsReady)
 			{
 				textBoxSpaceTotal.Text = driveC.TotalSize.ToString(provider: CultureInfo.InvariantCulture);
@@ -49,6 +60,43 @@ namespace DisksizeWatcher
 				textBoxSpaceUsed.Text = (driveC.TotalSize - driveC.TotalFreeSpace).ToString(provider: CultureInfo.InvariantCulture);
 				textBoxSpaceFree.Text = driveC.TotalFreeSpace.ToString(provider: CultureInfo.InvariantCulture);
 			}
+		}
+
+		private void ToolStripSplitButtonSettings_ButtonClick(object sender, EventArgs e)
+		{
+			if (menuitemStayOnTop.Checked)
+			{
+				TopMost = false;
+			}
+			using (SettingsForm settingsForm = new SettingsForm())
+			{
+				DialogResult dialogResult = settingsForm.ShowDialog();
+			}
+			if (menuitemStayOnTop.Checked)
+			{
+				TopMost = true;
+			}
+		}
+
+		private void MenuitemStayOnTop_Click(object sender, EventArgs e) => TopMost = menuitemStayOnTop.Checked;
+
+		private void MainForm_Resize(object sender, EventArgs e)
+		{
+			if (WindowState == FormWindowState.Minimized)
+			{
+				if (menuitemMinimizeToTray.Checked)
+				{
+					Hide();
+					notifyIcon.Visible = true;
+				}
+			}
+		}
+
+		private void NotifyIcon_DoubleClick(object sender, EventArgs e)
+		{
+			Show();
+			WindowState = FormWindowState.Normal;
+			notifyIcon.Visible = false;
 		}
 	}
 }

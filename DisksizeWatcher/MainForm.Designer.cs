@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			this.fileSystemWatcher = new System.IO.FileSystemWatcher();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.labelSpaceFree = new System.Windows.Forms.Label();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -44,13 +44,13 @@
 			this.labelSpaceUsedUnit = new System.Windows.Forms.Label();
 			this.textBoxSpaceUsed = new System.Windows.Forms.TextBox();
 			this.labelSpaceUsed = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).BeginInit();
+			this.statusStrip = new System.Windows.Forms.StatusStrip();
+			this.labelInformation = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripSplitButtonSettings = new System.Windows.Forms.ToolStripSplitButton();
+			this.menuitemStayOnTop = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuitemMinimizeToTray = new System.Windows.Forms.ToolStripMenuItem();
+			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// fileSystemWatcher
-			// 
-			this.fileSystemWatcher.EnableRaisingEvents = true;
-			this.fileSystemWatcher.SynchronizingObject = this;
 			// 
 			// timer
 			// 
@@ -67,8 +67,10 @@
 			// 
 			// notifyIcon
 			// 
-			this.notifyIcon.Text = "notify";
+			this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+			this.notifyIcon.Text = "Disksize Watcher";
 			this.notifyIcon.Visible = true;
+			this.notifyIcon.DoubleClick += new System.EventHandler(this.NotifyIcon_DoubleClick);
 			// 
 			// textBoxSpaceFree
 			// 
@@ -169,11 +171,66 @@
 			this.labelSpaceUsed.TabIndex = 0;
 			this.labelSpaceUsed.Text = "&Used space:";
 			// 
+			// statusStrip
+			// 
+			this.statusStrip.AllowItemReorder = true;
+			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.labelInformation,
+            this.toolStripSplitButtonSettings});
+			this.statusStrip.Location = new System.Drawing.Point(0, 113);
+			this.statusStrip.Name = "statusStrip";
+			this.statusStrip.ShowItemToolTips = true;
+			this.statusStrip.Size = new System.Drawing.Size(272, 22);
+			this.statusStrip.SizingGrip = false;
+			this.statusStrip.TabIndex = 12;
+			this.statusStrip.TabStop = true;
+			this.statusStrip.Text = "statusStrip";
+			// 
+			// labelInformation
+			// 
+			this.labelInformation.AutoToolTip = true;
+			this.labelInformation.Name = "labelInformation";
+			this.labelInformation.Size = new System.Drawing.Size(225, 17);
+			this.labelInformation.Spring = true;
+			this.labelInformation.Text = "info";
+			this.labelInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// toolStripSplitButtonSettings
+			// 
+			this.toolStripSplitButtonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripSplitButtonSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuitemStayOnTop,
+            this.menuitemMinimizeToTray});
+			this.toolStripSplitButtonSettings.Image = global::DisksizeWatcher.Properties.Resources.fatcow_wrench_16;
+			this.toolStripSplitButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripSplitButtonSettings.Name = "toolStripSplitButtonSettings";
+			this.toolStripSplitButtonSettings.Size = new System.Drawing.Size(32, 20);
+			this.toolStripSplitButtonSettings.Text = "Settings";
+			this.toolStripSplitButtonSettings.ButtonClick += new System.EventHandler(this.ToolStripSplitButtonSettings_ButtonClick);
+			// 
+			// menuitemStayOnTop
+			// 
+			this.menuitemStayOnTop.AutoToolTip = true;
+			this.menuitemStayOnTop.CheckOnClick = true;
+			this.menuitemStayOnTop.Name = "menuitemStayOnTop";
+			this.menuitemStayOnTop.Size = new System.Drawing.Size(180, 22);
+			this.menuitemStayOnTop.Text = "&Stay on top";
+			this.menuitemStayOnTop.Click += new System.EventHandler(this.MenuitemStayOnTop_Click);
+			// 
+			// menuitemMinimizeToTray
+			// 
+			this.menuitemMinimizeToTray.AutoToolTip = true;
+			this.menuitemMinimizeToTray.CheckOnClick = true;
+			this.menuitemMinimizeToTray.Name = "menuitemMinimizeToTray";
+			this.menuitemMinimizeToTray.Size = new System.Drawing.Size(180, 22);
+			this.menuitemMinimizeToTray.Text = "&Minimize to tray";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(272, 116);
+			this.ClientSize = new System.Drawing.Size(272, 135);
+			this.Controls.Add(this.statusStrip);
 			this.Controls.Add(this.labelSpaceUsedUnit);
 			this.Controls.Add(this.textBoxSpaceUsed);
 			this.Controls.Add(this.labelSpaceUsed);
@@ -187,20 +244,21 @@
 			this.Controls.Add(this.textBoxSpaceFree);
 			this.Controls.Add(this.labelSpaceFree);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Disksize Watcher";
 			this.Load += new System.EventHandler(this.MainForm_Load);
-			((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).EndInit();
+			this.Resize += new System.EventHandler(this.MainForm_Resize);
+			this.statusStrip.ResumeLayout(false);
+			this.statusStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
         }
 
 		#endregion
-
-		private System.IO.FileSystemWatcher fileSystemWatcher;
 		private System.Windows.Forms.TextBox textBoxSpaceTotal;
 		private System.Windows.Forms.Label labelSpaceTotal;
 		private System.Windows.Forms.TextBox textBoxSpaceFree;
@@ -215,6 +273,11 @@
 		private System.Windows.Forms.Label labelSpaceUsedUnit;
 		private System.Windows.Forms.TextBox textBoxSpaceUsed;
 		private System.Windows.Forms.Label labelSpaceUsed;
+		private System.Windows.Forms.StatusStrip statusStrip;
+		private System.Windows.Forms.ToolStripStatusLabel labelInformation;
+		private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonSettings;
+		private System.Windows.Forms.ToolStripMenuItem menuitemStayOnTop;
+		private System.Windows.Forms.ToolStripMenuItem menuitemMinimizeToTray;
 	}
 }
 
