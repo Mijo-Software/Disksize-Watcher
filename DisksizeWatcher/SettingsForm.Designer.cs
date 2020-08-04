@@ -29,13 +29,14 @@
 		private void InitializeComponent()
 		{
 			this.checkBoxStayOnTop = new System.Windows.Forms.CheckBox();
-			this.checkBoxMinimizeToTray = new System.Windows.Forms.CheckBox();
+			this.checkBoxMinimizeToSystemTray = new System.Windows.Forms.CheckBox();
 			this.buttonApply = new System.Windows.Forms.Button();
 			this.buttonCancel = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// checkBoxStayOnTop
 			// 
+			this.checkBoxStayOnTop.AutoEllipsis = true;
 			this.checkBoxStayOnTop.AutoSize = true;
 			this.checkBoxStayOnTop.Location = new System.Drawing.Point(13, 12);
 			this.checkBoxStayOnTop.Name = "checkBoxStayOnTop";
@@ -44,18 +45,21 @@
 			this.checkBoxStayOnTop.Text = "Stay on &top";
 			this.checkBoxStayOnTop.UseVisualStyleBackColor = true;
 			// 
-			// checkBoxMinimizeToTray
+			// checkBoxMinimizeToSystemTray
 			// 
-			this.checkBoxMinimizeToTray.AutoSize = true;
-			this.checkBoxMinimizeToTray.Location = new System.Drawing.Point(13, 36);
-			this.checkBoxMinimizeToTray.Name = "checkBoxMinimizeToTray";
-			this.checkBoxMinimizeToTray.Size = new System.Drawing.Size(98, 17);
-			this.checkBoxMinimizeToTray.TabIndex = 1;
-			this.checkBoxMinimizeToTray.Text = "&Minimize to tray";
-			this.checkBoxMinimizeToTray.UseVisualStyleBackColor = true;
+			this.checkBoxMinimizeToSystemTray.AutoEllipsis = true;
+			this.checkBoxMinimizeToSystemTray.AutoSize = true;
+			this.checkBoxMinimizeToSystemTray.Location = new System.Drawing.Point(13, 36);
+			this.checkBoxMinimizeToSystemTray.Name = "checkBoxMinimizeToSystemTray";
+			this.checkBoxMinimizeToSystemTray.Size = new System.Drawing.Size(133, 17);
+			this.checkBoxMinimizeToSystemTray.TabIndex = 1;
+			this.checkBoxMinimizeToSystemTray.Text = "&Minimize to system tray";
+			this.checkBoxMinimizeToSystemTray.UseVisualStyleBackColor = true;
 			// 
 			// buttonApply
 			// 
+			this.buttonApply.AutoEllipsis = true;
+			this.buttonApply.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.buttonApply.Location = new System.Drawing.Point(13, 70);
 			this.buttonApply.Name = "buttonApply";
 			this.buttonApply.Size = new System.Drawing.Size(75, 23);
@@ -65,6 +69,8 @@
 			// 
 			// buttonCancel
 			// 
+			this.buttonCancel.AutoEllipsis = true;
+			this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.buttonCancel.Location = new System.Drawing.Point(94, 70);
 			this.buttonCancel.Name = "buttonCancel";
 			this.buttonCancel.Size = new System.Drawing.Size(75, 23);
@@ -81,7 +87,7 @@
 			this.ClientSize = new System.Drawing.Size(187, 107);
 			this.Controls.Add(this.buttonCancel);
 			this.Controls.Add(this.buttonApply);
-			this.Controls.Add(this.checkBoxMinimizeToTray);
+			this.Controls.Add(this.checkBoxMinimizeToSystemTray);
 			this.Controls.Add(this.checkBoxStayOnTop);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.MaximizeBox = false;
@@ -90,6 +96,7 @@
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Settings";
+			this.Load += new System.EventHandler(this.SettingsForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -98,7 +105,7 @@
 		#endregion
 
 		private System.Windows.Forms.CheckBox checkBoxStayOnTop;
-		private System.Windows.Forms.CheckBox checkBoxMinimizeToTray;
+		private System.Windows.Forms.CheckBox checkBoxMinimizeToSystemTray;
 		private System.Windows.Forms.Button buttonApply;
 		private System.Windows.Forms.Button buttonCancel;
 	}

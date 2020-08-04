@@ -48,7 +48,7 @@
 			this.labelInformation = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripSplitButtonSettings = new System.Windows.Forms.ToolStripSplitButton();
 			this.menuitemStayOnTop = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuitemMinimizeToTray = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuitemMinimizeToSystemTray = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -58,7 +58,7 @@
 			// 
 			// labelSpaceFree
 			// 
-			this.labelSpaceFree.AutoSize = true;
+			this.labelSpaceFree.AutoEllipsis = true;
 			this.labelSpaceFree.Location = new System.Drawing.Point(11, 41);
 			this.labelSpaceFree.Name = "labelSpaceFree";
 			this.labelSpaceFree.Size = new System.Drawing.Size(63, 13);
@@ -92,6 +92,7 @@
 			// 
 			// labelSpaceTotal
 			// 
+			this.labelSpaceTotal.AutoEllipsis = true;
 			this.labelSpaceTotal.AutoSize = true;
 			this.labelSpaceTotal.Location = new System.Drawing.Point(11, 67);
 			this.labelSpaceTotal.Name = "labelSpaceTotal";
@@ -101,6 +102,7 @@
 			// 
 			// labelSpaceFreeUnit
 			// 
+			this.labelSpaceFreeUnit.AutoEllipsis = true;
 			this.labelSpaceFreeUnit.AutoSize = true;
 			this.labelSpaceFreeUnit.Location = new System.Drawing.Point(199, 41);
 			this.labelSpaceFreeUnit.Name = "labelSpaceFreeUnit";
@@ -110,6 +112,7 @@
 			// 
 			// labelSpaceTotalUnit
 			// 
+			this.labelSpaceTotalUnit.AutoEllipsis = true;
 			this.labelSpaceTotalUnit.AutoSize = true;
 			this.labelSpaceTotalUnit.Location = new System.Drawing.Point(199, 67);
 			this.labelSpaceTotalUnit.Name = "labelSpaceTotalUnit";
@@ -119,6 +122,7 @@
 			// 
 			// labelSpacePercentage
 			// 
+			this.labelSpacePercentage.AutoEllipsis = true;
 			this.labelSpacePercentage.AutoSize = true;
 			this.labelSpacePercentage.Location = new System.Drawing.Point(11, 90);
 			this.labelSpacePercentage.Name = "labelSpacePercentage";
@@ -137,6 +141,7 @@
 			// 
 			// labelSpacePercentageValue
 			// 
+			this.labelSpacePercentageValue.AutoEllipsis = true;
 			this.labelSpacePercentageValue.AutoSize = true;
 			this.labelSpacePercentageValue.Location = new System.Drawing.Point(199, 90);
 			this.labelSpacePercentageValue.Name = "labelSpacePercentageValue";
@@ -146,6 +151,7 @@
 			// 
 			// labelSpaceUsedUnit
 			// 
+			this.labelSpaceUsedUnit.AutoEllipsis = true;
 			this.labelSpaceUsedUnit.AutoSize = true;
 			this.labelSpaceUsedUnit.Location = new System.Drawing.Point(199, 15);
 			this.labelSpaceUsedUnit.Name = "labelSpaceUsedUnit";
@@ -164,6 +170,7 @@
 			// 
 			// labelSpaceUsed
 			// 
+			this.labelSpaceUsed.AutoEllipsis = true;
 			this.labelSpaceUsed.AutoSize = true;
 			this.labelSpaceUsed.Location = new System.Drawing.Point(11, 15);
 			this.labelSpaceUsed.Name = "labelSpaceUsed";
@@ -200,7 +207,7 @@
 			this.toolStripSplitButtonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.toolStripSplitButtonSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuitemStayOnTop,
-            this.menuitemMinimizeToTray});
+            this.menuitemMinimizeToSystemTray});
 			this.toolStripSplitButtonSettings.Image = global::DisksizeWatcher.Properties.Resources.fatcow_wrench_16;
 			this.toolStripSplitButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripSplitButtonSettings.Name = "toolStripSplitButtonSettings";
@@ -213,17 +220,17 @@
 			this.menuitemStayOnTop.AutoToolTip = true;
 			this.menuitemStayOnTop.CheckOnClick = true;
 			this.menuitemStayOnTop.Name = "menuitemStayOnTop";
-			this.menuitemStayOnTop.Size = new System.Drawing.Size(180, 22);
+			this.menuitemStayOnTop.Size = new System.Drawing.Size(200, 22);
 			this.menuitemStayOnTop.Text = "&Stay on top";
-			this.menuitemStayOnTop.Click += new System.EventHandler(this.MenuitemStayOnTop_Click);
+			this.menuitemStayOnTop.CheckedChanged += new System.EventHandler(this.MenuitemStayOnTop_CheckedChanged);
 			// 
-			// menuitemMinimizeToTray
+			// menuitemMinimizeToSystemTray
 			// 
-			this.menuitemMinimizeToTray.AutoToolTip = true;
-			this.menuitemMinimizeToTray.CheckOnClick = true;
-			this.menuitemMinimizeToTray.Name = "menuitemMinimizeToTray";
-			this.menuitemMinimizeToTray.Size = new System.Drawing.Size(180, 22);
-			this.menuitemMinimizeToTray.Text = "&Minimize to tray";
+			this.menuitemMinimizeToSystemTray.AutoToolTip = true;
+			this.menuitemMinimizeToSystemTray.CheckOnClick = true;
+			this.menuitemMinimizeToSystemTray.Name = "menuitemMinimizeToSystemTray";
+			this.menuitemMinimizeToSystemTray.Size = new System.Drawing.Size(200, 22);
+			this.menuitemMinimizeToSystemTray.Text = "&Minimize to system tray";
 			// 
 			// MainForm
 			// 
@@ -277,7 +284,7 @@
 		private System.Windows.Forms.ToolStripStatusLabel labelInformation;
 		private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonSettings;
 		private System.Windows.Forms.ToolStripMenuItem menuitemStayOnTop;
-		private System.Windows.Forms.ToolStripMenuItem menuitemMinimizeToTray;
+		private System.Windows.Forms.ToolStripMenuItem menuitemMinimizeToSystemTray;
 	}
 }
 
