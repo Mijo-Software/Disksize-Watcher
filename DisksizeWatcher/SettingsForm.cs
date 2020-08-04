@@ -16,6 +16,7 @@ namespace DisksizeWatcher
 				checkBoxStayOnTop.Checked = value;
 			}
 		}
+
 		public bool MinimizeToSystemTray
 		{
 			get

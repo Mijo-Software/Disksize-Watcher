@@ -58,12 +58,17 @@
 			// 
 			// labelSpaceFree
 			// 
+			this.labelSpaceFree.AccessibleDescription = "Show the free space";
 			this.labelSpaceFree.AutoEllipsis = true;
 			this.labelSpaceFree.Location = new System.Drawing.Point(11, 41);
 			this.labelSpaceFree.Name = "labelSpaceFree";
 			this.labelSpaceFree.Size = new System.Drawing.Size(63, 13);
 			this.labelSpaceFree.TabIndex = 3;
 			this.labelSpaceFree.Text = "&Free space:";
+			this.labelSpaceFree.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceFree.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpaceFree.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceFree.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// notifyIcon
 			// 
@@ -74,24 +79,35 @@
 			// 
 			// textBoxSpaceFree
 			// 
+			this.textBoxSpaceFree.AccessibleDescription = "Show the unit of the free space";
 			this.textBoxSpaceFree.Location = new System.Drawing.Point(82, 38);
 			this.textBoxSpaceFree.Name = "textBoxSpaceFree";
 			this.textBoxSpaceFree.ReadOnly = true;
 			this.textBoxSpaceFree.Size = new System.Drawing.Size(111, 20);
 			this.textBoxSpaceFree.TabIndex = 4;
 			this.textBoxSpaceFree.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.textBoxSpaceFree.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.textBoxSpaceFree.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.textBoxSpaceFree.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.textBoxSpaceFree.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// textBoxSpaceTotal
 			// 
+			this.textBoxSpaceTotal.AccessibleDescription = "Show the unit of the total space";
 			this.textBoxSpaceTotal.Location = new System.Drawing.Point(82, 64);
 			this.textBoxSpaceTotal.Name = "textBoxSpaceTotal";
 			this.textBoxSpaceTotal.ReadOnly = true;
 			this.textBoxSpaceTotal.Size = new System.Drawing.Size(111, 20);
 			this.textBoxSpaceTotal.TabIndex = 7;
 			this.textBoxSpaceTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.textBoxSpaceTotal.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.textBoxSpaceTotal.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.textBoxSpaceTotal.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.textBoxSpaceTotal.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// labelSpaceTotal
 			// 
+			this.labelSpaceTotal.AccessibleDescription = "Show the total space";
 			this.labelSpaceTotal.AutoEllipsis = true;
 			this.labelSpaceTotal.AutoSize = true;
 			this.labelSpaceTotal.Location = new System.Drawing.Point(11, 67);
@@ -99,9 +115,14 @@
 			this.labelSpaceTotal.Size = new System.Drawing.Size(66, 13);
 			this.labelSpaceTotal.TabIndex = 6;
 			this.labelSpaceTotal.Text = "&Total space:";
+			this.labelSpaceTotal.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceTotal.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpaceTotal.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceTotal.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// labelSpaceFreeUnit
 			// 
+			this.labelSpaceFreeUnit.AccessibleDescription = "Show the unit of the free space";
 			this.labelSpaceFreeUnit.AutoEllipsis = true;
 			this.labelSpaceFreeUnit.AutoSize = true;
 			this.labelSpaceFreeUnit.Location = new System.Drawing.Point(199, 41);
@@ -109,9 +130,14 @@
 			this.labelSpaceFreeUnit.Size = new System.Drawing.Size(32, 13);
 			this.labelSpaceFreeUnit.TabIndex = 5;
 			this.labelSpaceFreeUnit.Text = "bytes";
+			this.labelSpaceFreeUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceFreeUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpaceFreeUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceFreeUnit.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// labelSpaceTotalUnit
 			// 
+			this.labelSpaceTotalUnit.AccessibleDescription = "Show the unit of the total space";
 			this.labelSpaceTotalUnit.AutoEllipsis = true;
 			this.labelSpaceTotalUnit.AutoSize = true;
 			this.labelSpaceTotalUnit.Location = new System.Drawing.Point(199, 67);
@@ -119,9 +145,14 @@
 			this.labelSpaceTotalUnit.Size = new System.Drawing.Size(32, 13);
 			this.labelSpaceTotalUnit.TabIndex = 8;
 			this.labelSpaceTotalUnit.Text = "bytes";
+			this.labelSpaceTotalUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceTotalUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpaceTotalUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceTotalUnit.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// labelSpacePercentage
 			// 
+			this.labelSpacePercentage.AccessibleDescription = "Show the percentage";
 			this.labelSpacePercentage.AutoEllipsis = true;
 			this.labelSpacePercentage.AutoSize = true;
 			this.labelSpacePercentage.Location = new System.Drawing.Point(11, 90);
@@ -129,18 +160,26 @@
 			this.labelSpacePercentage.Size = new System.Drawing.Size(65, 13);
 			this.labelSpacePercentage.TabIndex = 9;
 			this.labelSpacePercentage.Text = "Percentage:";
+			this.labelSpacePercentage.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpacePercentage.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpacePercentage.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpacePercentage.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// progressBarPercentage
 			// 
+			this.progressBarPercentage.AccessibleDescription = "Show the state of the percentage";
 			this.progressBarPercentage.Location = new System.Drawing.Point(82, 90);
 			this.progressBarPercentage.Name = "progressBarPercentage";
 			this.progressBarPercentage.Size = new System.Drawing.Size(111, 13);
 			this.progressBarPercentage.Step = 1;
 			this.progressBarPercentage.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
 			this.progressBarPercentage.TabIndex = 10;
+			this.progressBarPercentage.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.progressBarPercentage.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// labelSpacePercentageValue
 			// 
+			this.labelSpacePercentageValue.AccessibleDescription = "Show the value of the percentage";
 			this.labelSpacePercentageValue.AutoEllipsis = true;
 			this.labelSpacePercentageValue.AutoSize = true;
 			this.labelSpacePercentageValue.Location = new System.Drawing.Point(199, 90);
@@ -148,9 +187,14 @@
 			this.labelSpacePercentageValue.Size = new System.Drawing.Size(15, 13);
 			this.labelSpacePercentageValue.TabIndex = 11;
 			this.labelSpacePercentageValue.Text = "%";
+			this.labelSpacePercentageValue.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpacePercentageValue.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpacePercentageValue.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpacePercentageValue.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// labelSpaceUsedUnit
 			// 
+			this.labelSpaceUsedUnit.AccessibleDescription = "Show the unit of the used space";
 			this.labelSpaceUsedUnit.AutoEllipsis = true;
 			this.labelSpaceUsedUnit.AutoSize = true;
 			this.labelSpaceUsedUnit.Location = new System.Drawing.Point(199, 15);
@@ -158,18 +202,28 @@
 			this.labelSpaceUsedUnit.Size = new System.Drawing.Size(32, 13);
 			this.labelSpaceUsedUnit.TabIndex = 2;
 			this.labelSpaceUsedUnit.Text = "bytes";
+			this.labelSpaceUsedUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceUsedUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpaceUsedUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceUsedUnit.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// textBoxSpaceUsed
 			// 
+			this.textBoxSpaceUsed.AccessibleDescription = "Show the unit of the used space";
 			this.textBoxSpaceUsed.Location = new System.Drawing.Point(82, 12);
 			this.textBoxSpaceUsed.Name = "textBoxSpaceUsed";
 			this.textBoxSpaceUsed.ReadOnly = true;
 			this.textBoxSpaceUsed.Size = new System.Drawing.Size(111, 20);
 			this.textBoxSpaceUsed.TabIndex = 1;
 			this.textBoxSpaceUsed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.textBoxSpaceUsed.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.textBoxSpaceUsed.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.textBoxSpaceUsed.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.textBoxSpaceUsed.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// labelSpaceUsed
 			// 
+			this.labelSpaceUsed.AccessibleDescription = "Show the used space";
 			this.labelSpaceUsed.AutoEllipsis = true;
 			this.labelSpaceUsed.AutoSize = true;
 			this.labelSpaceUsed.Location = new System.Drawing.Point(11, 15);
@@ -177,6 +231,10 @@
 			this.labelSpaceUsed.Size = new System.Drawing.Size(67, 13);
 			this.labelSpaceUsed.TabIndex = 0;
 			this.labelSpaceUsed.Text = "&Used space:";
+			this.labelSpaceUsed.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceUsed.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpaceUsed.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceUsed.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// statusStrip
 			// 
@@ -195,15 +253,19 @@
 			// 
 			// labelInformation
 			// 
+			this.labelInformation.AccessibleDescription = "Show some information";
 			this.labelInformation.AutoToolTip = true;
 			this.labelInformation.Name = "labelInformation";
 			this.labelInformation.Size = new System.Drawing.Size(225, 17);
 			this.labelInformation.Spring = true;
 			this.labelInformation.Text = "info";
 			this.labelInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.labelInformation.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelInformation.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// toolStripSplitButtonSettings
 			// 
+			this.toolStripSplitButtonSettings.AccessibleDescription = "Click to open the settings";
 			this.toolStripSplitButtonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.toolStripSplitButtonSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuitemStayOnTop,
@@ -214,23 +276,31 @@
 			this.toolStripSplitButtonSettings.Size = new System.Drawing.Size(32, 20);
 			this.toolStripSplitButtonSettings.Text = "Settings";
 			this.toolStripSplitButtonSettings.ButtonClick += new System.EventHandler(this.ToolStripSplitButtonSettings_ButtonClick);
+			this.toolStripSplitButtonSettings.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.toolStripSplitButtonSettings.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// menuitemStayOnTop
 			// 
+			this.menuitemStayOnTop.AccessibleDescription = "Click to stay on top";
 			this.menuitemStayOnTop.AutoToolTip = true;
 			this.menuitemStayOnTop.CheckOnClick = true;
 			this.menuitemStayOnTop.Name = "menuitemStayOnTop";
 			this.menuitemStayOnTop.Size = new System.Drawing.Size(200, 22);
 			this.menuitemStayOnTop.Text = "&Stay on top";
 			this.menuitemStayOnTop.CheckedChanged += new System.EventHandler(this.MenuitemStayOnTop_CheckedChanged);
+			this.menuitemStayOnTop.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.menuitemStayOnTop.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// menuitemMinimizeToSystemTray
 			// 
+			this.menuitemMinimizeToSystemTray.AccessibleDescription = "Click to minimize to system tray";
 			this.menuitemMinimizeToSystemTray.AutoToolTip = true;
 			this.menuitemMinimizeToSystemTray.CheckOnClick = true;
 			this.menuitemMinimizeToSystemTray.Name = "menuitemMinimizeToSystemTray";
 			this.menuitemMinimizeToSystemTray.Size = new System.Drawing.Size(200, 22);
 			this.menuitemMinimizeToSystemTray.Text = "&Minimize to system tray";
+			this.menuitemMinimizeToSystemTray.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.menuitemMinimizeToSystemTray.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// MainForm
 			// 
