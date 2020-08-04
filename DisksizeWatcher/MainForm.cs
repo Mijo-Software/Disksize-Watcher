@@ -70,7 +70,14 @@ namespace DisksizeWatcher
 			}
 			using (SettingsForm settingsForm = new SettingsForm())
 			{
+				settingsForm.StayOnTop = menuitemStayOnTop.Checked;
+				settingsForm.MinimizeToSystemTray = menuitemMinimizeToSystemTray.Checked;
 				DialogResult dialogResult = settingsForm.ShowDialog();
+				if (dialogResult == DialogResult.OK)
+				{
+					menuitemStayOnTop.Checked = settingsForm.StayOnTop;
+					menuitemMinimizeToSystemTray.Checked = settingsForm.MinimizeToSystemTray;
+				}
 			}
 			if (menuitemStayOnTop.Checked)
 			{
@@ -78,13 +85,13 @@ namespace DisksizeWatcher
 			}
 		}
 
-		private void MenuitemStayOnTop_Click(object sender, EventArgs e) => TopMost = menuitemStayOnTop.Checked;
+		private void MenuitemStayOnTop_CheckedChanged(object sender, EventArgs e) => TopMost = menuitemStayOnTop.Checked;
 
 		private void MainForm_Resize(object sender, EventArgs e)
 		{
 			if (WindowState == FormWindowState.Minimized)
 			{
-				if (menuitemMinimizeToTray.Checked)
+				if (menuitemMinimizeToSystemTray.Checked)
 				{
 					Hide();
 					notifyIcon.Visible = true;

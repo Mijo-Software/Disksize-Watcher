@@ -1,20 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DisksizeWatcher
 {
 	public partial class SettingsForm : Form
 	{
-		public SettingsForm()
+		public bool StayOnTop
 		{
-			InitializeComponent();
+			get
+			{
+				return checkBoxStayOnTop.Checked;
+			}
+			set
+			{
+				checkBoxStayOnTop.Checked = value;
+			}
+		}
+		public bool MinimizeToSystemTray
+		{
+			get
+			{
+				return checkBoxMinimizeToSystemTray.Checked;
+			}
+			set
+			{
+				checkBoxMinimizeToSystemTray.Checked = value;
+			}
+		}
+
+		public SettingsForm() => InitializeComponent();
+
+		private void SettingsForm_Load(object sender, EventArgs e)
+		{
 		}
 	}
 }
