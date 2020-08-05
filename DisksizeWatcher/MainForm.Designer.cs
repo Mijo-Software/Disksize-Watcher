@@ -79,7 +79,7 @@
 			// 
 			// textBoxSpaceFree
 			// 
-			this.textBoxSpaceFree.AccessibleDescription = "Show the unit of the free space";
+			this.textBoxSpaceFree.AccessibleDescription = "Show the value of the free space";
 			this.textBoxSpaceFree.Location = new System.Drawing.Point(82, 38);
 			this.textBoxSpaceFree.Name = "textBoxSpaceFree";
 			this.textBoxSpaceFree.ReadOnly = true;
@@ -93,7 +93,7 @@
 			// 
 			// textBoxSpaceTotal
 			// 
-			this.textBoxSpaceTotal.AccessibleDescription = "Show the unit of the total space";
+			this.textBoxSpaceTotal.AccessibleDescription = "Show the value of the total space";
 			this.textBoxSpaceTotal.Location = new System.Drawing.Point(82, 64);
 			this.textBoxSpaceTotal.Name = "textBoxSpaceTotal";
 			this.textBoxSpaceTotal.ReadOnly = true;
@@ -209,7 +209,7 @@
 			// 
 			// textBoxSpaceUsed
 			// 
-			this.textBoxSpaceUsed.AccessibleDescription = "Show the unit of the used space";
+			this.textBoxSpaceUsed.AccessibleDescription = "Show the value of the used space";
 			this.textBoxSpaceUsed.Location = new System.Drawing.Point(82, 12);
 			this.textBoxSpaceUsed.Name = "textBoxSpaceUsed";
 			this.textBoxSpaceUsed.ReadOnly = true;

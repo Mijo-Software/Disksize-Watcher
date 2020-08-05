@@ -29,6 +29,18 @@ namespace DisksizeWatcher
 			}
 		}
 
+		public int RefreshRate
+		{
+			get
+			{
+				return (int)numericUpDownRefreshRate.Value;
+			}
+			set
+			{
+				numericUpDownRefreshRate.Value = value;
+			}
+		}
+
 		public SettingsForm() => InitializeComponent();
 
 		private void SettingsForm_Load(object sender, EventArgs e)
