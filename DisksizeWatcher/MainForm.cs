@@ -116,6 +116,7 @@ namespace DisksizeWatcher
 				DialogResult dialogResult = settingsForm.ShowDialog();
 				if (dialogResult == DialogResult.OK)
 				{
+					timer.Interval = settingsForm.RefreshRate;
 					menuitemStayOnTop.Checked = settingsForm.StayOnTop;
 					menuitemMinimizeToSystemTray.Checked = settingsForm.MinimizeToSystemTray;
 				}
