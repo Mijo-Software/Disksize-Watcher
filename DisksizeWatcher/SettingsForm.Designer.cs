@@ -28,13 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.checkBoxStayOnTop = new System.Windows.Forms.CheckBox();
 			this.checkBoxMinimizeToSystemTray = new System.Windows.Forms.CheckBox();
 			this.buttonApply = new System.Windows.Forms.Button();
 			this.buttonCancel = new System.Windows.Forms.Button();
 			this.labelRefreshRate = new System.Windows.Forms.Label();
 			this.numericUpDownRefreshRate = new System.Windows.Forms.NumericUpDown();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.statusStrip = new System.Windows.Forms.StatusStrip();
+			this.labelInformation = new System.Windows.Forms.ToolStripStatusLabel();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshRate)).BeginInit();
+			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// checkBoxStayOnTop
@@ -113,13 +118,34 @@
             0,
             0});
 			// 
+			// statusStrip
+			// 
+			this.statusStrip.AllowItemReorder = true;
+			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.labelInformation});
+			this.statusStrip.Location = new System.Drawing.Point(0, 120);
+			this.statusStrip.Name = "statusStrip";
+			this.statusStrip.ShowItemToolTips = true;
+			this.statusStrip.Size = new System.Drawing.Size(181, 22);
+			this.statusStrip.SizingGrip = false;
+			this.statusStrip.TabIndex = 6;
+			this.statusStrip.TabStop = true;
+			this.statusStrip.Text = "statusStrip";
+			// 
+			// labelInformation
+			// 
+			this.labelInformation.Name = "labelInformation";
+			this.labelInformation.Size = new System.Drawing.Size(28, 17);
+			this.labelInformation.Text = "info";
+			// 
 			// SettingsForm
 			// 
 			this.AcceptButton = this.buttonApply;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.buttonCancel;
-			this.ClientSize = new System.Drawing.Size(181, 123);
+			this.ClientSize = new System.Drawing.Size(181, 142);
+			this.Controls.Add(this.statusStrip);
 			this.Controls.Add(this.numericUpDownRefreshRate);
 			this.Controls.Add(this.labelRefreshRate);
 			this.Controls.Add(this.buttonCancel);
@@ -135,6 +161,8 @@
 			this.Text = "Settings";
 			this.Load += new System.EventHandler(this.SettingsForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshRate)).EndInit();
+			this.statusStrip.ResumeLayout(false);
+			this.statusStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -148,5 +176,8 @@
 		private System.Windows.Forms.Button buttonCancel;
 		private System.Windows.Forms.Label labelRefreshRate;
 		private System.Windows.Forms.NumericUpDown numericUpDownRefreshRate;
+		private System.Windows.Forms.ToolTip toolTip;
+		private System.Windows.Forms.StatusStrip statusStrip;
+		private System.Windows.Forms.ToolStripStatusLabel labelInformation;
 	}
 }

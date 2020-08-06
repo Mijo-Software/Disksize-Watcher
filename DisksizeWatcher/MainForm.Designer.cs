@@ -49,7 +49,32 @@
 			this.toolStripSplitButtonSettings = new System.Windows.Forms.ToolStripSplitButton();
 			this.menuitemStayOnTop = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuitemMinimizeToSystemTray = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.contextMenuStripUsedSpaceUnits = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.toolStripMenuItemUsedSpaceUnitByte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemUsedSpaceUnitKilobyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemUsedSpaceUnitMegabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemUsedSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemUsedSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemUsedSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextMenuStripFreeSpaceUnits = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.contextMenuStripUsedTotalUnits = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.toolStripMenuItemFreeSpaceUnitByte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemFreeSpaceUnitKilobyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemFreeSpaceUnitMegabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemFreeSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemFreeSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemFreeSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemTotalSpaceUnitByte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemTotalSpaceUnitKilobyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemTotalSpaceUnitMegabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemTotalSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemTotalSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemTotalSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip.SuspendLayout();
+			this.contextMenuStripUsedSpaceUnits.SuspendLayout();
+			this.contextMenuStripFreeSpaceUnits.SuspendLayout();
+			this.contextMenuStripUsedTotalUnits.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// timer
@@ -125,11 +150,14 @@
 			this.labelSpaceFreeUnit.AccessibleDescription = "Show the unit of the free space";
 			this.labelSpaceFreeUnit.AutoEllipsis = true;
 			this.labelSpaceFreeUnit.AutoSize = true;
+			this.labelSpaceFreeUnit.ContextMenuStrip = this.contextMenuStripFreeSpaceUnits;
+			this.labelSpaceFreeUnit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.labelSpaceFreeUnit.Location = new System.Drawing.Point(199, 41);
 			this.labelSpaceFreeUnit.Name = "labelSpaceFreeUnit";
 			this.labelSpaceFreeUnit.Size = new System.Drawing.Size(32, 13);
 			this.labelSpaceFreeUnit.TabIndex = 5;
 			this.labelSpaceFreeUnit.Text = "bytes";
+			this.labelSpaceFreeUnit.Click += new System.EventHandler(this.LabelSpaceFreeUnit_Click);
 			this.labelSpaceFreeUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
 			this.labelSpaceFreeUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
 			this.labelSpaceFreeUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -140,11 +168,14 @@
 			this.labelSpaceTotalUnit.AccessibleDescription = "Show the unit of the total space";
 			this.labelSpaceTotalUnit.AutoEllipsis = true;
 			this.labelSpaceTotalUnit.AutoSize = true;
+			this.labelSpaceTotalUnit.ContextMenuStrip = this.contextMenuStripUsedTotalUnits;
+			this.labelSpaceTotalUnit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.labelSpaceTotalUnit.Location = new System.Drawing.Point(199, 67);
 			this.labelSpaceTotalUnit.Name = "labelSpaceTotalUnit";
 			this.labelSpaceTotalUnit.Size = new System.Drawing.Size(32, 13);
 			this.labelSpaceTotalUnit.TabIndex = 8;
 			this.labelSpaceTotalUnit.Text = "bytes";
+			this.labelSpaceTotalUnit.Click += new System.EventHandler(this.LabelSpaceTotalUnit_Click);
 			this.labelSpaceTotalUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
 			this.labelSpaceTotalUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
 			this.labelSpaceTotalUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -197,11 +228,14 @@
 			this.labelSpaceUsedUnit.AccessibleDescription = "Show the unit of the used space";
 			this.labelSpaceUsedUnit.AutoEllipsis = true;
 			this.labelSpaceUsedUnit.AutoSize = true;
+			this.labelSpaceUsedUnit.ContextMenuStrip = this.contextMenuStripUsedSpaceUnits;
+			this.labelSpaceUsedUnit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.labelSpaceUsedUnit.Location = new System.Drawing.Point(199, 15);
 			this.labelSpaceUsedUnit.Name = "labelSpaceUsedUnit";
 			this.labelSpaceUsedUnit.Size = new System.Drawing.Size(32, 13);
 			this.labelSpaceUsedUnit.TabIndex = 2;
 			this.labelSpaceUsedUnit.Text = "bytes";
+			this.labelSpaceUsedUnit.Click += new System.EventHandler(this.LabelSpaceUsedUnit_Click);
 			this.labelSpaceUsedUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
 			this.labelSpaceUsedUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
 			this.labelSpaceUsedUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -302,6 +336,156 @@
 			this.menuitemMinimizeToSystemTray.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
 			this.menuitemMinimizeToSystemTray.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
+			// contextMenuStripUsedSpaceUnits
+			// 
+			this.contextMenuStripUsedSpaceUnits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemUsedSpaceUnitByte,
+            this.toolStripMenuItemUsedSpaceUnitKilobyte,
+            this.toolStripMenuItemUsedSpaceUnitMegabyte,
+            this.toolStripMenuItemUsedSpaceUnitGigabyte,
+            this.toolStripMenuItemUsedSpaceUnitTerabyte,
+            this.toolStripMenuItemUsedSpaceUnitPentabyte});
+			this.contextMenuStripUsedSpaceUnits.Name = "unitsOfusedSpace";
+			this.contextMenuStripUsedSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+			this.contextMenuStripUsedSpaceUnits.Size = new System.Drawing.Size(128, 136);
+			this.contextMenuStripUsedSpaceUnits.TabStop = true;
+			// 
+			// toolStripMenuItemUsedSpaceUnitByte
+			// 
+			this.toolStripMenuItemUsedSpaceUnitByte.Name = "toolStripMenuItemUsedSpaceUnitByte";
+			this.toolStripMenuItemUsedSpaceUnitByte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemUsedSpaceUnitByte.Text = "&byte";
+			// 
+			// toolStripMenuItemUsedSpaceUnitKilobyte
+			// 
+			this.toolStripMenuItemUsedSpaceUnitKilobyte.Name = "toolStripMenuItemUsedSpaceUnitKilobyte";
+			this.toolStripMenuItemUsedSpaceUnitKilobyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemUsedSpaceUnitKilobyte.Text = "&kilobyte";
+			// 
+			// toolStripMenuItemUsedSpaceUnitMegabyte
+			// 
+			this.toolStripMenuItemUsedSpaceUnitMegabyte.Name = "toolStripMenuItemUsedSpaceUnitMegabyte";
+			this.toolStripMenuItemUsedSpaceUnitMegabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemUsedSpaceUnitMegabyte.Text = "&megabyte";
+			// 
+			// toolStripMenuItemUsedSpaceUnitGigabyte
+			// 
+			this.toolStripMenuItemUsedSpaceUnitGigabyte.Name = "toolStripMenuItemUsedSpaceUnitGigabyte";
+			this.toolStripMenuItemUsedSpaceUnitGigabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemUsedSpaceUnitGigabyte.Text = "&gigabyte";
+			// 
+			// toolStripMenuItemUsedSpaceUnitTerabyte
+			// 
+			this.toolStripMenuItemUsedSpaceUnitTerabyte.Name = "toolStripMenuItemUsedSpaceUnitTerabyte";
+			this.toolStripMenuItemUsedSpaceUnitTerabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemUsedSpaceUnitTerabyte.Text = "&terabyte";
+			// 
+			// toolStripMenuItemUsedSpaceUnitPentabyte
+			// 
+			this.toolStripMenuItemUsedSpaceUnitPentabyte.Name = "toolStripMenuItemUsedSpaceUnitPentabyte";
+			this.toolStripMenuItemUsedSpaceUnitPentabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemUsedSpaceUnitPentabyte.Text = "&pentabyte";
+			// 
+			// contextMenuStripFreeSpaceUnits
+			// 
+			this.contextMenuStripFreeSpaceUnits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemFreeSpaceUnitByte,
+            this.toolStripMenuItemFreeSpaceUnitKilobyte,
+            this.toolStripMenuItemFreeSpaceUnitMegabyte,
+            this.toolStripMenuItemFreeSpaceUnitGigabyte,
+            this.toolStripMenuItemFreeSpaceUnitTerabyte,
+            this.toolStripMenuItemFreeSpaceUnitPentabyte});
+			this.contextMenuStripFreeSpaceUnits.Name = "toolStripMenuItemFreeSpaceUnitMegabyte";
+			this.contextMenuStripFreeSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+			this.contextMenuStripFreeSpaceUnits.Size = new System.Drawing.Size(128, 136);
+			this.contextMenuStripFreeSpaceUnits.TabStop = true;
+			// 
+			// contextMenuStripUsedTotalUnits
+			// 
+			this.contextMenuStripUsedTotalUnits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemTotalSpaceUnitByte,
+            this.toolStripMenuItemTotalSpaceUnitKilobyte,
+            this.toolStripMenuItemTotalSpaceUnitMegabyte,
+            this.toolStripMenuItemTotalSpaceUnitGigabyte,
+            this.toolStripMenuItemTotalSpaceUnitTerabyte,
+            this.toolStripMenuItemTotalSpaceUnitPentabyte});
+			this.contextMenuStripUsedTotalUnits.Name = "contextMenuStripUsedTotalUnits";
+			this.contextMenuStripUsedTotalUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+			this.contextMenuStripUsedTotalUnits.Size = new System.Drawing.Size(128, 136);
+			this.contextMenuStripUsedTotalUnits.TabStop = true;
+			// 
+			// toolStripMenuItemFreeSpaceUnitByte
+			// 
+			this.toolStripMenuItemFreeSpaceUnitByte.Name = "toolStripMenuItemFreeSpaceUnitByte";
+			this.toolStripMenuItemFreeSpaceUnitByte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemFreeSpaceUnitByte.Text = "&byte";
+			// 
+			// toolStripMenuItemFreeSpaceUnitKilobyte
+			// 
+			this.toolStripMenuItemFreeSpaceUnitKilobyte.Name = "toolStripMenuItemFreeSpaceUnitKilobyte";
+			this.toolStripMenuItemFreeSpaceUnitKilobyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemFreeSpaceUnitKilobyte.Text = "&kilobyte";
+			// 
+			// toolStripMenuItemFreeSpaceUnitMegabyte
+			// 
+			this.toolStripMenuItemFreeSpaceUnitMegabyte.Name = "toolStripMenuItemFreeSpaceUnitMegabyte";
+			this.toolStripMenuItemFreeSpaceUnitMegabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemFreeSpaceUnitMegabyte.Text = "&megabyte";
+			// 
+			// toolStripMenuItemFreeSpaceUnitGigabyte
+			// 
+			this.toolStripMenuItemFreeSpaceUnitGigabyte.Name = "toolStripMenuItemFreeSpaceUnitGigabyte";
+			this.toolStripMenuItemFreeSpaceUnitGigabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemFreeSpaceUnitGigabyte.Text = "&gigabyte";
+			// 
+			// toolStripMenuItemFreeSpaceUnitTerabyte
+			// 
+			this.toolStripMenuItemFreeSpaceUnitTerabyte.Name = "toolStripMenuItemFreeSpaceUnitTerabyte";
+			this.toolStripMenuItemFreeSpaceUnitTerabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemFreeSpaceUnitTerabyte.Text = "&terabyte";
+			// 
+			// toolStripMenuItemFreeSpaceUnitPentabyte
+			// 
+			this.toolStripMenuItemFreeSpaceUnitPentabyte.Name = "toolStripMenuItemFreeSpaceUnitPentabyte";
+			this.toolStripMenuItemFreeSpaceUnitPentabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemFreeSpaceUnitPentabyte.Text = "&pentabyte";
+			// 
+			// toolStripMenuItemTotalSpaceUnitByte
+			// 
+			this.toolStripMenuItemTotalSpaceUnitByte.Name = "toolStripMenuItemTotalSpaceUnitByte";
+			this.toolStripMenuItemTotalSpaceUnitByte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemTotalSpaceUnitByte.Text = "&byte";
+			// 
+			// toolStripMenuItemTotalSpaceUnitKilobyte
+			// 
+			this.toolStripMenuItemTotalSpaceUnitKilobyte.Name = "toolStripMenuItemTotalSpaceUnitKilobyte";
+			this.toolStripMenuItemTotalSpaceUnitKilobyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemTotalSpaceUnitKilobyte.Text = "&kilobyte";
+			// 
+			// toolStripMenuItemTotalSpaceUnitMegabyte
+			// 
+			this.toolStripMenuItemTotalSpaceUnitMegabyte.Name = "toolStripMenuItemTotalSpaceUnitMegabyte";
+			this.toolStripMenuItemTotalSpaceUnitMegabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemTotalSpaceUnitMegabyte.Text = "&megabyte";
+			// 
+			// toolStripMenuItemTotalSpaceUnitGigabyte
+			// 
+			this.toolStripMenuItemTotalSpaceUnitGigabyte.Name = "toolStripMenuItemTotalSpaceUnitGigabyte";
+			this.toolStripMenuItemTotalSpaceUnitGigabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemTotalSpaceUnitGigabyte.Text = "&gigabyte";
+			// 
+			// toolStripMenuItemTotalSpaceUnitTerabyte
+			// 
+			this.toolStripMenuItemTotalSpaceUnitTerabyte.Name = "toolStripMenuItemTotalSpaceUnitTerabyte";
+			this.toolStripMenuItemTotalSpaceUnitTerabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemTotalSpaceUnitTerabyte.Text = "&terabyte";
+			// 
+			// toolStripMenuItemTotalSpaceUnitPentabyte
+			// 
+			this.toolStripMenuItemTotalSpaceUnitPentabyte.Name = "toolStripMenuItemTotalSpaceUnitPentabyte";
+			this.toolStripMenuItemTotalSpaceUnitPentabyte.Size = new System.Drawing.Size(127, 22);
+			this.toolStripMenuItemTotalSpaceUnitPentabyte.Text = "&pentabyte";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +514,9 @@
 			this.Resize += new System.EventHandler(this.MainForm_Resize);
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();
+			this.contextMenuStripUsedSpaceUnits.ResumeLayout(false);
+			this.contextMenuStripFreeSpaceUnits.ResumeLayout(false);
+			this.contextMenuStripUsedTotalUnits.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -355,6 +542,28 @@
 		private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonSettings;
 		private System.Windows.Forms.ToolStripMenuItem menuitemStayOnTop;
 		private System.Windows.Forms.ToolStripMenuItem menuitemMinimizeToSystemTray;
+		private System.Windows.Forms.ToolTip toolTip;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStripUsedSpaceUnits;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitByte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitKilobyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitMegabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitGigabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitTerabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitPentabyte;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStripFreeSpaceUnits;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStripUsedTotalUnits;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitByte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitKilobyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitMegabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitGigabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitTerabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitPentabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitByte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitKilobyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitMegabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitGigabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitTerabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitPentabyte;
 	}
 }
 
