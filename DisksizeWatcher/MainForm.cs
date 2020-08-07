@@ -12,7 +12,7 @@ namespace DisksizeWatcher
 	{
 		private readonly DriveInfo driveC = new DriveInfo(driveName: "C");
 
-		private short unitUsedSpace, unitFreeSpace, unitTotalSpace;
+		private short unitUsedSpace, unitFreeSpace, unitTotalSpace, swap;
 
 		private double usedSpace, freeSpace, totalSpace, usedSpaceOrig, freeSpaceOrig, totalSpaceOrig, freeSpacePerc, usedSpacePerc;
 
@@ -175,121 +175,205 @@ namespace DisksizeWatcher
 
 		private void ToolStripMenuItemUsedSpaceUnitKilobyte_Click(object sender, EventArgs e)
 		{
-			unitUsedSpace = 1;
+			unitUsedSpace = (int)SizeUnit.Kilobyte;
 			UncheckContextMenuForUsedSpaceUnits();
 			CaseUsedSpaceUnits();
 		}
 
 		private void ToolStripMenuItemUsedSpaceUnitMegabyte_Click(object sender, EventArgs e)
 		{
-			unitUsedSpace = 2;
+			unitUsedSpace = (int)SizeUnit.Megabyte;
 			UncheckContextMenuForUsedSpaceUnits();
 			CaseUsedSpaceUnits();
 		}
 
 		private void ToolStripMenuItemUsedSpaceUnitGigabyte_Click(object sender, EventArgs e)
 		{
-			unitUsedSpace = 3;
+			unitUsedSpace = (int)SizeUnit.Gigabyte;
 			UncheckContextMenuForUsedSpaceUnits();
 			CaseUsedSpaceUnits();
 		}
 
 		private void ToolStripMenuItemUsedSpaceUnitTerabyte_Click(object sender, EventArgs e)
 		{
-			unitUsedSpace = 4;
+			unitUsedSpace = (int)SizeUnit.Terabyte;
 			UncheckContextMenuForUsedSpaceUnits();
 			CaseUsedSpaceUnits();
 		}
 
 		private void ToolStripMenuItemUsedSpaceUnitPentabyte_Click(object sender, EventArgs e)
 		{
-			unitUsedSpace = 5;
+			unitUsedSpace = (int)SizeUnit.Pentabyte;
 			UncheckContextMenuForUsedSpaceUnits();
 			CaseUsedSpaceUnits();
 		}
 
 		private void ToolStripMenuItemFreeSpaceUnitByte_Click(object sender, EventArgs e)
 		{
-			unitFreeSpace = 0;
+			unitFreeSpace = (int)SizeUnit.Byte;
 			UncheckContextMenuForFreeSpaceUnits();
 			CaseFreeSpaceUnits();
 		}
 
 		private void ToolStripMenuItemFreeSpaceUnitKilobyte_Click(object sender, EventArgs e)
 		{
-			unitFreeSpace = 1;
+			unitFreeSpace = (int)SizeUnit.Kilobyte;
 			UncheckContextMenuForFreeSpaceUnits();
 			CaseFreeSpaceUnits();
 		}
 
 		private void ToolStripMenuItemFreeSpaceUnitMegabyte_Click(object sender, EventArgs e)
 		{
-			unitFreeSpace = 2;
+			unitFreeSpace = (int)SizeUnit.Megabyte;
 			UncheckContextMenuForFreeSpaceUnits();
 			CaseFreeSpaceUnits();
 		}
 
 		private void ToolStripMenuItemFreeSpaceUnitGigabyte_Click(object sender, EventArgs e)
 		{
-			unitFreeSpace = 3;
+			unitFreeSpace = (int)SizeUnit.Gigabyte;
 			UncheckContextMenuForFreeSpaceUnits();
 			CaseFreeSpaceUnits();
 		}
 
 		private void ToolStripMenuItemFreeSpaceUnitTerabyte_Click(object sender, EventArgs e)
 		{
-			unitFreeSpace = 4;
+			unitFreeSpace = (int)SizeUnit.Terabyte;
 			UncheckContextMenuForFreeSpaceUnits();
 			CaseFreeSpaceUnits();
 		}
 
 		private void ToolStripMenuItemFreeSpaceUnitPentabyte_Click(object sender, EventArgs e)
 		{
-			unitFreeSpace = 5;
+			unitFreeSpace = (int)SizeUnit.Pentabyte;
 			UncheckContextMenuForFreeSpaceUnits();
 			CaseFreeSpaceUnits();
 		}
 
 		private void ToolStripMenuItemTotalSpaceUnitByte_Click(object sender, EventArgs e)
 		{
-			unitTotalSpace = 0;
+			unitTotalSpace = (int)SizeUnit.Byte;
 			UncheckContextMenuForTotalSpaceUnits();
 			CaseTotalSpaceUnits();
 		}
 
 		private void ToolStripMenuItemTotalSpaceUnitKilobyte_Click(object sender, EventArgs e)
 		{
-			unitTotalSpace = 1;
+			unitTotalSpace = (int)SizeUnit.Kilobyte;
 			UncheckContextMenuForTotalSpaceUnits();
 			CaseTotalSpaceUnits();
 		}
 
 		private void ToolStripMenuItemTotalSpaceUnitMegabyte_Click(object sender, EventArgs e)
 		{
-			unitTotalSpace = 2;
+			unitTotalSpace = (int)SizeUnit.Megabyte;
 			UncheckContextMenuForTotalSpaceUnits();
 			CaseTotalSpaceUnits();
 		}
 
 		private void ToolStripMenuItemTotalSpaceUnitGigabyte_Click(object sender, EventArgs e)
 		{
-			unitTotalSpace = 3;
+			unitTotalSpace = (int)SizeUnit.Gigabyte;
 			UncheckContextMenuForTotalSpaceUnits();
 			CaseTotalSpaceUnits();
 		}
 
 		private void ToolStripMenuItemTotalSpaceUnitTerabyte_Click(object sender, EventArgs e)
 		{
-			unitTotalSpace = 4;
+			unitTotalSpace = (int)SizeUnit.Terabyte;
 			UncheckContextMenuForTotalSpaceUnits();
 			CaseTotalSpaceUnits();
 		}
 
 		private void ToolStripMenuItemTotalSpaceUnitPentabyte_Click(object sender, EventArgs e)
 		{
-			unitTotalSpace = 5;
+			unitTotalSpace = (int)SizeUnit.Pentabyte;
 			UncheckContextMenuForTotalSpaceUnits();
 			CaseTotalSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitByte_MouseEnter(object sender, EventArgs e)
+		{
+			swap = unitUsedSpace;
+			unitUsedSpace = (int)SizeUnit.Byte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitKilobyte_MouseEnter(object sender, EventArgs e)
+		{
+			swap = unitUsedSpace;
+			unitUsedSpace = (int)SizeUnit.Kilobyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitMegabyte_MouseEnter(object sender, EventArgs e)
+		{
+			swap = unitUsedSpace;
+			unitUsedSpace = (int)SizeUnit.Megabyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitGigabyte_MouseEnter(object sender, EventArgs e)
+		{
+			swap = unitUsedSpace;
+			unitUsedSpace = (int)SizeUnit.Gigabyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitTerabyte_MouseEnter(object sender, EventArgs e)
+		{
+			swap = unitUsedSpace;
+			unitUsedSpace = (int)SizeUnit.Terabyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitPentabyte_MouseEnter(object sender, EventArgs e)
+		{
+			swap = unitUsedSpace;
+			unitUsedSpace = (int)SizeUnit.Pentabyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitByte_MouseLeave(object sender, EventArgs e)
+		{
+			unitUsedSpace = swap;
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitKilobyte_MouseLeave(object sender, EventArgs e)
+		{
+			unitUsedSpace = swap;
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitMegabyte_MouseLeave(object sender, EventArgs e)
+		{
+			unitUsedSpace = swap;
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitGigabyte_MouseLeave(object sender, EventArgs e)
+		{
+			unitUsedSpace = swap;
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitTerabyte_MouseLeave(object sender, EventArgs e)
+		{
+			unitUsedSpace = swap;
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitPentabyte_MouseLeave(object sender, EventArgs e)
+		{
+			unitUsedSpace = swap;
+			CaseUsedSpaceUnits();
 		}
 
 		/// <summary>
