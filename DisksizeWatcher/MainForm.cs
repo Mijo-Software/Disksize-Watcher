@@ -30,6 +30,78 @@ namespace DisksizeWatcher
 
 		private bool HasFraction(double number) => !(number - Math.Truncate(d: number) == 0);
 
+		private void UncheckContextMenuForUsedSpaceUnits()
+		{
+			toolStripMenuItemUsedSpaceUnitByte.Checked = false;
+			toolStripMenuItemUsedSpaceUnitKilobyte.Checked = false;
+			toolStripMenuItemUsedSpaceUnitMegabyte.Checked = false;
+			toolStripMenuItemUsedSpaceUnitGigabyte.Checked = false;
+			toolStripMenuItemUsedSpaceUnitTerabyte.Checked = false;
+			toolStripMenuItemUsedSpaceUnitPentabyte.Checked = false;
+		}
+
+		private void UncheckContextMenuForFreeSpaceUnits()
+		{
+			toolStripMenuItemFreeSpaceUnitByte.Checked = false;
+			toolStripMenuItemFreeSpaceUnitKilobyte.Checked = false;
+			toolStripMenuItemFreeSpaceUnitMegabyte.Checked = false;
+			toolStripMenuItemFreeSpaceUnitGigabyte.Checked = false;
+			toolStripMenuItemFreeSpaceUnitTerabyte.Checked = false;
+			toolStripMenuItemFreeSpaceUnitPentabyte.Checked = false;
+		}
+
+		private void UncheckContextMenuForTotalSpaceUnits()
+		{
+			toolStripMenuItemTotalSpaceUnitByte.Checked = false;
+			toolStripMenuItemTotalSpaceUnitKilobyte.Checked = false;
+			toolStripMenuItemTotalSpaceUnitMegabyte.Checked = false;
+			toolStripMenuItemTotalSpaceUnitGigabyte.Checked = false;
+			toolStripMenuItemTotalSpaceUnitTerabyte.Checked = false;
+			toolStripMenuItemTotalSpaceUnitPentabyte.Checked = false;
+		}
+
+		private void CaseUsedSpaceUnits()
+		{
+			switch (unitUsedSpace)
+			{
+				case (int)SizeUnit.Byte: labelSpaceUsedUnit.Text = "bytes"; toolStripMenuItemUsedSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Kilobyte: labelSpaceUsedUnit.Text = "kilobytes"; toolStripMenuItemUsedSpaceUnitKilobyte.Checked = true; break;
+				case (int)SizeUnit.Megabyte: labelSpaceUsedUnit.Text = "megabytes"; toolStripMenuItemUsedSpaceUnitMegabyte.Checked = true; break;
+				case (int)SizeUnit.Gigabyte: labelSpaceUsedUnit.Text = "gigabytes"; toolStripMenuItemUsedSpaceUnitGigabyte.Checked = true; break;
+				case (int)SizeUnit.Terabyte: labelSpaceUsedUnit.Text = "terabytes"; toolStripMenuItemUsedSpaceUnitTerabyte.Checked = true; break;
+				case (int)SizeUnit.Pentabyte: labelSpaceUsedUnit.Text = "pentabytes"; toolStripMenuItemUsedSpaceUnitPentabyte.Checked = true; break;
+				default: labelSpaceUsedUnit.Text = "bytes"; toolStripMenuItemUsedSpaceUnitByte.Checked = true; unitUsedSpace = 0; break;
+			}
+		}
+
+		private void CaseFreeSpaceUnits()
+		{
+			switch (unitFreeSpace)
+			{
+				case (int)SizeUnit.Byte: labelSpaceFreeUnit.Text = "bytes"; toolStripMenuItemFreeSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Kilobyte: labelSpaceFreeUnit.Text = "kilobytes"; toolStripMenuItemFreeSpaceUnitKilobyte.Checked = true; break;
+				case (int)SizeUnit.Megabyte: labelSpaceFreeUnit.Text = "megabytes"; toolStripMenuItemFreeSpaceUnitMegabyte.Checked = true; break;
+				case (int)SizeUnit.Gigabyte: labelSpaceFreeUnit.Text = "gigabytes"; toolStripMenuItemFreeSpaceUnitGigabyte.Checked = true; break;
+				case (int)SizeUnit.Terabyte: labelSpaceFreeUnit.Text = "terabytes"; toolStripMenuItemFreeSpaceUnitTerabyte.Checked = true; break;
+				case (int)SizeUnit.Pentabyte: labelSpaceFreeUnit.Text = "pentabytes"; toolStripMenuItemFreeSpaceUnitPentabyte.Checked = true; break;
+				default: labelSpaceFreeUnit.Text = "bytes"; unitFreeSpace = 0; toolStripMenuItemFreeSpaceUnitByte.Checked = true; break;
+			}
+		}
+
+		private void CaseTotalSpaceUnits()
+		{
+			switch (unitTotalSpace)
+			{
+				case (int)SizeUnit.Byte: labelSpaceTotalUnit.Text = "bytes"; toolStripMenuItemTotalSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Kilobyte: labelSpaceTotalUnit.Text = "kilobytes"; toolStripMenuItemTotalSpaceUnitKilobyte.Checked = true; break;
+				case (int)SizeUnit.Megabyte: labelSpaceTotalUnit.Text = "megabytes"; toolStripMenuItemTotalSpaceUnitMegabyte.Checked = true; break;
+				case (int)SizeUnit.Gigabyte: labelSpaceTotalUnit.Text = "gigabytes"; toolStripMenuItemTotalSpaceUnitGigabyte.Checked = true; break;
+				case (int)SizeUnit.Terabyte: labelSpaceTotalUnit.Text = "terabytes"; toolStripMenuItemTotalSpaceUnitTerabyte.Checked = true; break;
+				case (int)SizeUnit.Pentabyte: labelSpaceTotalUnit.Text = "pentabytes"; toolStripMenuItemTotalSpaceUnitPentabyte.Checked = true; break;
+				default: labelSpaceTotalUnit.Text = "bytes"; unitTotalSpace = 0; toolStripMenuItemTotalSpaceUnitByte.Checked = true; break;
+			}
+		}
+
 		/// <summary>
 		/// Set a specific text to the status bar
 		/// </summary>
@@ -92,6 +164,132 @@ namespace DisksizeWatcher
 				text = toolStripMenuItem.AccessibleDescription;
 			}
 			SetStatusbarText(text: text);
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitByte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = (int)SizeUnit.Byte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitKilobyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = 1;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitMegabyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = 2;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitGigabyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = 3;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitTerabyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = 4;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemUsedSpaceUnitPentabyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = 5;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		private void ToolStripMenuItemFreeSpaceUnitByte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = 0;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		private void ToolStripMenuItemFreeSpaceUnitKilobyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = 1;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		private void ToolStripMenuItemFreeSpaceUnitMegabyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = 2;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		private void ToolStripMenuItemFreeSpaceUnitGigabyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = 3;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		private void ToolStripMenuItemFreeSpaceUnitTerabyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = 4;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		private void ToolStripMenuItemFreeSpaceUnitPentabyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = 5;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		private void ToolStripMenuItemTotalSpaceUnitByte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = 0;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		private void ToolStripMenuItemTotalSpaceUnitKilobyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = 1;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		private void ToolStripMenuItemTotalSpaceUnitMegabyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = 2;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		private void ToolStripMenuItemTotalSpaceUnitGigabyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = 3;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		private void ToolStripMenuItemTotalSpaceUnitTerabyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = 4;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		private void ToolStripMenuItemTotalSpaceUnitPentabyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = 5;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
 		}
 
 		/// <summary>
@@ -219,46 +417,22 @@ namespace DisksizeWatcher
 		private void LabelSpaceUsedUnit_Click(object sender, EventArgs e)
 		{
 			unitUsedSpace++;
-			switch (unitUsedSpace)
-			{
-				case (int)SizeUnit.Byte: labelSpaceUsedUnit.Text = "bytes"; break;
-				case (int)SizeUnit.Kilobyte: labelSpaceUsedUnit.Text = "kilobytes"; break;
-				case (int)SizeUnit.Megabyte: labelSpaceUsedUnit.Text = "megabytes"; break;
-				case (int)SizeUnit.Gigabyte: labelSpaceUsedUnit.Text = "gigabytes"; break;
-				case (int)SizeUnit.Terabyte: labelSpaceUsedUnit.Text = "terabytes"; break;
-				case (int)SizeUnit.Pentabyte: labelSpaceUsedUnit.Text = "pentabytes"; break;
-				default: labelSpaceUsedUnit.Text = "bytes"; unitUsedSpace = 0; break;
-			}
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
 		}
 
 		private void LabelSpaceFreeUnit_Click(object sender, EventArgs e)
 		{
 			unitFreeSpace++;
-			switch (unitFreeSpace)
-			{
-				case (int)SizeUnit.Byte: labelSpaceFreeUnit.Text = "bytes"; break;
-				case (int)SizeUnit.Kilobyte: labelSpaceFreeUnit.Text = "kilobytes"; break;
-				case (int)SizeUnit.Megabyte: labelSpaceFreeUnit.Text = "megabytes"; break;
-				case (int)SizeUnit.Gigabyte: labelSpaceFreeUnit.Text = "gigabytes"; break;
-				case (int)SizeUnit.Terabyte: labelSpaceFreeUnit.Text = "terabytes"; break;
-				case (int)SizeUnit.Pentabyte: labelSpaceFreeUnit.Text = "pentabytes"; break;
-				default: labelSpaceFreeUnit.Text = "bytes"; unitFreeSpace = 0; break;
-			}
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
 		}
 
 		private void LabelSpaceTotalUnit_Click(object sender, EventArgs e)
 		{
 			unitTotalSpace++;
-			switch (unitTotalSpace)
-			{
-				case (int)SizeUnit.Byte: labelSpaceTotalUnit.Text = "bytes"; break;
-				case (int)SizeUnit.Kilobyte: labelSpaceTotalUnit.Text = "kilobytes"; break;
-				case (int)SizeUnit.Megabyte: labelSpaceTotalUnit.Text = "megabytes"; break;
-				case (int)SizeUnit.Gigabyte: labelSpaceTotalUnit.Text = "gigabytes"; break;
-				case (int)SizeUnit.Terabyte: labelSpaceTotalUnit.Text = "terabytes"; break;
-				case (int)SizeUnit.Pentabyte: labelSpaceTotalUnit.Text = "pentabytes"; break;
-				default: labelSpaceTotalUnit.Text = "bytes"; unitTotalSpace = 0; break;
-			}
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
 		}
 	}
 }
