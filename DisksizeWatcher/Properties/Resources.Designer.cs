@@ -61,12 +61,66 @@ namespace DisksizeWatcher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die bytes ähnelt.
+        /// </summary>
+        internal static string bytes {
+            get {
+                return ResourceManager.GetString("bytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap fatcow_wrench_16 {
             get {
                 object obj = ResourceManager.GetObject("fatcow-wrench-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die gigabytes ähnelt.
+        /// </summary>
+        internal static string gigabytes {
+            get {
+                return ResourceManager.GetString("gigabytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die kilobytes ähnelt.
+        /// </summary>
+        internal static string kilobytes {
+            get {
+                return ResourceManager.GetString("kilobytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die megabytes ähnelt.
+        /// </summary>
+        internal static string megabytes {
+            get {
+                return ResourceManager.GetString("megabytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die pentabytes ähnelt.
+        /// </summary>
+        internal static string pentabytes {
+            get {
+                return ResourceManager.GetString("pentabytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die terabytes ähnelt.
+        /// </summary>
+        internal static string terabytes {
+            get {
+                return ResourceManager.GetString("terabytes", resourceCulture);
             }
         }
     }
