@@ -14,7 +14,7 @@ namespace DisksizeWatcher
 
 		private short unitUsedSpace, unitFreeSpace, unitTotalSpace;
 
-		private double usedSpace, freeSpace, totalSpace, usedSpaceOrig, freeSpaceOrig, totalSpaceOrig, freeSpacePerc, usedSpacePerc;
+		private double usedSpace, freeSpace, totalSpace, diffSpace, usedSpaceOrig, freeSpaceOrig, totalSpaceOrig, diffSpaceOrig, freeSpacePerc, usedSpacePerc;
 
 		private string numberFormat;
 
@@ -560,13 +560,13 @@ namespace DisksizeWatcher
 		{
 			if (driveC.IsReady)
 			{
+				diffSpace = usedSpaceOrig;
 				usedSpaceOrig = driveC.TotalSize - driveC.TotalFreeSpace;
 				freeSpaceOrig = driveC.TotalFreeSpace;
 				totalSpaceOrig = driveC.TotalSize;
 				usedSpace = usedSpaceOrig;
 				freeSpace = freeSpaceOrig;
 				totalSpace = totalSpaceOrig;
-
 				switch (unitUsedSpace)
 				{
 					case (int)SizeUnit.Kilobyte: usedSpace /= 1024; break;
@@ -618,6 +618,13 @@ namespace DisksizeWatcher
 					numberFormat = "F6";
 				}
 				textBoxSpaceTotal.Text = totalSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+
+				numberFormat = string.Empty;
+				if (HasFraction(number: diffSpace))
+				{
+					numberFormat = "F6";
+				}
+				textBoxSpaceDiff.Text = Math.Abs(diffSpace - usedSpace).ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
 			}
 		}
 
