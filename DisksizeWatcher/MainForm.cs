@@ -12,9 +12,11 @@ namespace DisksizeWatcher
 	{
 		private readonly DriveInfo driveC = new DriveInfo(driveName: "C");
 
-		private short unitUsedSpace, unitFreeSpace, unitTotalSpace;
+		private bool rememberDiffSpace = false;
 
-		private double usedSpace, freeSpace, totalSpace, diffSpace, usedSpaceOrig, freeSpaceOrig, totalSpaceOrig, diffSpaceOrig, freeSpacePerc, usedSpacePerc;
+		private short unitUsedSpace, unitFreeSpace, unitTotalSpace, unitDiffSpace;
+
+		private double usedSpace, freeSpace, totalSpace, diffSpace, usedSpaceOrig, freeSpaceOrig, totalSpaceOrig, diffSpaceOrig, diff, freeSpacePerc, usedSpacePerc;
 
 		private string numberFormat;
 
@@ -80,6 +82,19 @@ namespace DisksizeWatcher
 		}
 
 		/// <summary>
+		/// Uncheck all menu item in the associated context menu for the total space
+		/// </summary>
+		private void UncheckContextMenuForDiffSpaceUnits()
+		{
+			toolStripMenuItemDiffSpaceUnitByte.Checked = false;
+			toolStripMenuItemDiffSpaceUnitKilobyte.Checked = false;
+			toolStripMenuItemDiffSpaceUnitMegabyte.Checked = false;
+			toolStripMenuItemDiffSpaceUnitGigabyte.Checked = false;
+			toolStripMenuItemDiffSpaceUnitTerabyte.Checked = false;
+			toolStripMenuItemDiffSpaceUnitPentabyte.Checked = false;
+		}
+
+		/// <summary>
 		/// Choose the correct unit for the used space
 		/// </summary>
 		private void CaseUsedSpaceUnits()
@@ -127,6 +142,23 @@ namespace DisksizeWatcher
 				case (int)SizeUnit.Terabyte: labelSpaceTotalUnit.Text = Properties.Resources.terabytes; toolStripMenuItemTotalSpaceUnitTerabyte.Checked = true; break;
 				case (int)SizeUnit.Pentabyte: labelSpaceTotalUnit.Text = Properties.Resources.pentabytes; toolStripMenuItemTotalSpaceUnitPentabyte.Checked = true; break;
 				default: labelSpaceTotalUnit.Text = Properties.Resources.bytes; toolStripMenuItemTotalSpaceUnitByte.Checked = true; unitTotalSpace = 0; break;
+			}
+		}
+
+		/// <summary>
+		/// Choose the correct unit for the total space
+		/// </summary>
+		private void CaseDiffSpaceUnits()
+		{
+			switch (unitDiffSpace)
+			{
+				case (int)SizeUnit.Byte: labelSpaceDiffUnit.Text = Properties.Resources.bytes; toolStripMenuItemDiffSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Kilobyte: labelSpaceDiffUnit.Text = Properties.Resources.kilobytes; toolStripMenuItemDiffSpaceUnitKilobyte.Checked = true; break;
+				case (int)SizeUnit.Megabyte: labelSpaceDiffUnit.Text = Properties.Resources.megabytes; toolStripMenuItemDiffSpaceUnitMegabyte.Checked = true; break;
+				case (int)SizeUnit.Gigabyte: labelSpaceDiffUnit.Text = Properties.Resources.gigabytes; toolStripMenuItemDiffSpaceUnitGigabyte.Checked = true; break;
+				case (int)SizeUnit.Terabyte: labelSpaceDiffUnit.Text = Properties.Resources.terabytes; toolStripMenuItemDiffSpaceUnitTerabyte.Checked = true; break;
+				case (int)SizeUnit.Pentabyte: labelSpaceDiffUnit.Text = Properties.Resources.pentabytes; toolStripMenuItemDiffSpaceUnitPentabyte.Checked = true; break;
+				default: labelSpaceDiffUnit.Text = Properties.Resources.bytes; toolStripMenuItemDiffSpaceUnitByte.Checked = true; unitDiffSpace = 0; break;
 			}
 		}
 
@@ -259,6 +291,19 @@ namespace DisksizeWatcher
 			unitTotalSpace++;
 			UncheckContextMenuForTotalSpaceUnits();
 			CaseTotalSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the next unit for the diff space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void LabelSpaceDiffUnit_Click(object sender, EventArgs e)
+		{
+			unitDiffSpace++;
+			UncheckContextMenuForDiffSpaceUnits();
+			CaseDiffSpaceUnits();
 		}
 
 		/// <summary>
@@ -495,6 +540,84 @@ namespace DisksizeWatcher
 			CaseTotalSpaceUnits();
 		}
 
+		/// <summary>
+		/// Set the unit 'byte' for the diff space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemDiffSpaceUnitByte_Click(object sender, EventArgs e)
+		{
+			unitDiffSpace = (int)SizeUnit.Byte;
+			UncheckContextMenuForDiffSpaceUnits();
+			CaseDiffSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'kilobyte' for the diff space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemDiffSpaceUnitKilobyte_Click(object sender, EventArgs e)
+		{
+			unitDiffSpace = (int)SizeUnit.Kilobyte;
+			UncheckContextMenuForDiffSpaceUnits();
+			CaseDiffSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'megabyte' for the diff space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemDiffSpaceUnitMegabyte_Click(object sender, EventArgs e)
+		{
+			unitDiffSpace = (int)SizeUnit.Megabyte;
+			UncheckContextMenuForDiffSpaceUnits();
+			CaseDiffSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'gigabyte' for the diff space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemDiffSpaceUnitGigabyte_Click(object sender, EventArgs e)
+		{
+			unitDiffSpace = (int)SizeUnit.Gigabyte;
+			UncheckContextMenuForDiffSpaceUnits();
+			CaseDiffSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'terabyte' for the diff space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemDiffSpaceUnitTerabyte_Click(object sender, EventArgs e)
+		{
+			unitDiffSpace = (int)SizeUnit.Terabyte;
+			UncheckContextMenuForDiffSpaceUnits();
+			CaseDiffSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'pentabyte' for the diff space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemDiffSpaceUnitPentabyte_Click(object sender, EventArgs e)
+		{
+			unitDiffSpace = (int)SizeUnit.Pentabyte;
+			UncheckContextMenuForDiffSpaceUnits();
+			CaseDiffSpaceUnits();
+		}
+
 		#endregion
 
 		#region ButtonClick event handler
@@ -515,12 +638,15 @@ namespace DisksizeWatcher
 			{
 				settingsForm.StayOnTop = menuitemStayOnTop.Checked;
 				settingsForm.MinimizeToSystemTray = menuitemMinimizeToSystemTray.Checked;
+				settingsForm.RefreshRate = timer.Interval;
+				settingsForm.RememberDiffSpace = rememberDiffSpace;
 				DialogResult dialogResult = settingsForm.ShowDialog();
 				if (dialogResult == DialogResult.OK)
 				{
 					timer.Interval = settingsForm.RefreshRate;
 					menuitemStayOnTop.Checked = settingsForm.StayOnTop;
 					menuitemMinimizeToSystemTray.Checked = settingsForm.MinimizeToSystemTray;
+					rememberDiffSpace = settingsForm.RememberDiffSpace;
 				}
 			}
 			if (menuitemStayOnTop.Checked)
@@ -560,13 +686,21 @@ namespace DisksizeWatcher
 		{
 			if (driveC.IsReady)
 			{
-				diffSpace = usedSpaceOrig;
+				diffSpaceOrig = usedSpaceOrig;
 				usedSpaceOrig = driveC.TotalSize - driveC.TotalFreeSpace;
 				freeSpaceOrig = driveC.TotalFreeSpace;
 				totalSpaceOrig = driveC.TotalSize;
 				usedSpace = usedSpaceOrig;
 				freeSpace = freeSpaceOrig;
 				totalSpace = totalSpaceOrig;
+				if (rememberDiffSpace)
+				{
+					if (diffSpaceOrig - usedSpaceOrig != 0) diffSpace = diffSpaceOrig - usedSpaceOrig;
+				}
+				else
+				{
+					diffSpace = diffSpaceOrig - usedSpaceOrig;
+				}
 				switch (unitUsedSpace)
 				{
 					case (int)SizeUnit.Kilobyte: usedSpace /= 1024; break;
@@ -592,6 +726,15 @@ namespace DisksizeWatcher
 					case (int)SizeUnit.Gigabyte: totalSpace = totalSpace / 1024 / 1024 / 1024; break;
 					case (int)SizeUnit.Terabyte: totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024; break;
 					case (int)SizeUnit.Pentabyte: totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
+					default: break;
+				}
+				switch (unitDiffSpace)
+				{
+					case (int)SizeUnit.Kilobyte: diffSpace /= 1024; break;
+					case (int)SizeUnit.Megabyte: diffSpace = diffSpace / 1024 / 1024; break;
+					case (int)SizeUnit.Gigabyte: diffSpace = diffSpace / 1024 / 1024 / 1024; break;
+					case (int)SizeUnit.Terabyte: diffSpace = diffSpace / 1024 / 1024 / 1024 / 1024; break;
+					case (int)SizeUnit.Pentabyte: diffSpace = diffSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
 					default: break;
 				}
 				freeSpacePerc = freeSpaceOrig / totalSpaceOrig * 100;
@@ -624,7 +767,7 @@ namespace DisksizeWatcher
 				{
 					numberFormat = "F6";
 				}
-				textBoxSpaceDiff.Text = Math.Abs(diffSpace - usedSpace).ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+				textBoxSpaceDiff.Text = Math.Abs(value: diffSpace).ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
 			}
 		}
 

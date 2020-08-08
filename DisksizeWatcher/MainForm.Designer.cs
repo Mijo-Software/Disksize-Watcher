@@ -74,10 +74,18 @@
 			this.labelSpaceDiff = new System.Windows.Forms.Label();
 			this.textBoxSpaceDiff = new System.Windows.Forms.TextBox();
 			this.labelSpaceDiffUnit = new System.Windows.Forms.Label();
+			this.contextMenuStripDiffSpaceUnits = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.toolStripMenuItemDiffSpaceUnitByte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemDiffSpaceUnitKilobyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemDiffSpaceUnitMegabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemDiffSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemDiffSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItemDiffSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextMenuStripFreeSpaceUnits.SuspendLayout();
 			this.contextMenuStripTotalSpaceUnits.SuspendLayout();
 			this.contextMenuStripUsedSpaceUnits.SuspendLayout();
 			this.statusStrip.SuspendLayout();
+			this.contextMenuStripDiffSpaceUnits.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// timer
@@ -197,6 +205,7 @@
 			this.contextMenuStripFreeSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
 			this.contextMenuStripFreeSpaceUnits.Size = new System.Drawing.Size(128, 136);
 			this.contextMenuStripFreeSpaceUnits.TabStop = true;
+			this.toolTip.SetToolTip(this.contextMenuStripFreeSpaceUnits, "units of the free space");
 			this.contextMenuStripFreeSpaceUnits.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
 			this.contextMenuStripFreeSpaceUnits.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
@@ -486,6 +495,7 @@
 			this.contextMenuStripUsedSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
 			this.contextMenuStripUsedSpaceUnits.Size = new System.Drawing.Size(128, 136);
 			this.contextMenuStripUsedSpaceUnits.TabStop = true;
+			this.toolTip.SetToolTip(this.contextMenuStripUsedSpaceUnits, "units of the used space");
 			this.contextMenuStripUsedSpaceUnits.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
 			this.contextMenuStripUsedSpaceUnits.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
@@ -698,6 +708,10 @@
 			this.labelSpaceDiff.TabIndex = 9;
 			this.labelSpaceDiff.Text = "&Diff space:";
 			this.toolTip.SetToolTip(this.labelSpaceDiff, "Show the diff space");
+			this.labelSpaceDiff.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceDiff.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpaceDiff.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceDiff.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// textBoxSpaceDiff
 			// 
@@ -711,6 +725,10 @@
 			this.textBoxSpaceDiff.TabIndex = 10;
 			this.textBoxSpaceDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.toolTip.SetToolTip(this.textBoxSpaceDiff, "Show the value of the diff space");
+			this.textBoxSpaceDiff.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.textBoxSpaceDiff.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.textBoxSpaceDiff.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.textBoxSpaceDiff.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// labelSpaceDiffUnit
 			// 
@@ -719,7 +737,7 @@
 			this.labelSpaceDiffUnit.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
 			this.labelSpaceDiffUnit.AutoEllipsis = true;
 			this.labelSpaceDiffUnit.AutoSize = true;
-			this.labelSpaceDiffUnit.ContextMenuStrip = this.contextMenuStripUsedSpaceUnits;
+			this.labelSpaceDiffUnit.ContextMenuStrip = this.contextMenuStripDiffSpaceUnits;
 			this.labelSpaceDiffUnit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.labelSpaceDiffUnit.Location = new System.Drawing.Point(199, 93);
 			this.labelSpaceDiffUnit.Name = "labelSpaceDiffUnit";
@@ -727,6 +745,111 @@
 			this.labelSpaceDiffUnit.TabIndex = 11;
 			this.labelSpaceDiffUnit.Text = "bytes";
 			this.toolTip.SetToolTip(this.labelSpaceDiffUnit, "Show the unit of the used space");
+			this.labelSpaceDiffUnit.Click += new System.EventHandler(this.LabelSpaceDiffUnit_Click);
+			this.labelSpaceDiffUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceDiffUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.labelSpaceDiffUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.labelSpaceDiffUnit.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+			// 
+			// contextMenuStripDiffSpaceUnits
+			// 
+			this.contextMenuStripDiffSpaceUnits.AccessibleDescription = "Show the units of the diff space as context menu";
+			this.contextMenuStripDiffSpaceUnits.AccessibleName = "units of the diff space";
+			this.contextMenuStripDiffSpaceUnits.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+			this.contextMenuStripDiffSpaceUnits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemDiffSpaceUnitByte,
+            this.toolStripMenuItemDiffSpaceUnitKilobyte,
+            this.toolStripMenuItemDiffSpaceUnitMegabyte,
+            this.toolStripMenuItemDiffSpaceUnitGigabyte,
+            this.toolStripMenuItemDiffSpaceUnitTerabyte,
+            this.toolStripMenuItemDiffSpaceUnitPentabyte});
+			this.contextMenuStripDiffSpaceUnits.Name = "contextMenuStripUsedTotalUnits";
+			this.contextMenuStripDiffSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+			this.contextMenuStripDiffSpaceUnits.Size = new System.Drawing.Size(128, 136);
+			this.contextMenuStripDiffSpaceUnits.TabStop = true;
+			this.toolTip.SetToolTip(this.contextMenuStripDiffSpaceUnits, "units of the diff space");
+			this.contextMenuStripDiffSpaceUnits.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.contextMenuStripDiffSpaceUnits.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+			// 
+			// toolStripMenuItemDiffSpaceUnitByte
+			// 
+			this.toolStripMenuItemDiffSpaceUnitByte.AccessibleDescription = "Choose byte as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitByte.AccessibleName = "value \'byte\' as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitByte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+			this.toolStripMenuItemDiffSpaceUnitByte.AutoToolTip = true;
+			this.toolStripMenuItemDiffSpaceUnitByte.Checked = true;
+			this.toolStripMenuItemDiffSpaceUnitByte.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.toolStripMenuItemDiffSpaceUnitByte.Name = "toolStripMenuItemDiffSpaceUnitByte";
+			this.toolStripMenuItemDiffSpaceUnitByte.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItemDiffSpaceUnitByte.Text = "&byte";
+			this.toolStripMenuItemDiffSpaceUnitByte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitByte_Click);
+			this.toolStripMenuItemDiffSpaceUnitByte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.toolStripMenuItemDiffSpaceUnitByte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+			// 
+			// toolStripMenuItemDiffSpaceUnitKilobyte
+			// 
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.AccessibleDescription = "Choose kilobyte as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.AccessibleName = "value \'kilobyte\' as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.AutoToolTip = true;
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.Name = "toolStripMenuItemDiffSpaceUnitKilobyte";
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.Text = "&kilobyte";
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitKilobyte_Click);
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.toolStripMenuItemDiffSpaceUnitKilobyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+			// 
+			// toolStripMenuItemDiffSpaceUnitMegabyte
+			// 
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.AccessibleDescription = "Choose megabyte as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.AccessibleName = "value \'megabyte\' as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.AutoToolTip = true;
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.Name = "toolStripMenuItemDiffSpaceUnitMegabyte";
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.Text = "&megabyte";
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitMegabyte_Click);
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.toolStripMenuItemDiffSpaceUnitMegabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+			// 
+			// toolStripMenuItemDiffSpaceUnitGigabyte
+			// 
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.AccessibleDescription = "Choose gigabyte as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.AccessibleName = "value \'gigabyte\' as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.AutoToolTip = true;
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.Name = "toolStripMenuItemDiffSpaceUnitGigabyte";
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.Text = "&gigabyte";
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitGigabyte_Click);
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.toolStripMenuItemDiffSpaceUnitGigabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+			// 
+			// toolStripMenuItemDiffSpaceUnitTerabyte
+			// 
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.AccessibleDescription = "Choose terabyte as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.AccessibleName = "value \'terabyte\' as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.AutoToolTip = true;
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.Name = "toolStripMenuItemDiffSpaceUnitTerabyte";
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.Text = "&terabyte";
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitTerabyte_Click);
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.toolStripMenuItemDiffSpaceUnitTerabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+			// 
+			// toolStripMenuItemDiffSpaceUnitPentabyte
+			// 
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.AccessibleDescription = "Choose pentabyte as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.AccessibleName = "value \'pentabyte\' as unit for the diff space";
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.AutoToolTip = true;
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.Name = "toolStripMenuItemDiffSpaceUnitPentabyte";
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.Text = "&pentabyte";
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitPentabyte_Click);
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.toolStripMenuItemDiffSpaceUnitPentabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// MainForm
 			// 
@@ -765,6 +888,7 @@
 			this.contextMenuStripUsedSpaceUnits.ResumeLayout(false);
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();
+			this.contextMenuStripDiffSpaceUnits.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -815,6 +939,13 @@
 		private System.Windows.Forms.Label labelSpaceDiff;
 		private System.Windows.Forms.TextBox textBoxSpaceDiff;
 		private System.Windows.Forms.Label labelSpaceDiffUnit;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStripDiffSpaceUnits;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitByte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitKilobyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitMegabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitGigabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitTerabyte;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitPentabyte;
 	}
 }
 
