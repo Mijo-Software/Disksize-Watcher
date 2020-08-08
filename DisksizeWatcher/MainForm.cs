@@ -12,7 +12,7 @@ namespace DisksizeWatcher
 	{
 		private readonly DriveInfo driveC = new DriveInfo(driveName: "C");
 
-		private short unitUsedSpace, unitFreeSpace, unitTotalSpace, swap;
+		private short unitUsedSpace, unitFreeSpace, unitTotalSpace;
 
 		private double usedSpace, freeSpace, totalSpace, usedSpaceOrig, freeSpaceOrig, totalSpaceOrig, freeSpacePerc, usedSpacePerc;
 
@@ -113,7 +113,7 @@ namespace DisksizeWatcher
 		}
 
 		/// <summary>
-		/// Construtor
+		/// Constructor
 		/// </summary>
 		public MainForm() => InitializeComponent();
 
@@ -290,90 +290,6 @@ namespace DisksizeWatcher
 			unitTotalSpace = (int)SizeUnit.Pentabyte;
 			UncheckContextMenuForTotalSpaceUnits();
 			CaseTotalSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitByte_MouseEnter(object sender, EventArgs e)
-		{
-			swap = unitUsedSpace;
-			unitUsedSpace = (int)SizeUnit.Byte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitKilobyte_MouseEnter(object sender, EventArgs e)
-		{
-			swap = unitUsedSpace;
-			unitUsedSpace = (int)SizeUnit.Kilobyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitMegabyte_MouseEnter(object sender, EventArgs e)
-		{
-			swap = unitUsedSpace;
-			unitUsedSpace = (int)SizeUnit.Megabyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitGigabyte_MouseEnter(object sender, EventArgs e)
-		{
-			swap = unitUsedSpace;
-			unitUsedSpace = (int)SizeUnit.Gigabyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitTerabyte_MouseEnter(object sender, EventArgs e)
-		{
-			swap = unitUsedSpace;
-			unitUsedSpace = (int)SizeUnit.Terabyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitPentabyte_MouseEnter(object sender, EventArgs e)
-		{
-			swap = unitUsedSpace;
-			unitUsedSpace = (int)SizeUnit.Pentabyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitByte_MouseLeave(object sender, EventArgs e)
-		{
-			unitUsedSpace = swap;
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitKilobyte_MouseLeave(object sender, EventArgs e)
-		{
-			unitUsedSpace = swap;
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitMegabyte_MouseLeave(object sender, EventArgs e)
-		{
-			unitUsedSpace = swap;
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitGigabyte_MouseLeave(object sender, EventArgs e)
-		{
-			unitUsedSpace = swap;
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitTerabyte_MouseLeave(object sender, EventArgs e)
-		{
-			unitUsedSpace = swap;
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitPentabyte_MouseLeave(object sender, EventArgs e)
-		{
-			unitUsedSpace = swap;
-			CaseUsedSpaceUnits();
 		}
 
 		/// <summary>
