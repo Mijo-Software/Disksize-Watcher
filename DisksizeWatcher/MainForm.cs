@@ -16,8 +16,11 @@ namespace DisksizeWatcher
 
 		private double usedSpace, freeSpace, totalSpace, usedSpaceOrig, freeSpaceOrig, totalSpaceOrig, freeSpacePerc, usedSpacePerc;
 
-		private string numberFormat = string.Empty;
+		private string numberFormat;
 
+		/// <summary>
+		/// Size units
+		/// </summary>
 		private enum SizeUnit
 		{
 			Byte = 0,
@@ -28,8 +31,18 @@ namespace DisksizeWatcher
 			Pentabyte = 5
 		}
 
+		#region Local methods
+
+		/// <summary>
+		/// Detects if a float number has a fraction
+		/// </summary>
+		/// <param name="number">number to check</param>
+		/// <returns></returns>
 		private bool HasFraction(double number) => !(number - Math.Truncate(d: number) == 0);
 
+		/// <summary>
+		/// Uncheck all menu item in the associated context menu for the used space
+		/// </summary>
 		private void UncheckContextMenuForUsedSpaceUnits()
 		{
 			toolStripMenuItemUsedSpaceUnitByte.Checked = false;
@@ -40,6 +53,9 @@ namespace DisksizeWatcher
 			toolStripMenuItemUsedSpaceUnitPentabyte.Checked = false;
 		}
 
+		/// <summary>
+		/// Uncheck all menu item in the associated context menu for the free space
+		/// </summary>
 		private void UncheckContextMenuForFreeSpaceUnits()
 		{
 			toolStripMenuItemFreeSpaceUnitByte.Checked = false;
@@ -50,6 +66,9 @@ namespace DisksizeWatcher
 			toolStripMenuItemFreeSpaceUnitPentabyte.Checked = false;
 		}
 
+		/// <summary>
+		/// Uncheck all menu item in the associated context menu for the total space
+		/// </summary>
 		private void UncheckContextMenuForTotalSpaceUnits()
 		{
 			toolStripMenuItemTotalSpaceUnitByte.Checked = false;
@@ -60,45 +79,54 @@ namespace DisksizeWatcher
 			toolStripMenuItemTotalSpaceUnitPentabyte.Checked = false;
 		}
 
+		/// <summary>
+		/// Choose the correct unit for the used space
+		/// </summary>
 		private void CaseUsedSpaceUnits()
 		{
 			switch (unitUsedSpace)
 			{
-				case (int)SizeUnit.Byte: labelSpaceUsedUnit.Text = "bytes"; toolStripMenuItemUsedSpaceUnitByte.Checked = true; break;
-				case (int)SizeUnit.Kilobyte: labelSpaceUsedUnit.Text = "kilobytes"; toolStripMenuItemUsedSpaceUnitKilobyte.Checked = true; break;
-				case (int)SizeUnit.Megabyte: labelSpaceUsedUnit.Text = "megabytes"; toolStripMenuItemUsedSpaceUnitMegabyte.Checked = true; break;
-				case (int)SizeUnit.Gigabyte: labelSpaceUsedUnit.Text = "gigabytes"; toolStripMenuItemUsedSpaceUnitGigabyte.Checked = true; break;
-				case (int)SizeUnit.Terabyte: labelSpaceUsedUnit.Text = "terabytes"; toolStripMenuItemUsedSpaceUnitTerabyte.Checked = true; break;
-				case (int)SizeUnit.Pentabyte: labelSpaceUsedUnit.Text = "pentabytes"; toolStripMenuItemUsedSpaceUnitPentabyte.Checked = true; break;
-				default: labelSpaceUsedUnit.Text = "bytes"; toolStripMenuItemUsedSpaceUnitByte.Checked = true; unitUsedSpace = 0; break;
+				case (int)SizeUnit.Byte: labelSpaceUsedUnit.Text = Properties.Resources.bytes; toolStripMenuItemUsedSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Kilobyte: labelSpaceUsedUnit.Text = Properties.Resources.kilobytes; toolStripMenuItemUsedSpaceUnitKilobyte.Checked = true; break;
+				case (int)SizeUnit.Megabyte: labelSpaceUsedUnit.Text = Properties.Resources.megabytes; toolStripMenuItemUsedSpaceUnitMegabyte.Checked = true; break;
+				case (int)SizeUnit.Gigabyte: labelSpaceUsedUnit.Text = Properties.Resources.gigabytes; toolStripMenuItemUsedSpaceUnitGigabyte.Checked = true; break;
+				case (int)SizeUnit.Terabyte: labelSpaceUsedUnit.Text = Properties.Resources.terabytes; toolStripMenuItemUsedSpaceUnitTerabyte.Checked = true; break;
+				case (int)SizeUnit.Pentabyte: labelSpaceUsedUnit.Text = Properties.Resources.pentabytes; toolStripMenuItemUsedSpaceUnitPentabyte.Checked = true; break;
+				default: labelSpaceUsedUnit.Text = Properties.Resources.bytes; toolStripMenuItemUsedSpaceUnitByte.Checked = true; unitUsedSpace = 0; break;
 			}
 		}
 
+		/// <summary>
+		/// Choose the correct unit for the free space
+		/// </summary>
 		private void CaseFreeSpaceUnits()
 		{
 			switch (unitFreeSpace)
 			{
-				case (int)SizeUnit.Byte: labelSpaceFreeUnit.Text = "bytes"; toolStripMenuItemFreeSpaceUnitByte.Checked = true; break;
-				case (int)SizeUnit.Kilobyte: labelSpaceFreeUnit.Text = "kilobytes"; toolStripMenuItemFreeSpaceUnitKilobyte.Checked = true; break;
-				case (int)SizeUnit.Megabyte: labelSpaceFreeUnit.Text = "megabytes"; toolStripMenuItemFreeSpaceUnitMegabyte.Checked = true; break;
-				case (int)SizeUnit.Gigabyte: labelSpaceFreeUnit.Text = "gigabytes"; toolStripMenuItemFreeSpaceUnitGigabyte.Checked = true; break;
-				case (int)SizeUnit.Terabyte: labelSpaceFreeUnit.Text = "terabytes"; toolStripMenuItemFreeSpaceUnitTerabyte.Checked = true; break;
-				case (int)SizeUnit.Pentabyte: labelSpaceFreeUnit.Text = "pentabytes"; toolStripMenuItemFreeSpaceUnitPentabyte.Checked = true; break;
-				default: labelSpaceFreeUnit.Text = "bytes"; unitFreeSpace = 0; toolStripMenuItemFreeSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Byte: labelSpaceFreeUnit.Text = Properties.Resources.bytes; toolStripMenuItemFreeSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Kilobyte: labelSpaceFreeUnit.Text = Properties.Resources.kilobytes; toolStripMenuItemFreeSpaceUnitKilobyte.Checked = true; break;
+				case (int)SizeUnit.Megabyte: labelSpaceFreeUnit.Text = Properties.Resources.megabytes; toolStripMenuItemFreeSpaceUnitMegabyte.Checked = true; break;
+				case (int)SizeUnit.Gigabyte: labelSpaceFreeUnit.Text = Properties.Resources.gigabytes; toolStripMenuItemFreeSpaceUnitGigabyte.Checked = true; break;
+				case (int)SizeUnit.Terabyte: labelSpaceFreeUnit.Text = Properties.Resources.terabytes; toolStripMenuItemFreeSpaceUnitTerabyte.Checked = true; break;
+				case (int)SizeUnit.Pentabyte: labelSpaceFreeUnit.Text = Properties.Resources.pentabytes; toolStripMenuItemFreeSpaceUnitPentabyte.Checked = true; break;
+				default: labelSpaceFreeUnit.Text = Properties.Resources.bytes; toolStripMenuItemFreeSpaceUnitByte.Checked = true; unitFreeSpace = 0; break;
 			}
 		}
 
+		/// <summary>
+		/// Choose the correct unit for the total space
+		/// </summary>
 		private void CaseTotalSpaceUnits()
 		{
 			switch (unitTotalSpace)
 			{
-				case (int)SizeUnit.Byte: labelSpaceTotalUnit.Text = "bytes"; toolStripMenuItemTotalSpaceUnitByte.Checked = true; break;
-				case (int)SizeUnit.Kilobyte: labelSpaceTotalUnit.Text = "kilobytes"; toolStripMenuItemTotalSpaceUnitKilobyte.Checked = true; break;
-				case (int)SizeUnit.Megabyte: labelSpaceTotalUnit.Text = "megabytes"; toolStripMenuItemTotalSpaceUnitMegabyte.Checked = true; break;
-				case (int)SizeUnit.Gigabyte: labelSpaceTotalUnit.Text = "gigabytes"; toolStripMenuItemTotalSpaceUnitGigabyte.Checked = true; break;
-				case (int)SizeUnit.Terabyte: labelSpaceTotalUnit.Text = "terabytes"; toolStripMenuItemTotalSpaceUnitTerabyte.Checked = true; break;
-				case (int)SizeUnit.Pentabyte: labelSpaceTotalUnit.Text = "pentabytes"; toolStripMenuItemTotalSpaceUnitPentabyte.Checked = true; break;
-				default: labelSpaceTotalUnit.Text = "bytes"; unitTotalSpace = 0; toolStripMenuItemTotalSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Byte: labelSpaceTotalUnit.Text = Properties.Resources.bytes; toolStripMenuItemTotalSpaceUnitByte.Checked = true; break;
+				case (int)SizeUnit.Kilobyte: labelSpaceTotalUnit.Text = Properties.Resources.kilobytes; toolStripMenuItemTotalSpaceUnitKilobyte.Checked = true; break;
+				case (int)SizeUnit.Megabyte: labelSpaceTotalUnit.Text = Properties.Resources.megabytes; toolStripMenuItemTotalSpaceUnitMegabyte.Checked = true; break;
+				case (int)SizeUnit.Gigabyte: labelSpaceTotalUnit.Text = Properties.Resources.gigabytes; toolStripMenuItemTotalSpaceUnitGigabyte.Checked = true; break;
+				case (int)SizeUnit.Terabyte: labelSpaceTotalUnit.Text = Properties.Resources.terabytes; toolStripMenuItemTotalSpaceUnitTerabyte.Checked = true; break;
+				case (int)SizeUnit.Pentabyte: labelSpaceTotalUnit.Text = Properties.Resources.pentabytes; toolStripMenuItemTotalSpaceUnitPentabyte.Checked = true; break;
+				default: labelSpaceTotalUnit.Text = Properties.Resources.bytes; toolStripMenuItemTotalSpaceUnitByte.Checked = true; unitTotalSpace = 0; break;
 			}
 		}
 
@@ -112,10 +140,18 @@ namespace DisksizeWatcher
 			labelInformation.Text = text;
 		}
 
+		#endregion
+
+		#region Constructor
+
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		public MainForm() => InitializeComponent();
+
+		#endregion
+
+		#region Load event handler
 
 		/// <summary>
 		/// Load the main form
@@ -133,6 +169,10 @@ namespace DisksizeWatcher
 			}
 			timer.Start();
 		}
+
+		#endregion
+
+		#region Enter event handler
 
 		/// <summary>
 		/// Detect the accessibility description to set as information text in the status bar
@@ -166,131 +206,9 @@ namespace DisksizeWatcher
 			SetStatusbarText(text: text);
 		}
 
-		private void ToolStripMenuItemUsedSpaceUnitByte_Click(object sender, EventArgs e)
-		{
-			unitUsedSpace = (int)SizeUnit.Byte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
+		#endregion
 
-		private void ToolStripMenuItemUsedSpaceUnitKilobyte_Click(object sender, EventArgs e)
-		{
-			unitUsedSpace = (int)SizeUnit.Kilobyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitMegabyte_Click(object sender, EventArgs e)
-		{
-			unitUsedSpace = (int)SizeUnit.Megabyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitGigabyte_Click(object sender, EventArgs e)
-		{
-			unitUsedSpace = (int)SizeUnit.Gigabyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitTerabyte_Click(object sender, EventArgs e)
-		{
-			unitUsedSpace = (int)SizeUnit.Terabyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemUsedSpaceUnitPentabyte_Click(object sender, EventArgs e)
-		{
-			unitUsedSpace = (int)SizeUnit.Pentabyte;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void ToolStripMenuItemFreeSpaceUnitByte_Click(object sender, EventArgs e)
-		{
-			unitFreeSpace = (int)SizeUnit.Byte;
-			UncheckContextMenuForFreeSpaceUnits();
-			CaseFreeSpaceUnits();
-		}
-
-		private void ToolStripMenuItemFreeSpaceUnitKilobyte_Click(object sender, EventArgs e)
-		{
-			unitFreeSpace = (int)SizeUnit.Kilobyte;
-			UncheckContextMenuForFreeSpaceUnits();
-			CaseFreeSpaceUnits();
-		}
-
-		private void ToolStripMenuItemFreeSpaceUnitMegabyte_Click(object sender, EventArgs e)
-		{
-			unitFreeSpace = (int)SizeUnit.Megabyte;
-			UncheckContextMenuForFreeSpaceUnits();
-			CaseFreeSpaceUnits();
-		}
-
-		private void ToolStripMenuItemFreeSpaceUnitGigabyte_Click(object sender, EventArgs e)
-		{
-			unitFreeSpace = (int)SizeUnit.Gigabyte;
-			UncheckContextMenuForFreeSpaceUnits();
-			CaseFreeSpaceUnits();
-		}
-
-		private void ToolStripMenuItemFreeSpaceUnitTerabyte_Click(object sender, EventArgs e)
-		{
-			unitFreeSpace = (int)SizeUnit.Terabyte;
-			UncheckContextMenuForFreeSpaceUnits();
-			CaseFreeSpaceUnits();
-		}
-
-		private void ToolStripMenuItemFreeSpaceUnitPentabyte_Click(object sender, EventArgs e)
-		{
-			unitFreeSpace = (int)SizeUnit.Pentabyte;
-			UncheckContextMenuForFreeSpaceUnits();
-			CaseFreeSpaceUnits();
-		}
-
-		private void ToolStripMenuItemTotalSpaceUnitByte_Click(object sender, EventArgs e)
-		{
-			unitTotalSpace = (int)SizeUnit.Byte;
-			UncheckContextMenuForTotalSpaceUnits();
-			CaseTotalSpaceUnits();
-		}
-
-		private void ToolStripMenuItemTotalSpaceUnitKilobyte_Click(object sender, EventArgs e)
-		{
-			unitTotalSpace = (int)SizeUnit.Kilobyte;
-			UncheckContextMenuForTotalSpaceUnits();
-			CaseTotalSpaceUnits();
-		}
-
-		private void ToolStripMenuItemTotalSpaceUnitMegabyte_Click(object sender, EventArgs e)
-		{
-			unitTotalSpace = (int)SizeUnit.Megabyte;
-			UncheckContextMenuForTotalSpaceUnits();
-			CaseTotalSpaceUnits();
-		}
-
-		private void ToolStripMenuItemTotalSpaceUnitGigabyte_Click(object sender, EventArgs e)
-		{
-			unitTotalSpace = (int)SizeUnit.Gigabyte;
-			UncheckContextMenuForTotalSpaceUnits();
-			CaseTotalSpaceUnits();
-		}
-
-		private void ToolStripMenuItemTotalSpaceUnitTerabyte_Click(object sender, EventArgs e)
-		{
-			unitTotalSpace = (int)SizeUnit.Terabyte;
-			UncheckContextMenuForTotalSpaceUnits();
-			CaseTotalSpaceUnits();
-		}
-
-		private void ToolStripMenuItemTotalSpaceUnitPentabyte_Click(object sender, EventArgs e)
-		{
-			unitTotalSpace = (int)SizeUnit.Pentabyte;
-			UncheckContextMenuForTotalSpaceUnits();
-			CaseTotalSpaceUnits();
-		}
+		#region Leave event handlers
 
 		/// <summary>
 		/// Clear the information text of the status bar
@@ -299,6 +217,338 @@ namespace DisksizeWatcher
 		/// <param name="e">event arguments</param>
 		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
 		private void ClearStatusbar_Leave(object sender, EventArgs e) => SetStatusbarText(text: string.Empty);
+
+		#endregion
+
+		#region Click event handlers
+
+		/// <summary>
+		/// Set the next unit for the used space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void LabelSpaceUsedUnit_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace++;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the next unit for the free space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void LabelSpaceFreeUnit_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace++;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the next unit for the total space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void LabelSpaceTotalUnit_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace++;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'byte' for the used space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemUsedSpaceUnitByte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = (int)SizeUnit.Byte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'kilobyte' for the used space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemUsedSpaceUnitKilobyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = (int)SizeUnit.Kilobyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'megabyte' for the used space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemUsedSpaceUnitMegabyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = (int)SizeUnit.Megabyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'gigabyte' for the used space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemUsedSpaceUnitGigabyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = (int)SizeUnit.Gigabyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'terabyte' for the used space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemUsedSpaceUnitTerabyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = (int)SizeUnit.Terabyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'pentabyte' for the used space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemUsedSpaceUnitPentabyte_Click(object sender, EventArgs e)
+		{
+			unitUsedSpace = (int)SizeUnit.Pentabyte;
+			UncheckContextMenuForUsedSpaceUnits();
+			CaseUsedSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'byte' for the free space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemFreeSpaceUnitByte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = (int)SizeUnit.Byte;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'kilobyte' for the free space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemFreeSpaceUnitKilobyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = (int)SizeUnit.Kilobyte;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'megabyte' for the free space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemFreeSpaceUnitMegabyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = (int)SizeUnit.Megabyte;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'gigabyte' for the free space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemFreeSpaceUnitGigabyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = (int)SizeUnit.Gigabyte;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'terabyte' for the free space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemFreeSpaceUnitTerabyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = (int)SizeUnit.Terabyte;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'pentabyte' for the free space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemFreeSpaceUnitPentabyte_Click(object sender, EventArgs e)
+		{
+			unitFreeSpace = (int)SizeUnit.Pentabyte;
+			UncheckContextMenuForFreeSpaceUnits();
+			CaseFreeSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'byte' for the total space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemTotalSpaceUnitByte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = (int)SizeUnit.Byte;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'kilobyte' for the total space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemTotalSpaceUnitKilobyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = (int)SizeUnit.Kilobyte;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'megabyte' for the total space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemTotalSpaceUnitMegabyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = (int)SizeUnit.Megabyte;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'gigabyte' for the total space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemTotalSpaceUnitGigabyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = (int)SizeUnit.Gigabyte;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'terabyte' for the total space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemTotalSpaceUnitTerabyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = (int)SizeUnit.Terabyte;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		/// <summary>
+		/// Set the unit 'pentabyte' for the total space
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripMenuItemTotalSpaceUnitPentabyte_Click(object sender, EventArgs e)
+		{
+			unitTotalSpace = (int)SizeUnit.Pentabyte;
+			UncheckContextMenuForTotalSpaceUnits();
+			CaseTotalSpaceUnits();
+		}
+
+		#endregion
+
+		#region ButtonClick event handler
+
+		/// <summary>
+		/// Open the setting window and apply the settings
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ToolStripSplitButtonSettings_ButtonClick(object sender, EventArgs e)
+		{
+			if (menuitemStayOnTop.Checked)
+			{
+				TopMost = false;
+			}
+			using (SettingsForm settingsForm = new SettingsForm())
+			{
+				settingsForm.StayOnTop = menuitemStayOnTop.Checked;
+				settingsForm.MinimizeToSystemTray = menuitemMinimizeToSystemTray.Checked;
+				DialogResult dialogResult = settingsForm.ShowDialog();
+				if (dialogResult == DialogResult.OK)
+				{
+					timer.Interval = settingsForm.RefreshRate;
+					menuitemStayOnTop.Checked = settingsForm.StayOnTop;
+					menuitemMinimizeToSystemTray.Checked = settingsForm.MinimizeToSystemTray;
+				}
+			}
+			if (menuitemStayOnTop.Checked)
+			{
+				TopMost = true;
+			}
+		}
+
+		#endregion
+
+		#region DoubleClick event handlers
+
+		/// <summary>
+		/// Open the main window from the notify icon
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void NotifyIcon_DoubleClick(object sender, EventArgs e)
+		{
+			Show();
+			WindowState = FormWindowState.Normal;
+			notifyIcon.Visible = false;
+		}
+
+		#endregion
+
+		#region Tick event handlers
 
 		/// <summary>
 		/// Perform the timer
@@ -347,20 +597,22 @@ namespace DisksizeWatcher
 				freeSpacePerc = freeSpaceOrig / totalSpaceOrig * 100;
 				usedSpacePerc = 100 - freeSpacePerc;
 				progressBarPercentage.Value = (int)usedSpacePerc;
-				labelSpacePercentageValue.Text = $"{usedSpacePerc:G6} %";
-				numberFormat = "";
+				numberFormat = string.Empty;
+				numberFormat = "G6";
+				labelSpacePercentageValue.Text = $"{usedSpacePerc.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture)} %";
+				numberFormat = string.Empty;
 				if (HasFraction(number: usedSpace))
 				{
 					numberFormat = "F6";
 				}
 				textBoxSpaceUsed.Text = usedSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
-				numberFormat = "";
+				numberFormat = string.Empty;
 				if (HasFraction(number: freeSpace))
 				{
 					numberFormat = "F6";
 				}
 				textBoxSpaceFree.Text = freeSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
-				numberFormat = "";
+				numberFormat = string.Empty;
 				if (HasFraction(number: totalSpace))
 				{
 					numberFormat = "F6";
@@ -369,32 +621,27 @@ namespace DisksizeWatcher
 			}
 		}
 
-		private void ToolStripSplitButtonSettings_ButtonClick(object sender, EventArgs e)
-		{
-			if (menuitemStayOnTop.Checked)
-			{
-				TopMost = false;
-			}
-			using (SettingsForm settingsForm = new SettingsForm())
-			{
-				settingsForm.StayOnTop = menuitemStayOnTop.Checked;
-				settingsForm.MinimizeToSystemTray = menuitemMinimizeToSystemTray.Checked;
-				DialogResult dialogResult = settingsForm.ShowDialog();
-				if (dialogResult == DialogResult.OK)
-				{
-					timer.Interval = settingsForm.RefreshRate;
-					menuitemStayOnTop.Checked = settingsForm.StayOnTop;
-					menuitemMinimizeToSystemTray.Checked = settingsForm.MinimizeToSystemTray;
-				}
-			}
-			if (menuitemStayOnTop.Checked)
-			{
-				TopMost = true;
-			}
-		}
+		#endregion
 
+		#region CheckedChanged event handlers
+
+		/// <summary>
+		/// Set window in foreground if the option "stay on top" is enabled
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void MenuitemStayOnTop_CheckedChanged(object sender, EventArgs e) => TopMost = menuitemStayOnTop.Checked;
 
+		#endregion
+
+		#region Resize event handlers
+
+		/// <summary>
+		/// If the option 'minimize to system tray' is enabled, minimize to system tray
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
 		private void MainForm_Resize(object sender, EventArgs e)
 		{
 			if (WindowState == FormWindowState.Minimized)
@@ -407,32 +654,6 @@ namespace DisksizeWatcher
 			}
 		}
 
-		private void NotifyIcon_DoubleClick(object sender, EventArgs e)
-		{
-			Show();
-			WindowState = FormWindowState.Normal;
-			notifyIcon.Visible = false;
-		}
-
-		private void LabelSpaceUsedUnit_Click(object sender, EventArgs e)
-		{
-			unitUsedSpace++;
-			UncheckContextMenuForUsedSpaceUnits();
-			CaseUsedSpaceUnits();
-		}
-
-		private void LabelSpaceFreeUnit_Click(object sender, EventArgs e)
-		{
-			unitFreeSpace++;
-			UncheckContextMenuForFreeSpaceUnits();
-			CaseFreeSpaceUnits();
-		}
-
-		private void LabelSpaceTotalUnit_Click(object sender, EventArgs e)
-		{
-			unitTotalSpace++;
-			UncheckContextMenuForTotalSpaceUnits();
-			CaseTotalSpaceUnits();
-		}
+		#endregion
 	}
 }

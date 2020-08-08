@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("DisksizeWatcher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Disksize Watcher")]
+[assembly: AssemblyDescription("Control the disk size")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DisksizeWatcher")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("Mijo Software")]
+[assembly: AssemblyProduct("Disksize Watcher")]
+[assembly: AssemblyCopyright("Copyright © 2020 Mijo Software")]
+[assembly: AssemblyTrademark("Disksize Watcher")]
 [assembly: AssemblyCulture("")]
 
 // Durch Festlegen von ComVisible auf FALSE werden die Typen in dieser Assembly

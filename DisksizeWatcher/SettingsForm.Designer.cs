@@ -185,8 +185,6 @@
 			this.checkBoxStayOnTop.AccessibleName = "stay on top";
 			this.checkBoxStayOnTop.AccessibleRole = System.Windows.Forms.AccessibleRole.CheckButton;
 			this.checkBoxStayOnTop.AutoSize = true;
-			this.checkBoxStayOnTop.Checked = global::DisksizeWatcher.Properties.Settings.Default.StayOnTop;
-			this.checkBoxStayOnTop.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DisksizeWatcher.Properties.Settings.Default, "StayOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.checkBoxStayOnTop.Location = new System.Drawing.Point(13, 12);
 			this.checkBoxStayOnTop.Name = "checkBoxStayOnTop";
 			this.checkBoxStayOnTop.Size = new System.Drawing.Size(80, 17);

@@ -631,7 +631,7 @@
 			this.labelInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
 			this.labelInformation.AutoToolTip = true;
 			this.labelInformation.Name = "labelInformation";
-			this.labelInformation.Size = new System.Drawing.Size(194, 17);
+			this.labelInformation.Size = new System.Drawing.Size(225, 17);
 			this.labelInformation.Spring = true;
 			this.labelInformation.Text = "info";
 			this.labelInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -662,7 +662,6 @@
 			this.menuitemStayOnTop.AccessibleName = "stay on top";
 			this.menuitemStayOnTop.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
 			this.menuitemStayOnTop.AutoToolTip = true;
-			this.menuitemStayOnTop.Checked = global::DisksizeWatcher.Properties.Settings.Default.StayOnTop;
 			this.menuitemStayOnTop.CheckOnClick = true;
 			this.menuitemStayOnTop.Name = "menuitemStayOnTop";
 			this.menuitemStayOnTop.Size = new System.Drawing.Size(200, 22);

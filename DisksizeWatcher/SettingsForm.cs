@@ -3,8 +3,14 @@ using System.Windows.Forms;
 
 namespace DisksizeWatcher
 {
+	/// <summary>
+	/// Show the setting window of the application
+	/// </summary>
 	public partial class SettingsForm : Form
 	{
+		/// <summary>
+		/// Get or set to stay on top
+		/// </summary>
 		public bool StayOnTop
 		{
 			get
@@ -17,6 +23,9 @@ namespace DisksizeWatcher
 			}
 		}
 
+		/// <summary>
+		/// Get or set to minimize to system tray
+		/// </summary>
 		public bool MinimizeToSystemTray
 		{
 			get
@@ -29,6 +38,9 @@ namespace DisksizeWatcher
 			}
 		}
 
+		/// <summary>
+		/// Set or set the refresh rate
+		/// </summary>
 		public int RefreshRate
 		{
 			get
