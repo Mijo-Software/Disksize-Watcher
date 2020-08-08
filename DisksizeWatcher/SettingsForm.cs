@@ -39,7 +39,7 @@ namespace DisksizeWatcher
 		}
 
 		/// <summary>
-		/// Set or set the refresh rate
+		/// Get or set the refresh rate
 		/// </summary>
 		public int RefreshRate
 		{
@@ -50,6 +50,21 @@ namespace DisksizeWatcher
 			set
 			{
 				numericUpDownRefreshRate.Value = value;
+			}
+		}
+
+		/// <summary>
+		/// Get or set to remember the diff space
+		/// </summary>
+		public bool RememberDiffSpace
+		{
+			get
+			{
+				return checkBoxRememberDiffSpace.Checked;
+			}
+			set
+			{
+				checkBoxRememberDiffSpace.Checked = value;
 			}
 		}
 
