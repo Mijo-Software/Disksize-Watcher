@@ -211,6 +211,10 @@
 			this.checkBoxRememberDiffSpace.Text = "Remem&ber the diff space";
 			this.toolTip.SetToolTip(this.checkBoxRememberDiffSpace, "Click to remember the diff space");
 			this.checkBoxRememberDiffSpace.UseVisualStyleBackColor = true;
+			this.checkBoxRememberDiffSpace.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.checkBoxRememberDiffSpace.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+			this.checkBoxRememberDiffSpace.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+			this.checkBoxRememberDiffSpace.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
 			// SettingsForm
 			// 
