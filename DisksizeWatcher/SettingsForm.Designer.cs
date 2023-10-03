@@ -38,7 +38,6 @@
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.labelInformation = new System.Windows.Forms.ToolStripStatusLabel();
 			this.checkBoxStayOnTop = new System.Windows.Forms.CheckBox();
-			this.checkBoxRememberDiffSpace = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshRate)).BeginInit();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -68,10 +67,10 @@
 			this.buttonApply.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonApply.AutoEllipsis = true;
 			this.buttonApply.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.buttonApply.Location = new System.Drawing.Point(12, 109);
+			this.buttonApply.Location = new System.Drawing.Point(12, 88);
 			this.buttonApply.Name = "buttonApply";
 			this.buttonApply.Size = new System.Drawing.Size(75, 23);
-			this.buttonApply.TabIndex = 5;
+			this.buttonApply.TabIndex = 4;
 			this.buttonApply.Text = "&Apply";
 			this.toolTip.SetToolTip(this.buttonApply, "Apply the settings");
 			this.buttonApply.UseVisualStyleBackColor = true;
@@ -87,10 +86,10 @@
 			this.buttonCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
 			this.buttonCancel.AutoEllipsis = true;
 			this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.buttonCancel.Location = new System.Drawing.Point(93, 109);
+			this.buttonCancel.Location = new System.Drawing.Point(93, 88);
 			this.buttonCancel.Name = "buttonCancel";
 			this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-			this.buttonCancel.TabIndex = 6;
+			this.buttonCancel.TabIndex = 5;
 			this.buttonCancel.Text = "&Cancel";
 			this.toolTip.SetToolTip(this.buttonCancel, "Cancel the settings");
 			this.buttonCancel.UseVisualStyleBackColor = true;
@@ -106,7 +105,7 @@
 			this.labelRefreshRate.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
 			this.labelRefreshRate.AutoEllipsis = true;
 			this.labelRefreshRate.AutoSize = true;
-			this.labelRefreshRate.Location = new System.Drawing.Point(10, 60);
+			this.labelRefreshRate.Location = new System.Drawing.Point(13, 60);
 			this.labelRefreshRate.Name = "labelRefreshRate";
 			this.labelRefreshRate.Size = new System.Drawing.Size(92, 13);
 			this.labelRefreshRate.TabIndex = 2;
@@ -154,12 +153,12 @@
 			this.statusStrip.AllowItemReorder = true;
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.labelInformation});
-			this.statusStrip.Location = new System.Drawing.Point(0, 142);
+			this.statusStrip.Location = new System.Drawing.Point(0, 120);
 			this.statusStrip.Name = "statusStrip";
 			this.statusStrip.ShowItemToolTips = true;
 			this.statusStrip.Size = new System.Drawing.Size(181, 22);
 			this.statusStrip.SizingGrip = false;
-			this.statusStrip.TabIndex = 7;
+			this.statusStrip.TabIndex = 6;
 			this.statusStrip.TabStop = true;
 			this.statusStrip.Text = "statusStrip";
 			this.toolTip.SetToolTip(this.statusStrip, "Show the status bar");
@@ -198,24 +197,6 @@
 			this.checkBoxStayOnTop.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
 			this.checkBoxStayOnTop.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
 			// 
-			// checkBoxRememberDiffSpace
-			// 
-			this.checkBoxRememberDiffSpace.AccessibleDescription = "Click to remember the diff space";
-			this.checkBoxRememberDiffSpace.AccessibleName = "remember the diff space";
-			this.checkBoxRememberDiffSpace.AccessibleRole = System.Windows.Forms.AccessibleRole.CheckButton;
-			this.checkBoxRememberDiffSpace.AutoSize = true;
-			this.checkBoxRememberDiffSpace.Location = new System.Drawing.Point(13, 86);
-			this.checkBoxRememberDiffSpace.Name = "checkBoxRememberDiffSpace";
-			this.checkBoxRememberDiffSpace.Size = new System.Drawing.Size(144, 17);
-			this.checkBoxRememberDiffSpace.TabIndex = 4;
-			this.checkBoxRememberDiffSpace.Text = "Remem&ber the diff space";
-			this.toolTip.SetToolTip(this.checkBoxRememberDiffSpace, "Click to remember the diff space");
-			this.checkBoxRememberDiffSpace.UseVisualStyleBackColor = true;
-			this.checkBoxRememberDiffSpace.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-			this.checkBoxRememberDiffSpace.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-			this.checkBoxRememberDiffSpace.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-			this.checkBoxRememberDiffSpace.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-			// 
 			// SettingsForm
 			// 
 			this.AcceptButton = this.buttonApply;
@@ -225,8 +206,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.buttonCancel;
-			this.ClientSize = new System.Drawing.Size(181, 164);
-			this.Controls.Add(this.checkBoxRememberDiffSpace);
+			this.ClientSize = new System.Drawing.Size(181, 142);
 			this.Controls.Add(this.statusStrip);
 			this.Controls.Add(this.numericUpDownRefreshRate);
 			this.Controls.Add(this.labelRefreshRate);
@@ -261,6 +241,5 @@
 		private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.ToolStripStatusLabel labelInformation;
-		private System.Windows.Forms.CheckBox checkBoxRememberDiffSpace;
 	}
 }
