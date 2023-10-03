@@ -133,6 +133,12 @@
   <data name="megabytes" xml:space="preserve">
     <value>megabytes</value>
   </data>
+  <data name="numberformatF6" xml:space="preserve">
+    <value>F6</value>
+  </data>
+  <data name="numberformatG6" xml:space="preserve">
+    <value>G6</value>
+  </data>
   <data name="pentabytes" xml:space="preserve">
     <value>pentabytes</value>
   </data>

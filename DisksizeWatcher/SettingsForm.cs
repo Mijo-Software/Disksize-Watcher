@@ -13,66 +13,33 @@ namespace DisksizeWatcher
 		/// </summary>
 		public bool StayOnTop
 		{
-			get
-			{
-				return checkBoxStayOnTop.Checked;
-			}
-			set
-			{
-				checkBoxStayOnTop.Checked = value;
-			}
+            get => checkBoxStayOnTop.Checked;
+			set => checkBoxStayOnTop.Checked = value;
 		}
 
 		/// <summary>
 		/// Get or set to minimize to system tray
 		/// </summary>
 		public bool MinimizeToSystemTray
-		{
-			get
-			{
-				return checkBoxMinimizeToSystemTray.Checked;
-			}
-			set
-			{
-				checkBoxMinimizeToSystemTray.Checked = value;
-			}
-		}
+        {
+            get => checkBoxMinimizeToSystemTray.Checked;
+            set => checkBoxMinimizeToSystemTray.Checked = value;
+        }
 
-		/// <summary>
-		/// Get or set the refresh rate
-		/// </summary>
-		public int RefreshRate
-		{
-			get
-			{
-				return (int)numericUpDownRefreshRate.Value;
-			}
-			set
-			{
-				numericUpDownRefreshRate.Value = value;
-			}
-		}
+        /// <summary>
+        /// Set or set the refresh rate
+        /// </summary>
+        public int RefreshRate
+        {
+            get => (int)numericUpDownRefreshRate.Value;
+            set => numericUpDownRefreshRate.Value = value;
+        }
 
-		/// <summary>
-		/// Get or set to remember the diff space
-		/// </summary>
-		public bool RememberDiffSpace
-		{
-			get
-			{
-				return checkBoxRememberDiffSpace.Checked;
-			}
-			set
-			{
-				checkBoxRememberDiffSpace.Checked = value;
-			}
-		}
-
-		/// <summary>
-		/// Set a specific text to the status bar
-		/// </summary>
-		/// <param name="text">text with some information</param>
-		private void SetStatusbarText(string text)
+        /// <summary>
+        /// Set a specific text to the status bar
+        /// </summary>
+        /// <param name="text">text with some information</param>
+        private void SetStatusbarText(string text)
 		{
 			labelInformation.Enabled = !string.IsNullOrEmpty(value: text);
 			labelInformation.Text = text;
@@ -83,45 +50,40 @@ namespace DisksizeWatcher
 		/// </summary>
 		public SettingsForm() => InitializeComponent();
 
-		/// <summary>
-		/// Load the settings form
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-		private void SettingsForm_Load(object sender, EventArgs e)
-		{
-			SetStatusbarText(text: string.Empty);
-		}
+        /// <summary>
+        /// Load the settings form
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void SettingsForm_Load(object sender, EventArgs e) => SetStatusbarText(text: string.Empty);
 
-		/// <summary>
-		/// Detect the accessibility description to set as information text in the status bar
-		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
-		private void SetStatusbar_Enter(object sender, EventArgs e)
+        /// <summary>
+        /// Detect the accessibility description to set as information text in the status bar
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
+        private void SetStatusbar_Enter(object sender, EventArgs e)
 		{
 			string text = string.Empty;
-			if (sender is Control control)
+			switch (sender)
 			{
-				text = control.AccessibleDescription;
-			}
-			else if (sender is ToolStripSplitButton toolStripSplitButton)
-			{
-				text = toolStripSplitButton.AccessibleDescription;
-			}
-			else if (sender is ToolStripButton toolStripButton)
-			{
-				text = toolStripButton.AccessibleDescription;
-			}
-			else if (sender is ToolStripLabel toolStripLabel)
-			{
-				text = toolStripLabel.AccessibleDescription;
-			}
-			else if (sender is ToolStripMenuItem toolStripMenuItem)
-			{
-				text = toolStripMenuItem.AccessibleDescription;
+				case Control control:
+					text = control.AccessibleDescription;
+					break;
+				case ToolStripSplitButton toolStripSplitButton:
+					text = toolStripSplitButton.AccessibleDescription;
+					break;
+				case ToolStripButton toolStripButton:
+					text = toolStripButton.AccessibleDescription;
+					break;
+				case ToolStripLabel toolStripLabel:
+					text = toolStripLabel.AccessibleDescription;
+					break;
+				case ToolStripMenuItem toolStripMenuItem:
+					text = toolStripMenuItem.AccessibleDescription;
+					break;
 			}
 			SetStatusbarText(text: text);
 		}

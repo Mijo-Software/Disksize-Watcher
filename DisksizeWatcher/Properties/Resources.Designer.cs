@@ -107,6 +107,24 @@ namespace DisksizeWatcher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die F6 ähnelt.
+        /// </summary>
+        internal static string numberformatF6 {
+            get {
+                return ResourceManager.GetString("numberformatF6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die G6 ähnelt.
+        /// </summary>
+        internal static string numberformatG6 {
+            get {
+                return ResourceManager.GetString("numberformatG6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die pentabytes ähnelt.
         /// </summary>
         internal static string pentabytes {
