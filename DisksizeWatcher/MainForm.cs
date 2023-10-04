@@ -171,6 +171,100 @@ namespace DisksizeWatcher
             labelInformation.Text = text;
         }
 
+        /// <summary>
+        /// Update the information of the disk space
+        /// </summary>
+        private void UpdateSpaceInfo()
+        {
+            if (driveC.IsReady)
+            {
+                diffSpaceOrig = usedSpaceOrig;
+                usedSpaceOrig = driveC.TotalSize - driveC.TotalFreeSpace;
+                freeSpaceOrig = driveC.TotalFreeSpace;
+                totalSpaceOrig = driveC.TotalSize;
+                usedSpace = usedSpaceOrig;
+                freeSpace = freeSpaceOrig;
+                totalSpace = totalSpaceOrig;
+                diffSpace = diffSpaceOrig;
+                switch (unitUsedSpace)
+                {
+                    case (int)SizeUnit.Kilobyte: usedSpace /= 1024; break;
+                    case (int)SizeUnit.Megabyte: usedSpace = usedSpace / 1024 / 1024; break;
+                    case (int)SizeUnit.Gigabyte: usedSpace = usedSpace / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Terabyte: usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Pentabyte: usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
+                    default: break;
+                }
+                switch (unitFreeSpace)
+                {
+                    case (int)SizeUnit.Kilobyte: freeSpace /= 1024; break;
+                    case (int)SizeUnit.Megabyte: freeSpace = freeSpace / 1024 / 1024; break;
+                    case (int)SizeUnit.Gigabyte: freeSpace = freeSpace / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Terabyte: freeSpace = freeSpace / 1024 / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Pentabyte: freeSpace = freeSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
+                    default: break;
+                }
+                switch (unitTotalSpace)
+                {
+                    case (int)SizeUnit.Kilobyte: totalSpace /= 1024; break;
+                    case (int)SizeUnit.Megabyte: totalSpace = totalSpace / 1024 / 1024; break;
+                    case (int)SizeUnit.Gigabyte: totalSpace = totalSpace / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Terabyte: totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Pentabyte: totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
+                    default: break;
+                }
+                switch (unitDiffSpace)
+                {
+                    case (int)SizeUnit.Kilobyte: diffSpace /= 1024; break;
+                    case (int)SizeUnit.Megabyte: diffSpace = diffSpace / 1024 / 1024; break;
+                    case (int)SizeUnit.Gigabyte: diffSpace = diffSpace / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Terabyte: diffSpace = diffSpace / 1024 / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Pentabyte: diffSpace = diffSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
+                    default: break;
+                }
+                freeSpacePerc = freeSpaceOrig / totalSpaceOrig * 100;
+                usedSpacePerc = 100 - freeSpacePerc;
+                progressBarPercentage.Value = (int)usedSpacePerc;
+                numberFormat = Resources.numberformatG6;
+                labelSpacePercentageValue.Text = $"{usedSpacePerc.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture)} %";
+                numberFormat = string.Empty;
+                if (HasFraction(number: usedSpace))
+                {
+                    numberFormat = Resources.numberformatF6;
+                }
+                textBoxSpaceUsed.Text = usedSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+                numberFormat = string.Empty;
+                if (HasFraction(number: freeSpace))
+                {
+                    numberFormat = Resources.numberformatF6;
+                }
+                textBoxSpaceFree.Text = freeSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+                numberFormat = string.Empty;
+                if (HasFraction(number: totalSpace))
+                {
+                    numberFormat = Resources.numberformatF6;
+                }
+                textBoxSpaceTotal.Text = totalSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+                numberFormat = string.Empty;
+                if (HasFraction(number: diffSpace))
+                {
+                    numberFormat = Resources.numberformatF6;
+                }
+                usedSpace = usedSpaceOrig;
+                switch (unitDiffSpace)
+                {
+                    case (int)SizeUnit.Kilobyte: usedSpace /= 1024; break;
+                    case (int)SizeUnit.Megabyte: usedSpace = usedSpace / 1024 / 1024; break;
+                    case (int)SizeUnit.Gigabyte: usedSpace = usedSpace / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Terabyte: usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024; break;
+                    case (int)SizeUnit.Pentabyte: usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
+                    default: break;
+                }
+                textBoxSpaceDiff.Text = Math.Abs(diffSpace - usedSpace).ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+            }
+
+        }
+
         #endregion
 
         #region Constructor
@@ -197,8 +291,8 @@ namespace DisksizeWatcher
             if (driveC.IsReady)
             {
                 textBoxSpaceTotal.Text = driveC.TotalSize.ToString(provider: CultureInfo.InvariantCulture);
+                fileSystemWatcher.Path = driveC.Name;
             }
-            timer.Start();
         }
 
         #endregion
@@ -356,7 +450,7 @@ namespace DisksizeWatcher
         }
 
         /// <summary>
-        /// Set the unit 'terabyte' for the used space
+        /// Set the unit 'tera byte' for the used space
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -369,7 +463,7 @@ namespace DisksizeWatcher
         }
 
         /// <summary>
-        /// Set the unit 'pentabyte' for the used space
+        /// Set the unit 'penta byte' for the used space
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -434,7 +528,7 @@ namespace DisksizeWatcher
         }
 
         /// <summary>
-        /// Set the unit 'terabyte' for the free space
+        /// Set the unit 'tera byte' for the free space
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -447,7 +541,7 @@ namespace DisksizeWatcher
         }
 
         /// <summary>
-        /// Set the unit 'pentabyte' for the free space
+        /// Set the unit 'penta byte' for the free space
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -525,7 +619,7 @@ namespace DisksizeWatcher
         }
 
         /// <summary>
-        /// Set the unit 'pentabyte' for the total space
+        /// Set the unit 'penta byte' for the total space
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -564,6 +658,20 @@ namespace DisksizeWatcher
         }
 
         /// <summary>
+        /// Open the program information window
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void ToolStripButtonInfo_Click(object sender, EventArgs e)
+        {
+            using (AboutBoxForm aboutBoxForm = new AboutBoxForm())
+            {
+                aboutBoxForm.ShowDialog();
+            }
+        }
+
+        /// <summary>
         /// Set the unit 'megabyte' for the diff space
         /// </summary>
         /// <param name="sender">object sender</param>
@@ -590,7 +698,7 @@ namespace DisksizeWatcher
         }
 
         /// <summary>
-        /// Set the unit 'terabyte' for the diff space
+        /// Set the unit 'tera byte' for the diff space
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -603,7 +711,7 @@ namespace DisksizeWatcher
         }
 
         /// <summary>
-        /// Set the unit 'pentabyte' for the diff space
+        /// Set the unit 'penta byte' for the diff space
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -638,7 +746,6 @@ namespace DisksizeWatcher
                 DialogResult dialogResult = settingsForm.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {
-                    timer.Interval = settingsForm.RefreshRate;
                     menuitemStayOnTop.Checked = settingsForm.StayOnTop;
                     menuitemMinimizeToSystemTray.Checked = settingsForm.MinimizeToSystemTray;
                 }
@@ -664,106 +771,6 @@ namespace DisksizeWatcher
             Show();
             WindowState = FormWindowState.Normal;
             notifyIcon.Visible = false;
-        }
-
-        #endregion
-
-        #region Tick event handlers
-
-        /// <summary>
-        /// Perform the timer
-        /// </summary>
-        /// <param name="sender">object sender</param>
-        /// <param name="e">event arguments</param>
-        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            if (driveC.IsReady)
-            {
-                diffSpaceOrig = usedSpaceOrig;
-                usedSpaceOrig = driveC.TotalSize - driveC.TotalFreeSpace;
-                freeSpaceOrig = driveC.TotalFreeSpace;
-                totalSpaceOrig = driveC.TotalSize;
-                usedSpace = usedSpaceOrig;
-                freeSpace = freeSpaceOrig;
-                totalSpace = totalSpaceOrig;
-                diffSpace = diffSpaceOrig;
-                switch (unitUsedSpace)
-                {
-                    case (int)SizeUnit.Kilobyte: usedSpace /= 1024; break;
-                    case (int)SizeUnit.Megabyte: usedSpace = usedSpace / 1024 / 1024; break;
-                    case (int)SizeUnit.Gigabyte: usedSpace = usedSpace / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Terabyte: usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Pentabyte: usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
-                    default: break;
-                }
-                switch (unitFreeSpace)
-                {
-                    case (int)SizeUnit.Kilobyte: freeSpace /= 1024; break;
-                    case (int)SizeUnit.Megabyte: freeSpace = freeSpace / 1024 / 1024; break;
-                    case (int)SizeUnit.Gigabyte: freeSpace = freeSpace / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Terabyte: freeSpace = freeSpace / 1024 / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Pentabyte: freeSpace = freeSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
-                    default: break;
-                }
-                switch (unitTotalSpace)
-                {
-                    case (int)SizeUnit.Kilobyte: totalSpace /= 1024; break;
-                    case (int)SizeUnit.Megabyte: totalSpace = totalSpace / 1024 / 1024; break;
-                    case (int)SizeUnit.Gigabyte: totalSpace = totalSpace / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Terabyte: totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Pentabyte: totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
-                    default: break;
-                }
-                switch (unitDiffSpace)
-                {
-                    case (int)SizeUnit.Kilobyte: diffSpace /= 1024; break;
-                    case (int)SizeUnit.Megabyte: diffSpace = diffSpace / 1024 / 1024; break;
-                    case (int)SizeUnit.Gigabyte: diffSpace = diffSpace / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Terabyte: diffSpace = diffSpace / 1024 / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Pentabyte: diffSpace = diffSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
-                    default: break;
-                }
-                freeSpacePerc = freeSpaceOrig / totalSpaceOrig * 100;
-                usedSpacePerc = 100 - freeSpacePerc;
-                progressBarPercentage.Value = (int)usedSpacePerc;
-                numberFormat = Resources.numberformatG6;
-                labelSpacePercentageValue.Text = $"{usedSpacePerc.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture)} %";
-                numberFormat = string.Empty;
-                if (HasFraction(number: usedSpace))
-                {
-                    numberFormat = Resources.numberformatF6;
-                }
-                textBoxSpaceUsed.Text = usedSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
-                numberFormat = string.Empty;
-                if (HasFraction(number: freeSpace))
-                {
-                    numberFormat = Resources.numberformatF6;
-                }
-                textBoxSpaceFree.Text = freeSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
-                numberFormat = string.Empty;
-                if (HasFraction(number: totalSpace))
-                {
-                    numberFormat = Resources.numberformatF6;
-                }
-                textBoxSpaceTotal.Text = totalSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
-                numberFormat = string.Empty;
-                if (HasFraction(number: diffSpace))
-                {
-                    numberFormat = Resources.numberformatF6;
-                }
-                usedSpace = usedSpaceOrig;
-                switch (unitDiffSpace)
-                {
-                    case (int)SizeUnit.Kilobyte: usedSpace /= 1024; break;
-                    case (int)SizeUnit.Megabyte: usedSpace = usedSpace / 1024 / 1024; break;
-                    case (int)SizeUnit.Gigabyte: usedSpace = usedSpace / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Terabyte: usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024; break;
-                    case (int)SizeUnit.Pentabyte: usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024 / 1024; break;
-                    default: break;
-                }
-                textBoxSpaceDiff.Text = Math.Abs(diffSpace - usedSpace).ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
-            }
         }
 
         #endregion
@@ -798,6 +805,42 @@ namespace DisksizeWatcher
                 }
             }
         }
+
+        #endregion
+
+        #region FileSystemWatcher event handlers
+
+        /// <summary>
+        /// Update information about the disk using FileSystemWatcher event
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void FileSystemWatcher_Created(object sender, FileSystemEventArgs e) => UpdateSpaceInfo();
+
+        /// <summary>
+        /// Update information about the disk using FileSystemWatcher event
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e) => UpdateSpaceInfo();
+
+        /// <summary>
+        /// Update information about the disk using FileSystemWatcher event
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void FileSystemWatcher_Deleted(object sender, FileSystemEventArgs e) => UpdateSpaceInfo();
+
+        /// <summary>
+        /// Update information about the disk using FileSystemWatcher event
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void FileSystemWatcher_Renamed(object sender, RenamedEventArgs e) => UpdateSpaceInfo();
 
         #endregion
     }

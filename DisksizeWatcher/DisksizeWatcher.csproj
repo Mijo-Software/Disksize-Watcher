@@ -15,6 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -120,6 +120,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBoxForm.Designer.cs">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -135,6 +141,9 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutBoxForm.resx">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +175,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Disksize-Watcher_logo.ico" />
+    <None Include="Resources\fatcow-tick-octagon-16.png" />
+    <None Include="Resources\fatcow-drive-network-16.png" />
+    <None Include="Resources\fatcow-drive-disk-16.png" />
+    <None Include="Resources\fatcow-drive-cd-16.png" />
+    <None Include="Resources\fatcow-drive-16.png" />
+    <None Include="Resources\fatcow-cancel-16.png" />
+    <None Include="Resources\fatcow-disk-space-32.png" />
+    <None Include="Resources\fatcow-infomation-16.png" />
     <None Include="Resources\fatcow-wrench-16.png" />
   </ItemGroup>
   <ItemGroup>
