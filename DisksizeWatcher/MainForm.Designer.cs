@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.labelSpaceFree = new System.Windows.Forms.Label();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.textBoxSpaceFree = new System.Windows.Forms.TextBox();
@@ -81,16 +80,22 @@
             this.toolStripMenuItemDiffSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDiffSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDiffSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSystemWatcher = new System.IO.FileSystemWatcher();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStripFreeSpaceUnits.SuspendLayout();
             this.contextMenuStripTotalSpaceUnits.SuspendLayout();
             this.contextMenuStripUsedSpaceUnits.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.contextMenuStripDiffSpaceUnits.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).BeginInit();
+            this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // labelSpaceFree
             // 
@@ -98,7 +103,7 @@
             this.labelSpaceFree.AccessibleName = "free space";
             this.labelSpaceFree.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceFree.AutoEllipsis = true;
-            this.labelSpaceFree.Location = new System.Drawing.Point(11, 41);
+            this.labelSpaceFree.Location = new System.Drawing.Point(3, 36);
             this.labelSpaceFree.Name = "labelSpaceFree";
             this.labelSpaceFree.Size = new System.Drawing.Size(63, 13);
             this.labelSpaceFree.TabIndex = 3;
@@ -121,7 +126,7 @@
             this.textBoxSpaceFree.AccessibleDescription = "Show the value of the free space";
             this.textBoxSpaceFree.AccessibleName = "value of the free space";
             this.textBoxSpaceFree.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSpaceFree.Location = new System.Drawing.Point(82, 38);
+            this.textBoxSpaceFree.Location = new System.Drawing.Point(74, 33);
             this.textBoxSpaceFree.Name = "textBoxSpaceFree";
             this.textBoxSpaceFree.ReadOnly = true;
             this.textBoxSpaceFree.Size = new System.Drawing.Size(111, 20);
@@ -138,7 +143,7 @@
             this.textBoxSpaceTotal.AccessibleDescription = "Show the value of the total space";
             this.textBoxSpaceTotal.AccessibleName = "value of the total space";
             this.textBoxSpaceTotal.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSpaceTotal.Location = new System.Drawing.Point(82, 64);
+            this.textBoxSpaceTotal.Location = new System.Drawing.Point(74, 59);
             this.textBoxSpaceTotal.Name = "textBoxSpaceTotal";
             this.textBoxSpaceTotal.ReadOnly = true;
             this.textBoxSpaceTotal.Size = new System.Drawing.Size(111, 20);
@@ -157,7 +162,7 @@
             this.labelSpaceTotal.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceTotal.AutoEllipsis = true;
             this.labelSpaceTotal.AutoSize = true;
-            this.labelSpaceTotal.Location = new System.Drawing.Point(11, 67);
+            this.labelSpaceTotal.Location = new System.Drawing.Point(3, 62);
             this.labelSpaceTotal.Name = "labelSpaceTotal";
             this.labelSpaceTotal.Size = new System.Drawing.Size(66, 13);
             this.labelSpaceTotal.TabIndex = 6;
@@ -177,7 +182,7 @@
             this.labelSpaceFreeUnit.AutoSize = true;
             this.labelSpaceFreeUnit.ContextMenuStrip = this.contextMenuStripFreeSpaceUnits;
             this.labelSpaceFreeUnit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelSpaceFreeUnit.Location = new System.Drawing.Point(199, 41);
+            this.labelSpaceFreeUnit.Location = new System.Drawing.Point(191, 36);
             this.labelSpaceFreeUnit.Name = "labelSpaceFreeUnit";
             this.labelSpaceFreeUnit.Size = new System.Drawing.Size(32, 13);
             this.labelSpaceFreeUnit.TabIndex = 5;
@@ -299,7 +304,7 @@
             this.labelSpaceTotalUnit.AutoSize = true;
             this.labelSpaceTotalUnit.ContextMenuStrip = this.contextMenuStripTotalSpaceUnits;
             this.labelSpaceTotalUnit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelSpaceTotalUnit.Location = new System.Drawing.Point(199, 67);
+            this.labelSpaceTotalUnit.Location = new System.Drawing.Point(191, 62);
             this.labelSpaceTotalUnit.Name = "labelSpaceTotalUnit";
             this.labelSpaceTotalUnit.Size = new System.Drawing.Size(32, 13);
             this.labelSpaceTotalUnit.TabIndex = 8;
@@ -419,7 +424,7 @@
             this.labelSpacePercentage.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpacePercentage.AutoEllipsis = true;
             this.labelSpacePercentage.AutoSize = true;
-            this.labelSpacePercentage.Location = new System.Drawing.Point(13, 116);
+            this.labelSpacePercentage.Location = new System.Drawing.Point(5, 111);
             this.labelSpacePercentage.Name = "labelSpacePercentage";
             this.labelSpacePercentage.Size = new System.Drawing.Size(65, 13);
             this.labelSpacePercentage.TabIndex = 12;
@@ -433,7 +438,7 @@
             // progressBarPercentage
             // 
             this.progressBarPercentage.AccessibleDescription = "Show the state of the percentage";
-            this.progressBarPercentage.Location = new System.Drawing.Point(82, 116);
+            this.progressBarPercentage.Location = new System.Drawing.Point(74, 111);
             this.progressBarPercentage.Name = "progressBarPercentage";
             this.progressBarPercentage.Size = new System.Drawing.Size(111, 13);
             this.progressBarPercentage.Step = 1;
@@ -450,7 +455,7 @@
             this.labelSpacePercentageValue.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpacePercentageValue.AutoEllipsis = true;
             this.labelSpacePercentageValue.AutoSize = true;
-            this.labelSpacePercentageValue.Location = new System.Drawing.Point(199, 116);
+            this.labelSpacePercentageValue.Location = new System.Drawing.Point(191, 111);
             this.labelSpacePercentageValue.Name = "labelSpacePercentageValue";
             this.labelSpacePercentageValue.Size = new System.Drawing.Size(15, 13);
             this.labelSpacePercentageValue.TabIndex = 14;
@@ -470,7 +475,7 @@
             this.labelSpaceUsedUnit.AutoSize = true;
             this.labelSpaceUsedUnit.ContextMenuStrip = this.contextMenuStripUsedSpaceUnits;
             this.labelSpaceUsedUnit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelSpaceUsedUnit.Location = new System.Drawing.Point(199, 15);
+            this.labelSpaceUsedUnit.Location = new System.Drawing.Point(191, 10);
             this.labelSpaceUsedUnit.Name = "labelSpaceUsedUnit";
             this.labelSpaceUsedUnit.Size = new System.Drawing.Size(32, 13);
             this.labelSpaceUsedUnit.TabIndex = 2;
@@ -587,7 +592,7 @@
             this.textBoxSpaceUsed.AccessibleDescription = "Show the value of the used space";
             this.textBoxSpaceUsed.AccessibleName = "value of the used space";
             this.textBoxSpaceUsed.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSpaceUsed.Location = new System.Drawing.Point(82, 12);
+            this.textBoxSpaceUsed.Location = new System.Drawing.Point(74, 7);
             this.textBoxSpaceUsed.Name = "textBoxSpaceUsed";
             this.textBoxSpaceUsed.ReadOnly = true;
             this.textBoxSpaceUsed.Size = new System.Drawing.Size(111, 20);
@@ -606,7 +611,7 @@
             this.labelSpaceUsed.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceUsed.AutoEllipsis = true;
             this.labelSpaceUsed.AutoSize = true;
-            this.labelSpaceUsed.Location = new System.Drawing.Point(11, 15);
+            this.labelSpaceUsed.Location = new System.Drawing.Point(3, 10);
             this.labelSpaceUsed.Name = "labelSpaceUsed";
             this.labelSpaceUsed.Size = new System.Drawing.Size(67, 13);
             this.labelSpaceUsed.TabIndex = 0;
@@ -623,10 +628,11 @@
             this.statusStrip.AccessibleName = "status bar";
             this.statusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
             this.statusStrip.AllowItemReorder = true;
+            this.statusStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.labelInformation,
             this.toolStripSplitButtonSettings});
-            this.statusStrip.Location = new System.Drawing.Point(0, 138);
+            this.statusStrip.Location = new System.Drawing.Point(0, 0);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.ShowItemToolTips = true;
             this.statusStrip.Size = new System.Drawing.Size(272, 22);
@@ -705,7 +711,7 @@
             this.labelSpaceDiff.AccessibleName = "diff space";
             this.labelSpaceDiff.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceDiff.AutoSize = true;
-            this.labelSpaceDiff.Location = new System.Drawing.Point(12, 93);
+            this.labelSpaceDiff.Location = new System.Drawing.Point(4, 88);
             this.labelSpaceDiff.Name = "labelSpaceDiff";
             this.labelSpaceDiff.Size = new System.Drawing.Size(58, 13);
             this.labelSpaceDiff.TabIndex = 9;
@@ -721,7 +727,7 @@
             this.textBoxSpaceDiff.AccessibleDescription = "Show the value of the diff space";
             this.textBoxSpaceDiff.AccessibleName = "value of the diff space";
             this.textBoxSpaceDiff.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSpaceDiff.Location = new System.Drawing.Point(82, 90);
+            this.textBoxSpaceDiff.Location = new System.Drawing.Point(74, 85);
             this.textBoxSpaceDiff.Name = "textBoxSpaceDiff";
             this.textBoxSpaceDiff.ReadOnly = true;
             this.textBoxSpaceDiff.Size = new System.Drawing.Size(110, 20);
@@ -742,7 +748,7 @@
             this.labelSpaceDiffUnit.AutoSize = true;
             this.labelSpaceDiffUnit.ContextMenuStrip = this.contextMenuStripDiffSpaceUnits;
             this.labelSpaceDiffUnit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelSpaceDiffUnit.Location = new System.Drawing.Point(199, 93);
+            this.labelSpaceDiffUnit.Location = new System.Drawing.Point(191, 88);
             this.labelSpaceDiffUnit.Name = "labelSpaceDiffUnit";
             this.labelSpaceDiffUnit.Size = new System.Drawing.Size(32, 13);
             this.labelSpaceDiffUnit.TabIndex = 11;
@@ -855,30 +861,89 @@
             this.toolStripMenuItemDiffSpaceUnitPentabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.toolStripMenuItemDiffSpaceUnitPentabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
+            // fileSystemWatcher
+            // 
+            this.fileSystemWatcher.EnableRaisingEvents = true;
+            this.fileSystemWatcher.IncludeSubdirectories = true;
+            this.fileSystemWatcher.SynchronizingObject = this;
+            this.fileSystemWatcher.Changed += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Changed);
+            this.fileSystemWatcher.Created += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Created);
+            this.fileSystemWatcher.Deleted += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Deleted);
+            this.fileSystemWatcher.Renamed += new System.IO.RenamedEventHandler(this.FileSystemWatcher_Renamed);
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.BottomToolStripPanel
+            // 
+            this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.statusStrip);
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceUsed);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceFree);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSpaceFree);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceTotal);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSpaceTotal);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceDiffUnit);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceFreeUnit);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSpaceDiff);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceTotalUnit);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceDiff);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpacePercentage);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceUsedUnit);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.progressBarPercentage);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSpaceUsed);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpacePercentageValue);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(272, 137);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(272, 184);
+            this.toolStripContainer1.TabIndex = 16;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip);
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonInfo});
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip.Size = new System.Drawing.Size(272, 25);
+            this.toolStrip.Stretch = true;
+            this.toolStrip.TabIndex = 0;
+            this.toolStrip.TabStop = true;
+            // 
+            // toolStripButtonInfo
+            // 
+            this.toolStripButtonInfo.AccessibleDescription = "Open the program information";
+            this.toolStripButtonInfo.AccessibleName = "program information";
+            this.toolStripButtonInfo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripButtonInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonInfo.Image = global::DisksizeWatcher.Properties.Resources.fatcow_infomation_16;
+            this.toolStripButtonInfo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonInfo.Name = "toolStripButtonInfo";
+            this.toolStripButtonInfo.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonInfo.Text = "Program information";
+            this.toolStripButtonInfo.Click += new System.EventHandler(this.ToolStripButtonInfo_Click);
+            this.toolStripButtonInfo.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripButtonInfo.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
             // MainForm
             // 
-            this.AccessibleDescription = "This is the main window";
-            this.AccessibleName = "main window";
+            this.AccessibleDescription = "This is the main window.";
+            this.AccessibleName = "Main window";
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 160);
-            this.Controls.Add(this.labelSpaceDiffUnit);
-            this.Controls.Add(this.textBoxSpaceDiff);
-            this.Controls.Add(this.labelSpaceDiff);
-            this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.labelSpaceUsedUnit);
-            this.Controls.Add(this.textBoxSpaceUsed);
-            this.Controls.Add(this.labelSpaceUsed);
-            this.Controls.Add(this.labelSpacePercentageValue);
-            this.Controls.Add(this.progressBarPercentage);
-            this.Controls.Add(this.labelSpacePercentage);
-            this.Controls.Add(this.labelSpaceTotalUnit);
-            this.Controls.Add(this.labelSpaceFreeUnit);
-            this.Controls.Add(this.textBoxSpaceTotal);
-            this.Controls.Add(this.labelSpaceTotal);
-            this.Controls.Add(this.textBoxSpaceFree);
-            this.Controls.Add(this.labelSpaceFree);
+            this.ClientSize = new System.Drawing.Size(272, 184);
+            this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -893,8 +958,18 @@
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.contextMenuStripDiffSpaceUnits.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).EndInit();
+            this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.PerformLayout();
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -903,7 +978,6 @@
 		private System.Windows.Forms.Label labelSpaceTotal;
 		private System.Windows.Forms.TextBox textBoxSpaceFree;
 		private System.Windows.Forms.Label labelSpaceFree;
-		private System.Windows.Forms.Timer timer;
 		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.Label labelSpaceTotalUnit;
 		private System.Windows.Forms.Label labelSpaceFreeUnit;
@@ -950,6 +1024,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitGigabyte;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitTerabyte;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitPentabyte;
+        private System.IO.FileSystemWatcher fileSystemWatcher;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStripButton toolStripButtonInfo;
     }
 }
 

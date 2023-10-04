@@ -72,6 +72,86 @@ namespace DisksizeWatcher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fatcow_cancel_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow-cancel-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_disk_space_32 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow-disk-space-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_drive_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow-drive-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_drive_cd_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow-drive-cd-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_drive_disk_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow-drive-disk-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_drive_network_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow-drive-network-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_infomation_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow-infomation-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_tick_octagon_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow-tick-octagon-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fatcow_wrench_16 {
             get {
                 object obj = ResourceManager.GetObject("fatcow-wrench-16", resourceCulture);
