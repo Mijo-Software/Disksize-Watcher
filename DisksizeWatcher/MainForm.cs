@@ -667,6 +667,7 @@ namespace DisksizeWatcher
         {
             using (AboutBoxForm aboutBoxForm = new AboutBoxForm())
             {
+                aboutBoxForm.TopMost = TopMost;
                 aboutBoxForm.ShowDialog();
             }
         }

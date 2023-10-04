@@ -710,6 +710,7 @@
             this.labelSpaceDiff.AccessibleDescription = "Show the diff space";
             this.labelSpaceDiff.AccessibleName = "diff space";
             this.labelSpaceDiff.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelSpaceDiff.AutoEllipsis = true;
             this.labelSpaceDiff.AutoSize = true;
             this.labelSpaceDiff.Location = new System.Drawing.Point(4, 88);
             this.labelSpaceDiff.Name = "labelSpaceDiff";
