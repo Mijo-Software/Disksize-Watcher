@@ -307,26 +307,69 @@ namespace DisksizeWatcher
         /// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
         private void SetStatusbar_Enter(object sender, EventArgs e)
         {
-            string text = string.Empty;
             switch (sender)
             {
-                case Control control:
-                    text = control.AccessibleDescription;
+                case TextBox _:
+                    SetStatusbarText(text: ((TextBox)sender).AccessibleDescription);
                     break;
-                case ToolStripSplitButton toolStripSplitButton:
-                    text = toolStripSplitButton.AccessibleDescription;
+                case Button _:
+                    SetStatusbarText(text: ((Button)sender).AccessibleDescription);
                     break;
-                case ToolStripButton toolStripButton:
-                    text = toolStripButton.AccessibleDescription;
+                case RadioButton _:
+                    SetStatusbarText(text: ((RadioButton)sender).AccessibleDescription);
                     break;
-                case ToolStripLabel toolStripLabel:
-                    text = toolStripLabel.AccessibleDescription;
+                case CheckBox _:
+                    SetStatusbarText(text: ((CheckBox)sender).AccessibleDescription);
                     break;
-                case ToolStripMenuItem toolStripMenuItem:
-                    text = toolStripMenuItem.AccessibleDescription;
+                case DateTimePicker _:
+                    SetStatusbarText(text: ((DateTimePicker)sender).AccessibleDescription);
+                    break;
+                case Label _:
+                    SetStatusbarText(text: ((Label)sender).AccessibleDescription);
+                    break;
+                case PictureBox _:
+                    SetStatusbarText(text: ((PictureBox)sender).AccessibleDescription);
+                    break;
+                case ToolStripButton _:
+                    SetStatusbarText(text: ((ToolStripButton)sender).AccessibleDescription);
+                    break;
+                case ToolStripMenuItem _:
+                    SetStatusbarText(text: ((ToolStripMenuItem)sender).AccessibleDescription);
+                    break;
+                case ToolStripLabel _:
+                    SetStatusbarText(text: ((ToolStripLabel)sender).AccessibleDescription);
+                    break;
+                case ToolStripComboBox _:
+                    SetStatusbarText(text: ((ToolStripComboBox)sender).AccessibleDescription);
+                    break;
+                case ToolStripDropDown _:
+                    SetStatusbarText(text: ((ToolStripDropDown)sender).AccessibleDescription);
+                    break;
+                case ToolStripDropDownButton _:
+                    SetStatusbarText(text: ((ToolStripDropDownButton)sender).AccessibleDescription);
+                    break;
+                case ToolStripDropDownItem _:
+                    SetStatusbarText(text: ((ToolStripDropDownItem)sender).AccessibleDescription);
+                    break;
+                /*case ToolStripDropDownMenu _:
+                    SetStatusbarText(text: ((ToolStripDropDownMenu)sender).AccessibleDescription);
+                    break;*/
+                case ToolStripProgressBar _:
+                    SetStatusbarText(text: ((ToolStripProgressBar)sender).AccessibleDescription);
+                    break;
+                /*case ToolStripSplitButton _:
+                    SetStatusbarText(text: ((ToolStripSplitButton)sender).AccessibleDescription);
+                    break;*/
+                case ToolStripSeparator _:
+                    SetStatusbarText(text: ((ToolStripSeparator)sender).AccessibleDescription);
+                    break;
+                /*case ToolStripStatusLabel _:
+                    SetStatusbarText(text: ((ToolStripStatusLabel)sender).AccessibleDescription);
+                    break;*/
+                case ToolStripTextBox _:
+                    SetStatusbarText(text: ((ToolStripTextBox)sender).AccessibleDescription);
                     break;
             }
-            SetStatusbarText(text: text);
         }
 
         #endregion

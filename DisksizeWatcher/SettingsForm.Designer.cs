@@ -71,7 +71,7 @@
             this.buttonApply.Location = new System.Drawing.Point(12, 59);
             this.buttonApply.Name = "buttonApply";
             this.buttonApply.Size = new System.Drawing.Size(75, 23);
-            this.buttonApply.TabIndex = 4;
+            this.buttonApply.TabIndex = 2;
             this.buttonApply.Text = "&Apply";
             this.buttonApply.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip.SetToolTip(this.buttonApply, "Apply the settings");
@@ -92,7 +92,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(93, 59);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.TabIndex = 3;
             this.buttonCancel.Text = "&Cancel";
             this.buttonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -116,7 +116,7 @@
             this.statusStrip.ShowItemToolTips = true;
             this.statusStrip.Size = new System.Drawing.Size(181, 22);
             this.statusStrip.SizingGrip = false;
-            this.statusStrip.TabIndex = 6;
+            this.statusStrip.TabIndex = 4;
             this.statusStrip.TabStop = true;
             this.statusStrip.Text = "statusStrip";
             this.toolTip.SetToolTip(this.statusStrip, "Show the status bar");
