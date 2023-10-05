@@ -107,7 +107,7 @@ namespace DisksizeWatcher
             this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelProductName.Name = "labelProductName";
             this.labelProductName.Size = new System.Drawing.Size(186, 13);
-            this.labelProductName.TabIndex = 19;
+            this.labelProductName.TabIndex = 0;
             this.labelProductName.Text = "Product name";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip.SetToolTip(this.labelProductName, "Product name");
@@ -128,7 +128,7 @@ namespace DisksizeWatcher
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(186, 13);
-            this.labelVersion.TabIndex = 0;
+            this.labelVersion.TabIndex = 1;
             this.labelVersion.Text = "Version";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip.SetToolTip(this.labelVersion, "Version");
@@ -149,7 +149,7 @@ namespace DisksizeWatcher
             this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(186, 13);
-            this.labelCopyright.TabIndex = 21;
+            this.labelCopyright.TabIndex = 2;
             this.labelCopyright.Text = "Copyright";
             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip.SetToolTip(this.labelCopyright, "Copyright");
@@ -170,7 +170,7 @@ namespace DisksizeWatcher
             this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelCompanyName.Name = "labelCompanyName";
             this.labelCompanyName.Size = new System.Drawing.Size(186, 13);
-            this.labelCompanyName.TabIndex = 22;
+            this.labelCompanyName.TabIndex = 3;
             this.labelCompanyName.Text = "Company name";
             this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip.SetToolTip(this.labelCompanyName, "Copyright name");
@@ -192,7 +192,7 @@ namespace DisksizeWatcher
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxDescription.Size = new System.Drawing.Size(186, 45);
-            this.textBoxDescription.TabIndex = 23;
+            this.textBoxDescription.TabIndex = 4;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = "Description";
             this.toolTip.SetToolTip(this.textBoxDescription, "Description");
@@ -214,7 +214,7 @@ namespace DisksizeWatcher
             this.okButton.Location = new System.Drawing.Point(162, 115);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 24;
+            this.okButton.TabIndex = 5;
             this.okButton.Text = "&OK";
             this.okButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.okButton.Enter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -236,7 +236,7 @@ namespace DisksizeWatcher
             this.statusStrip.ShowItemToolTips = true;
             this.statusStrip.Size = new System.Drawing.Size(240, 22);
             this.statusStrip.SizingGrip = false;
-            this.statusStrip.TabIndex = 7;
+            this.statusStrip.TabIndex = 0;
             this.statusStrip.TabStop = true;
             this.statusStrip.Text = "statusStrip";
             this.toolTip.SetToolTip(this.statusStrip, "Show the status bar");

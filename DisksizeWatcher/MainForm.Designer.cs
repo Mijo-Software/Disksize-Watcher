@@ -637,7 +637,7 @@
             this.statusStrip.ShowItemToolTips = true;
             this.statusStrip.Size = new System.Drawing.Size(272, 22);
             this.statusStrip.SizingGrip = false;
-            this.statusStrip.TabIndex = 15;
+            this.statusStrip.TabIndex = 0;
             this.statusStrip.TabStop = true;
             this.statusStrip.Text = "statusStrip";
             this.toolTip.SetToolTip(this.statusStrip, "Show the status bar");

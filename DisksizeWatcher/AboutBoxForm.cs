@@ -1,12 +1,17 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
+﻿using MijoSoftware.AssemblyInformation;
+using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace DisksizeWatcher
 {
     partial class AboutBoxForm : Form
     {
+        /// <summary>
+		/// Culture info
+		/// </summary>
+		private static readonly CultureInfo culture = CultureInfo.CurrentUICulture;
+
         /// <summary>
         /// Set a specific text to the status bar
         /// </summary>
@@ -20,93 +25,13 @@ namespace DisksizeWatcher
         public AboutBoxForm()
         {
             InitializeComponent();
-            Text = $"Info about {AssemblyTitle}";
-            labelProductName.Text = AssemblyProduct;
-            labelVersion.Text = $"Version {AssemblyVersion}";
-            labelCopyright.Text = AssemblyCopyright;
-            labelCompanyName.Text = AssemblyCompany;
-            textBoxDescription.Text = AssemblyDescription;
+            Text = string.Format(provider: culture, format: "Info about {0}", args: AssemblyInfo.AssemblyTitle);
+            labelProductName.Text = AssemblyInfo.AssemblyProduct;
+            labelVersion.Text = AssemblyInfo.AssemblyVersion;
+            labelCompanyName.Text = AssemblyInfo.AssemblyCompany;
+            labelCopyright.Text = AssemblyInfo.AssemblyCopyright;
+            textBoxDescription.Text = AssemblyInfo.AssemblyDescription;
         }
-
-        #region Assemblyattributaccessoren
-
-        public string AssemblyTitle
-        {
-            get
-            {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
-                if (attributes.Length > 0)
-                {
-                    AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-                    if (titleAttribute.Title != string.Empty)
-                    {
-                        return titleAttribute.Title;
-                    }
-                }
-                return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
-            }
-        }
-
-        public string AssemblyVersion
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
-
-        public string AssemblyDescription
-        {
-            get
-            {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
-            }
-        }
-
-        public string AssemblyProduct
-        {
-            get
-            {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-                return ((AssemblyProductAttribute)attributes[0]).Product;
-            }
-        }
-
-        public string AssemblyCopyright
-        {
-            get
-            {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
-            }
-        }
-
-        public string AssemblyCompany
-        {
-            get
-            {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-                return ((AssemblyCompanyAttribute)attributes[0]).Company;
-            }
-        }
-        #endregion
 
         /// <summary>
         /// Load the form
@@ -114,7 +39,7 @@ namespace DisksizeWatcher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void AboutBoxForm_Load(object sender, System.EventArgs e) => SetStatusbarText(text: string.Empty);
+        private void AboutBoxForm_Load(object sender, EventArgs e) => SetStatusbarText(text: string.Empty);
 
         /// <summary>
         /// Detect the accessibility description to set as information text in the status bar
@@ -124,26 +49,69 @@ namespace DisksizeWatcher
         /// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
         private void SetStatusbar_Enter(object sender, EventArgs e)
         {
-            string text = string.Empty;
             switch (sender)
             {
-                case Control control:
-                    text = control.AccessibleDescription;
+                case TextBox _:
+                    SetStatusbarText(text: ((TextBox)sender).AccessibleDescription);
                     break;
-                case ToolStripSplitButton toolStripSplitButton:
-                    text = toolStripSplitButton.AccessibleDescription;
+                case Button _:
+                    SetStatusbarText(text: ((Button)sender).AccessibleDescription);
                     break;
-                case ToolStripButton toolStripButton:
-                    text = toolStripButton.AccessibleDescription;
+                case RadioButton _:
+                    SetStatusbarText(text: ((RadioButton)sender).AccessibleDescription);
                     break;
-                case ToolStripLabel toolStripLabel:
-                    text = toolStripLabel.AccessibleDescription;
+                case CheckBox _:
+                    SetStatusbarText(text: ((CheckBox)sender).AccessibleDescription);
                     break;
-                case ToolStripMenuItem toolStripMenuItem:
-                    text = toolStripMenuItem.AccessibleDescription;
+                case DateTimePicker _:
+                    SetStatusbarText(text: ((DateTimePicker)sender).AccessibleDescription);
+                    break;
+                case Label _:
+                    SetStatusbarText(text: ((Label)sender).AccessibleDescription);
+                    break;
+                case PictureBox _:
+                    SetStatusbarText(text: ((PictureBox)sender).AccessibleDescription);
+                    break;
+                case ToolStripButton _:
+                    SetStatusbarText(text: ((ToolStripButton)sender).AccessibleDescription);
+                    break;
+                case ToolStripMenuItem _:
+                    SetStatusbarText(text: ((ToolStripMenuItem)sender).AccessibleDescription);
+                    break;
+                case ToolStripLabel _:
+                    SetStatusbarText(text: ((ToolStripLabel)sender).AccessibleDescription);
+                    break;
+                case ToolStripComboBox _:
+                    SetStatusbarText(text: ((ToolStripComboBox)sender).AccessibleDescription);
+                    break;
+                case ToolStripDropDown _:
+                    SetStatusbarText(text: ((ToolStripDropDown)sender).AccessibleDescription);
+                    break;
+                case ToolStripDropDownButton _:
+                    SetStatusbarText(text: ((ToolStripDropDownButton)sender).AccessibleDescription);
+                    break;
+                case ToolStripDropDownItem _:
+                    SetStatusbarText(text: ((ToolStripDropDownItem)sender).AccessibleDescription);
+                    break;
+                /*case ToolStripDropDownMenu _:
+                    SetStatusbarText(text: ((ToolStripDropDownMenu)sender).AccessibleDescription);
+                    break;*/
+                case ToolStripProgressBar _:
+                    SetStatusbarText(text: ((ToolStripProgressBar)sender).AccessibleDescription);
+                    break;
+                /*case ToolStripSplitButton _:
+                    SetStatusbarText(text: ((ToolStripSplitButton)sender).AccessibleDescription);
+                    break;*/
+                case ToolStripSeparator _:
+                    SetStatusbarText(text: ((ToolStripSeparator)sender).AccessibleDescription);
+                    break;
+                /*case ToolStripStatusLabel _:
+                    SetStatusbarText(text: ((ToolStripStatusLabel)sender).AccessibleDescription);
+                    break;*/
+                case ToolStripTextBox _:
+                    SetStatusbarText(text: ((ToolStripTextBox)sender).AccessibleDescription);
                     break;
             }
-            SetStatusbarText(text: text);
         }
 
         /// <summary>
