@@ -176,6 +176,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Disksize-Watcher_logo.ico" />
+    <None Include="Resources\thousand-separator-16.png" />
+    <None Include="Resources\decimal-separator-16.png" />
+    <None Include="Resources\value-terabyte-16.png" />
+    <None Include="Resources\value-pentabyte-16.png" />
+    <None Include="Resources\value-megabyte-16.png" />
+    <None Include="Resources\value-kilobyte-16.png" />
+    <None Include="Resources\value-gigabyte-16.png" />
+    <None Include="Resources\value-byte-16.png" />
     <None Include="Resources\fatcow-tick-octagon-16.png" />
     <None Include="Resources\fatcow-drive-network-16.png" />
     <None Include="Resources\fatcow-drive-disk-16.png" />

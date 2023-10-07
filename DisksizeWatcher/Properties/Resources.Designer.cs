@@ -72,6 +72,16 @@ namespace DisksizeWatcher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap decimal_separator_16 {
+            get {
+                object obj = ResourceManager.GetObject("decimal_separator_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fatcow_cancel_16 {
             get {
                 object obj = ResourceManager.GetObject("fatcow-cancel-16", resourceCulture);
@@ -187,6 +197,60 @@ namespace DisksizeWatcher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die F0 ähnelt.
+        /// </summary>
+        internal static string numberformatF0 {
+            get {
+                return ResourceManager.GetString("numberformatF0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die F1 ähnelt.
+        /// </summary>
+        internal static string numberformatF1 {
+            get {
+                return ResourceManager.GetString("numberformatF1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die F2 ähnelt.
+        /// </summary>
+        internal static string numberformatF2 {
+            get {
+                return ResourceManager.GetString("numberformatF2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die F3 ähnelt.
+        /// </summary>
+        internal static string numberformatF3 {
+            get {
+                return ResourceManager.GetString("numberformatF3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die F4 ähnelt.
+        /// </summary>
+        internal static string numberformatF4 {
+            get {
+                return ResourceManager.GetString("numberformatF4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die F5 ähnelt.
+        /// </summary>
+        internal static string numberformatF5 {
+            get {
+                return ResourceManager.GetString("numberformatF5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die F6 ähnelt.
         /// </summary>
         internal static string numberformatF6 {
@@ -205,6 +269,69 @@ namespace DisksizeWatcher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die N0 ähnelt.
+        /// </summary>
+        internal static string numberformatN0 {
+            get {
+                return ResourceManager.GetString("numberformatN0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die N1 ähnelt.
+        /// </summary>
+        internal static string numberformatN1 {
+            get {
+                return ResourceManager.GetString("numberformatN1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die N2 ähnelt.
+        /// </summary>
+        internal static string numberformatN2 {
+            get {
+                return ResourceManager.GetString("numberformatN2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die N3 ähnelt.
+        /// </summary>
+        internal static string numberformatN3 {
+            get {
+                return ResourceManager.GetString("numberformatN3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die N4 ähnelt.
+        /// </summary>
+        internal static string numberformatN4 {
+            get {
+                return ResourceManager.GetString("numberformatN4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die N5 ähnelt.
+        /// </summary>
+        internal static string numberformatN5 {
+            get {
+                return ResourceManager.GetString("numberformatN5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die N6 ähnelt.
+        /// </summary>
+        internal static string numberformatN6 {
+            get {
+                return ResourceManager.GetString("numberformatN6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die pentabytes ähnelt.
         /// </summary>
         internal static string pentabytes {
@@ -219,6 +346,76 @@ namespace DisksizeWatcher.Properties {
         internal static string terabytes {
             get {
                 return ResourceManager.GetString("terabytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thousand_separator_16 {
+            get {
+                object obj = ResourceManager.GetObject("thousand_separator_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap value_byte_16 {
+            get {
+                object obj = ResourceManager.GetObject("value-byte-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap value_gigabyte_16 {
+            get {
+                object obj = ResourceManager.GetObject("value-gigabyte-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap value_kilobyte_16 {
+            get {
+                object obj = ResourceManager.GetObject("value-kilobyte-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap value_megabyte_16 {
+            get {
+                object obj = ResourceManager.GetObject("value-megabyte-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap value_pentabyte_16 {
+            get {
+                object obj = ResourceManager.GetObject("value-pentabyte-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap value_terabyte_16 {
+            get {
+                object obj = ResourceManager.GetObject("value-terabyte-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -51,65 +51,101 @@ namespace DisksizeWatcher
         {
             switch (sender)
             {
-                case TextBox _:
-                    SetStatusbarText(text: ((TextBox)sender).AccessibleDescription);
+                case TextBox textBox:
+                    SetStatusbarText(text: textBox.AccessibleDescription);
                     break;
-                case Button _:
-                    SetStatusbarText(text: ((Button)sender).AccessibleDescription);
+                case Button button:
+                    SetStatusbarText(text: button.AccessibleDescription);
                     break;
-                case RadioButton _:
-                    SetStatusbarText(text: ((RadioButton)sender).AccessibleDescription);
+                case RadioButton radioButton:
+                    SetStatusbarText(text: radioButton.AccessibleDescription);
                     break;
-                case CheckBox _:
-                    SetStatusbarText(text: ((CheckBox)sender).AccessibleDescription);
+                case CheckBox checkBox:
+                    SetStatusbarText(text: checkBox.AccessibleDescription);
                     break;
-                case DateTimePicker _:
-                    SetStatusbarText(text: ((DateTimePicker)sender).AccessibleDescription);
+                case DateTimePicker dateTimePicker:
+                    SetStatusbarText(text: dateTimePicker.AccessibleDescription);
                     break;
-                case Label _:
-                    SetStatusbarText(text: ((Label)sender).AccessibleDescription);
+                case Label label:
+                    SetStatusbarText(text: label.AccessibleDescription);
                     break;
-                case PictureBox _:
-                    SetStatusbarText(text: ((PictureBox)sender).AccessibleDescription);
+                case PictureBox pictureBox:
+                    SetStatusbarText(text: pictureBox.AccessibleDescription);
                     break;
-                case ToolStripButton _:
-                    SetStatusbarText(text: ((ToolStripButton)sender).AccessibleDescription);
+                case CheckedListBox checkedListBox:
+                    SetStatusbarText(text: checkedListBox.AccessibleDescription);
                     break;
-                case ToolStripMenuItem _:
-                    SetStatusbarText(text: ((ToolStripMenuItem)sender).AccessibleDescription);
+                case ComboBox box:
+                    SetStatusbarText(text: box.AccessibleDescription);
                     break;
-                case ToolStripLabel _:
-                    SetStatusbarText(text: ((ToolStripLabel)sender).AccessibleDescription);
+                case DataGridView view:
+                    SetStatusbarText(text: view.AccessibleDescription);
                     break;
-                case ToolStripComboBox _:
-                    SetStatusbarText(text: ((ToolStripComboBox)sender).AccessibleDescription);
+                case GroupBox group:
+                    SetStatusbarText(text: group.AccessibleDescription);
                     break;
-                case ToolStripDropDown _:
-                    SetStatusbarText(text: ((ToolStripDropDown)sender).AccessibleDescription);
+                case ListBox box:
+                    SetStatusbarText(text: box.AccessibleDescription);
                     break;
-                case ToolStripDropDownButton _:
-                    SetStatusbarText(text: ((ToolStripDropDownButton)sender).AccessibleDescription);
+                case ListView view:
+                    SetStatusbarText(text: view.AccessibleDescription);
                     break;
-                case ToolStripDropDownItem _:
-                    SetStatusbarText(text: ((ToolStripDropDownItem)sender).AccessibleDescription);
+                case MaskedTextBox box:
+                    SetStatusbarText(text: box.AccessibleDescription);
                     break;
-                /*case ToolStripDropDownMenu _:
-                    SetStatusbarText(text: ((ToolStripDropDownMenu)sender).AccessibleDescription);
-                    break;*/
-                case ToolStripProgressBar _:
-                    SetStatusbarText(text: ((ToolStripProgressBar)sender).AccessibleDescription);
+                case NumericUpDown numericUpDown:
+                    SetStatusbarText(text: numericUpDown.AccessibleDescription);
                     break;
-                /*case ToolStripSplitButton _:
-                    SetStatusbarText(text: ((ToolStripSplitButton)sender).AccessibleDescription);
-                    break;*/
-                case ToolStripSeparator _:
-                    SetStatusbarText(text: ((ToolStripSeparator)sender).AccessibleDescription);
+                case MonthCalendar monthCalendar:
+                    SetStatusbarText(text: monthCalendar.AccessibleDescription);
                     break;
-                /*case ToolStripStatusLabel _:
-                    SetStatusbarText(text: ((ToolStripStatusLabel)sender).AccessibleDescription);
-                    break;*/
-                case ToolStripTextBox _:
-                    SetStatusbarText(text: ((ToolStripTextBox)sender).AccessibleDescription);
+                case PropertyGrid propertyGrid:
+                    SetStatusbarText(text: propertyGrid.AccessibleDescription);
+                    break;
+                case RichTextBox richTextBox:
+                    SetStatusbarText(text: richTextBox.AccessibleDescription);
+                    break;
+                case ScrollBar scrollBar:
+                    SetStatusbarText(text: scrollBar.AccessibleDescription);
+                    break;
+                case TrackBar trackBar:
+                    SetStatusbarText(text: trackBar.AccessibleDescription);
+                    break;
+                case WebBrowser webBrowser:
+                    SetStatusbarText(text: webBrowser.AccessibleDescription);
+                    break;
+                case DomainUpDown domainUpDown:
+                    SetStatusbarText(text: domainUpDown.AccessibleDescription);
+                    break;
+                case ToolStripButton toolStripButton:
+                    SetStatusbarText(text: toolStripButton.AccessibleDescription);
+                    break;
+                case ToolStripMenuItem toolStripMenuItem:
+                    SetStatusbarText(text: toolStripMenuItem.AccessibleDescription);
+                    break;
+                case ToolStripLabel toolStripLabel:
+                    SetStatusbarText(text: toolStripLabel.AccessibleDescription);
+                    break;
+                case ToolStripComboBox toolStripComboBox:
+                    SetStatusbarText(text: toolStripComboBox.AccessibleDescription);
+                    break;
+                case ToolStripDropDown toolStripDropDown:
+                    SetStatusbarText(text: toolStripDropDown.AccessibleDescription);
+                    break;
+                case ToolStripDropDownButton toolStripDropDownButton:
+                    SetStatusbarText(text: toolStripDropDownButton.AccessibleDescription);
+                    break;
+                case ToolStripDropDownItem toolStripDropDownItem:
+                    SetStatusbarText(text: toolStripDropDownItem.AccessibleDescription);
+                    break;
+                case ToolStripProgressBar progressBar:
+                    SetStatusbarText(text: progressBar.AccessibleDescription);
+                    break;
+                case ToolStripSeparator toolStripSeparator:
+                    SetStatusbarText(text: toolStripSeparator.AccessibleDescription);
+                    break;
+                case ToolStripTextBox toolStripTextBox:
+                    SetStatusbarText(text: toolStripTextBox.AccessibleDescription);
                     break;
             }
         }
