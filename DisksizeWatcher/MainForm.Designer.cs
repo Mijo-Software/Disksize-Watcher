@@ -36,32 +36,11 @@
             this.textBoxSpaceTotal = new System.Windows.Forms.TextBox();
             this.labelSpaceTotal = new System.Windows.Forms.Label();
             this.labelSpaceFreeUnit = new System.Windows.Forms.Label();
-            this.contextMenuStripFreeSpaceUnits = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemFreeSpaceUnitByte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemFreeSpaceUnitKilobyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemFreeSpaceUnitMegabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemFreeSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemFreeSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemFreeSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
             this.labelSpaceTotalUnit = new System.Windows.Forms.Label();
-            this.contextMenuStripTotalSpaceUnits = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemTotalSpaceUnitByte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemTotalSpaceUnitKilobyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemTotalSpaceUnitMegabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemTotalSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemTotalSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemTotalSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
             this.labelSpacePercentage = new System.Windows.Forms.Label();
             this.progressBarPercentage = new System.Windows.Forms.ProgressBar();
             this.labelSpacePercentageValue = new System.Windows.Forms.Label();
             this.labelSpaceUsedUnit = new System.Windows.Forms.Label();
-            this.contextMenuStripUsedSpaceUnits = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemUsedSpaceUnitByte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemUsedSpaceUnitKilobyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemUsedSpaceUnitMegabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemUsedSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemUsedSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemUsedSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxSpaceUsed = new System.Windows.Forms.TextBox();
             this.labelSpaceUsed = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -73,22 +52,28 @@
             this.labelSpaceDiff = new System.Windows.Forms.Label();
             this.textBoxSpaceDiff = new System.Windows.Forms.TextBox();
             this.labelSpaceDiffUnit = new System.Windows.Forms.Label();
-            this.contextMenuStripDiffSpaceUnits = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemDiffSpaceUnitByte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDiffSpaceUnitKilobyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDiffSpaceUnitMegabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDiffSpaceUnitGigabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDiffSpaceUnitTerabyte = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDiffSpaceUnitPentabyte = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSystemWatcher = new System.IO.FileSystemWatcher();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
-            this.contextMenuStripFreeSpaceUnits.SuspendLayout();
-            this.contextMenuStripTotalSpaceUnits.SuspendLayout();
-            this.contextMenuStripUsedSpaceUnits.SuspendLayout();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonShowValueInByte = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonShowValueInKilobyte = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonShowValueInMegabyte = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonShowValueInGigabyte = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonShowValueInTerabyte = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonShowValueInPentabyte = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonThousandSeparator = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButtonDecimalSeparator = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItemDecimalSeparatorTo0 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDecimalSeparatorTo1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDecimalSeparatorTo2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDecimalSeparatorTo3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDecimalSeparatorTo4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDecimalSeparatorTo5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDecimalSeparatorTo6 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
-            this.contextMenuStripDiffSpaceUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).BeginInit();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -180,120 +165,17 @@
             this.labelSpaceFreeUnit.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceFreeUnit.AutoEllipsis = true;
             this.labelSpaceFreeUnit.AutoSize = true;
-            this.labelSpaceFreeUnit.ContextMenuStrip = this.contextMenuStripFreeSpaceUnits;
-            this.labelSpaceFreeUnit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelSpaceFreeUnit.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelSpaceFreeUnit.Location = new System.Drawing.Point(191, 36);
             this.labelSpaceFreeUnit.Name = "labelSpaceFreeUnit";
             this.labelSpaceFreeUnit.Size = new System.Drawing.Size(32, 13);
             this.labelSpaceFreeUnit.TabIndex = 5;
             this.labelSpaceFreeUnit.Text = "bytes";
             this.toolTip.SetToolTip(this.labelSpaceFreeUnit, "Show the unit of the free space");
-            this.labelSpaceFreeUnit.Click += new System.EventHandler(this.LabelSpaceFreeUnit_Click);
             this.labelSpaceFreeUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelSpaceFreeUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.labelSpaceFreeUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelSpaceFreeUnit.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // contextMenuStripFreeSpaceUnits
-            // 
-            this.contextMenuStripFreeSpaceUnits.AccessibleDescription = "Show the units of the free space as context menu";
-            this.contextMenuStripFreeSpaceUnits.AccessibleName = "units of the free space";
-            this.contextMenuStripFreeSpaceUnits.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
-            this.contextMenuStripFreeSpaceUnits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemFreeSpaceUnitByte,
-            this.toolStripMenuItemFreeSpaceUnitKilobyte,
-            this.toolStripMenuItemFreeSpaceUnitMegabyte,
-            this.toolStripMenuItemFreeSpaceUnitGigabyte,
-            this.toolStripMenuItemFreeSpaceUnitTerabyte,
-            this.toolStripMenuItemFreeSpaceUnitPentabyte});
-            this.contextMenuStripFreeSpaceUnits.Name = "toolStripMenuItemFreeSpaceUnitMegabyte";
-            this.contextMenuStripFreeSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStripFreeSpaceUnits.Size = new System.Drawing.Size(128, 136);
-            this.contextMenuStripFreeSpaceUnits.TabStop = true;
-            this.contextMenuStripFreeSpaceUnits.Text = "Units of the free space";
-            this.toolTip.SetToolTip(this.contextMenuStripFreeSpaceUnits, "Show the units of the free space as context menu");
-            this.contextMenuStripFreeSpaceUnits.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.contextMenuStripFreeSpaceUnits.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemFreeSpaceUnitByte
-            // 
-            this.toolStripMenuItemFreeSpaceUnitByte.AccessibleDescription = "Choose byte as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitByte.AccessibleName = "value \'byte\' as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitByte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemFreeSpaceUnitByte.AutoToolTip = true;
-            this.toolStripMenuItemFreeSpaceUnitByte.Checked = true;
-            this.toolStripMenuItemFreeSpaceUnitByte.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toolStripMenuItemFreeSpaceUnitByte.Name = "toolStripMenuItemFreeSpaceUnitByte";
-            this.toolStripMenuItemFreeSpaceUnitByte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemFreeSpaceUnitByte.Text = "&byte";
-            this.toolStripMenuItemFreeSpaceUnitByte.Click += new System.EventHandler(this.ToolStripMenuItemFreeSpaceUnitByte_Click);
-            this.toolStripMenuItemFreeSpaceUnitByte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemFreeSpaceUnitByte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemFreeSpaceUnitKilobyte
-            // 
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.AccessibleDescription = "Choose kilobyte as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.AccessibleName = "value \'kilobyte\' as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.AutoToolTip = true;
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.Name = "toolStripMenuItemFreeSpaceUnitKilobyte";
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.Text = "&kilobyte";
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.Click += new System.EventHandler(this.ToolStripMenuItemFreeSpaceUnitKilobyte_Click);
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemFreeSpaceUnitKilobyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemFreeSpaceUnitMegabyte
-            // 
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.AccessibleDescription = "Choose megabyte as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.AccessibleName = "value \'megabyte\' as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.AutoToolTip = true;
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.Name = "toolStripMenuItemFreeSpaceUnitMegabyte";
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.Text = "&megabyte";
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.Click += new System.EventHandler(this.ToolStripMenuItemFreeSpaceUnitMegabyte_Click);
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemFreeSpaceUnitMegabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemFreeSpaceUnitGigabyte
-            // 
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.AccessibleDescription = "Choose gigabyte as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.AccessibleName = "value \'gigabyte\' as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.AutoToolTip = true;
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.Name = "toolStripMenuItemFreeSpaceUnitGigabyte";
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.Text = "&gigabyte";
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.Click += new System.EventHandler(this.ToolStripMenuItemFreeSpaceUnitGigabyte_Click);
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemFreeSpaceUnitGigabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemFreeSpaceUnitTerabyte
-            // 
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.AccessibleDescription = "Choose terabyte as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.AccessibleName = "value \'terabyte\' as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.AutoToolTip = true;
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.Name = "toolStripMenuItemFreeSpaceUnitTerabyte";
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.Text = "&terabyte";
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.Click += new System.EventHandler(this.ToolStripMenuItemFreeSpaceUnitTerabyte_Click);
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemFreeSpaceUnitTerabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemFreeSpaceUnitPentabyte
-            // 
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.AccessibleDescription = "Choose pentabyte as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.AccessibleName = "value \'pentabyte\' as unit for the free space";
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.AutoToolTip = true;
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.Name = "toolStripMenuItemFreeSpaceUnitPentabyte";
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.Text = "&pentabyte";
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.Click += new System.EventHandler(this.ToolStripMenuItemFreeSpaceUnitPentabyte_Click);
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemFreeSpaceUnitPentabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSpaceTotalUnit
             // 
@@ -302,120 +184,17 @@
             this.labelSpaceTotalUnit.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceTotalUnit.AutoEllipsis = true;
             this.labelSpaceTotalUnit.AutoSize = true;
-            this.labelSpaceTotalUnit.ContextMenuStrip = this.contextMenuStripTotalSpaceUnits;
-            this.labelSpaceTotalUnit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelSpaceTotalUnit.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelSpaceTotalUnit.Location = new System.Drawing.Point(191, 62);
             this.labelSpaceTotalUnit.Name = "labelSpaceTotalUnit";
             this.labelSpaceTotalUnit.Size = new System.Drawing.Size(32, 13);
             this.labelSpaceTotalUnit.TabIndex = 8;
             this.labelSpaceTotalUnit.Text = "bytes";
             this.toolTip.SetToolTip(this.labelSpaceTotalUnit, "Show the unit of the total space");
-            this.labelSpaceTotalUnit.Click += new System.EventHandler(this.LabelSpaceTotalUnit_Click);
             this.labelSpaceTotalUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelSpaceTotalUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.labelSpaceTotalUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelSpaceTotalUnit.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // contextMenuStripTotalSpaceUnits
-            // 
-            this.contextMenuStripTotalSpaceUnits.AccessibleDescription = "Show the units of the total space as context menu";
-            this.contextMenuStripTotalSpaceUnits.AccessibleName = "units of the total space";
-            this.contextMenuStripTotalSpaceUnits.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.contextMenuStripTotalSpaceUnits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemTotalSpaceUnitByte,
-            this.toolStripMenuItemTotalSpaceUnitKilobyte,
-            this.toolStripMenuItemTotalSpaceUnitMegabyte,
-            this.toolStripMenuItemTotalSpaceUnitGigabyte,
-            this.toolStripMenuItemTotalSpaceUnitTerabyte,
-            this.toolStripMenuItemTotalSpaceUnitPentabyte});
-            this.contextMenuStripTotalSpaceUnits.Name = "contextMenuStripUsedTotalUnits";
-            this.contextMenuStripTotalSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStripTotalSpaceUnits.Size = new System.Drawing.Size(128, 136);
-            this.contextMenuStripTotalSpaceUnits.TabStop = true;
-            this.contextMenuStripTotalSpaceUnits.Text = "units of the total space";
-            this.toolTip.SetToolTip(this.contextMenuStripTotalSpaceUnits, "Show the units of the total space as context menu");
-            this.contextMenuStripTotalSpaceUnits.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.contextMenuStripTotalSpaceUnits.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemTotalSpaceUnitByte
-            // 
-            this.toolStripMenuItemTotalSpaceUnitByte.AccessibleDescription = "Choose byte as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitByte.AccessibleName = "value \'byte\' as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitByte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemTotalSpaceUnitByte.AutoToolTip = true;
-            this.toolStripMenuItemTotalSpaceUnitByte.Checked = true;
-            this.toolStripMenuItemTotalSpaceUnitByte.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toolStripMenuItemTotalSpaceUnitByte.Name = "toolStripMenuItemTotalSpaceUnitByte";
-            this.toolStripMenuItemTotalSpaceUnitByte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemTotalSpaceUnitByte.Text = "&byte";
-            this.toolStripMenuItemTotalSpaceUnitByte.Click += new System.EventHandler(this.ToolStripMenuItemTotalSpaceUnitByte_Click);
-            this.toolStripMenuItemTotalSpaceUnitByte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemTotalSpaceUnitByte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemTotalSpaceUnitKilobyte
-            // 
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.AccessibleDescription = "Choose kilobyte as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.AccessibleName = "value \'kilobyte\' as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.AutoToolTip = true;
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.Name = "toolStripMenuItemTotalSpaceUnitKilobyte";
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.Text = "&kilobyte";
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.Click += new System.EventHandler(this.ToolStripMenuItemTotalSpaceUnitKilobyte_Click);
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemTotalSpaceUnitKilobyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemTotalSpaceUnitMegabyte
-            // 
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.AccessibleDescription = "Choose megabyte as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.AccessibleName = "value \'megabyte\' as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.AutoToolTip = true;
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.Name = "toolStripMenuItemTotalSpaceUnitMegabyte";
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.Text = "&megabyte";
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.Click += new System.EventHandler(this.ToolStripMenuItemTotalSpaceUnitMegabyte_Click);
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemTotalSpaceUnitMegabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemTotalSpaceUnitGigabyte
-            // 
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.AccessibleDescription = "Choose gigabyte as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.AccessibleName = "value \'gigabyte\' as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.AutoToolTip = true;
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.Name = "toolStripMenuItemTotalSpaceUnitGigabyte";
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.Text = "&gigabyte";
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.Click += new System.EventHandler(this.ToolStripMenuItemTotalSpaceUnitGigabyte_Click);
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemTotalSpaceUnitGigabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemTotalSpaceUnitTerabyte
-            // 
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.AccessibleDescription = "Choose terabyte as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.AccessibleName = "value \'terabyte\' as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.AutoToolTip = true;
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.Name = "toolStripMenuItemTotalSpaceUnitTerabyte";
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.Text = "&terabyte";
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.Click += new System.EventHandler(this.ToolStripMenuItemTotalSpaceUnitTerabyte_Click);
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemTotalSpaceUnitTerabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemTotalSpaceUnitPentabyte
-            // 
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.AccessibleDescription = "Choose pentabyte as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.AccessibleName = "value \'pentabyte\' as unit for the total space";
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.AutoToolTip = true;
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.Name = "toolStripMenuItemTotalSpaceUnitPentabyte";
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.Text = "&pentabyte";
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.Click += new System.EventHandler(this.ToolStripMenuItemTotalSpaceUnitPentabyte_Click);
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemTotalSpaceUnitPentabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSpacePercentage
             // 
@@ -473,119 +252,17 @@
             this.labelSpaceUsedUnit.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceUsedUnit.AutoEllipsis = true;
             this.labelSpaceUsedUnit.AutoSize = true;
-            this.labelSpaceUsedUnit.ContextMenuStrip = this.contextMenuStripUsedSpaceUnits;
-            this.labelSpaceUsedUnit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelSpaceUsedUnit.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelSpaceUsedUnit.Location = new System.Drawing.Point(191, 10);
             this.labelSpaceUsedUnit.Name = "labelSpaceUsedUnit";
             this.labelSpaceUsedUnit.Size = new System.Drawing.Size(32, 13);
             this.labelSpaceUsedUnit.TabIndex = 2;
             this.labelSpaceUsedUnit.Text = "bytes";
             this.toolTip.SetToolTip(this.labelSpaceUsedUnit, "Show the unit of the used space");
-            this.labelSpaceUsedUnit.Click += new System.EventHandler(this.LabelSpaceUsedUnit_Click);
             this.labelSpaceUsedUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelSpaceUsedUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.labelSpaceUsedUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelSpaceUsedUnit.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // contextMenuStripUsedSpaceUnits
-            // 
-            this.contextMenuStripUsedSpaceUnits.AccessibleDescription = "Show the units of the used space as context menu";
-            this.contextMenuStripUsedSpaceUnits.AccessibleName = "units of the used space";
-            this.contextMenuStripUsedSpaceUnits.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
-            this.contextMenuStripUsedSpaceUnits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemUsedSpaceUnitByte,
-            this.toolStripMenuItemUsedSpaceUnitKilobyte,
-            this.toolStripMenuItemUsedSpaceUnitMegabyte,
-            this.toolStripMenuItemUsedSpaceUnitGigabyte,
-            this.toolStripMenuItemUsedSpaceUnitTerabyte,
-            this.toolStripMenuItemUsedSpaceUnitPentabyte});
-            this.contextMenuStripUsedSpaceUnits.Name = "unitsOfusedSpace";
-            this.contextMenuStripUsedSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStripUsedSpaceUnits.Size = new System.Drawing.Size(128, 136);
-            this.contextMenuStripUsedSpaceUnits.TabStop = true;
-            this.contextMenuStripUsedSpaceUnits.Text = "units of the used space";
-            this.contextMenuStripUsedSpaceUnits.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.contextMenuStripUsedSpaceUnits.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemUsedSpaceUnitByte
-            // 
-            this.toolStripMenuItemUsedSpaceUnitByte.AccessibleDescription = "Choose byte as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitByte.AccessibleName = "value \'byte\' as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitByte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemUsedSpaceUnitByte.AutoToolTip = true;
-            this.toolStripMenuItemUsedSpaceUnitByte.Checked = true;
-            this.toolStripMenuItemUsedSpaceUnitByte.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toolStripMenuItemUsedSpaceUnitByte.Name = "toolStripMenuItemUsedSpaceUnitByte";
-            this.toolStripMenuItemUsedSpaceUnitByte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemUsedSpaceUnitByte.Text = "&byte";
-            this.toolStripMenuItemUsedSpaceUnitByte.Click += new System.EventHandler(this.ToolStripMenuItemUsedSpaceUnitByte_Click);
-            this.toolStripMenuItemUsedSpaceUnitByte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemUsedSpaceUnitByte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemUsedSpaceUnitKilobyte
-            // 
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.AccessibleDescription = "Choose kilobyte as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.AccessibleName = "value \'kilobyte\' as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.AutoToolTip = true;
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.Name = "toolStripMenuItemUsedSpaceUnitKilobyte";
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.Text = "&kilobyte";
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.Click += new System.EventHandler(this.ToolStripMenuItemUsedSpaceUnitKilobyte_Click);
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemUsedSpaceUnitKilobyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemUsedSpaceUnitMegabyte
-            // 
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.AccessibleDescription = "Choose megabyte as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.AccessibleName = "value \'megabyte\' as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.AutoToolTip = true;
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.Name = "toolStripMenuItemUsedSpaceUnitMegabyte";
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.Text = "&megabyte";
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.Click += new System.EventHandler(this.ToolStripMenuItemUsedSpaceUnitMegabyte_Click);
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemUsedSpaceUnitMegabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemUsedSpaceUnitGigabyte
-            // 
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.AccessibleDescription = "Choose gigabyte as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.AccessibleName = "value \'gigabyte\' as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.AutoToolTip = true;
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.Name = "toolStripMenuItemUsedSpaceUnitGigabyte";
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.Text = "&gigabyte";
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.Click += new System.EventHandler(this.ToolStripMenuItemUsedSpaceUnitGigabyte_Click);
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemUsedSpaceUnitGigabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemUsedSpaceUnitTerabyte
-            // 
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.AccessibleDescription = "Choose terabyte as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.AccessibleName = "value \'terabyte\' as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.AutoToolTip = true;
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.Name = "toolStripMenuItemUsedSpaceUnitTerabyte";
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.Text = "&terabyte";
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.Click += new System.EventHandler(this.ToolStripMenuItemUsedSpaceUnitTerabyte_Click);
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemUsedSpaceUnitTerabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemUsedSpaceUnitPentabyte
-            // 
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.AccessibleDescription = "Choose pentabyte as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.AccessibleName = "value \'pentabyte\' as unit for the used space";
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.AutoToolTip = true;
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.Name = "toolStripMenuItemUsedSpaceUnitPentabyte";
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.Text = "&pentabyte";
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.Click += new System.EventHandler(this.ToolStripMenuItemUsedSpaceUnitPentabyte_Click);
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemUsedSpaceUnitPentabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSpaceUsed
             // 
@@ -747,120 +424,17 @@
             this.labelSpaceDiffUnit.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceDiffUnit.AutoEllipsis = true;
             this.labelSpaceDiffUnit.AutoSize = true;
-            this.labelSpaceDiffUnit.ContextMenuStrip = this.contextMenuStripDiffSpaceUnits;
-            this.labelSpaceDiffUnit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelSpaceDiffUnit.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelSpaceDiffUnit.Location = new System.Drawing.Point(191, 88);
             this.labelSpaceDiffUnit.Name = "labelSpaceDiffUnit";
             this.labelSpaceDiffUnit.Size = new System.Drawing.Size(32, 13);
             this.labelSpaceDiffUnit.TabIndex = 11;
             this.labelSpaceDiffUnit.Text = "bytes";
             this.toolTip.SetToolTip(this.labelSpaceDiffUnit, "Show the unit of the used space");
-            this.labelSpaceDiffUnit.Click += new System.EventHandler(this.LabelSpaceDiffUnit_Click);
             this.labelSpaceDiffUnit.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelSpaceDiffUnit.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.labelSpaceDiffUnit.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelSpaceDiffUnit.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // contextMenuStripDiffSpaceUnits
-            // 
-            this.contextMenuStripDiffSpaceUnits.AccessibleDescription = "Show the units of the diff space as context menu";
-            this.contextMenuStripDiffSpaceUnits.AccessibleName = "units of the diff space";
-            this.contextMenuStripDiffSpaceUnits.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.contextMenuStripDiffSpaceUnits.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemDiffSpaceUnitByte,
-            this.toolStripMenuItemDiffSpaceUnitKilobyte,
-            this.toolStripMenuItemDiffSpaceUnitMegabyte,
-            this.toolStripMenuItemDiffSpaceUnitGigabyte,
-            this.toolStripMenuItemDiffSpaceUnitTerabyte,
-            this.toolStripMenuItemDiffSpaceUnitPentabyte});
-            this.contextMenuStripDiffSpaceUnits.Name = "contextMenuStripUsedTotalUnits";
-            this.contextMenuStripDiffSpaceUnits.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStripDiffSpaceUnits.Size = new System.Drawing.Size(128, 136);
-            this.contextMenuStripDiffSpaceUnits.TabStop = true;
-            this.contextMenuStripDiffSpaceUnits.Text = "units of the diff space";
-            this.toolTip.SetToolTip(this.contextMenuStripDiffSpaceUnits, "Show the units of the diff space as context menu");
-            this.contextMenuStripDiffSpaceUnits.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.contextMenuStripDiffSpaceUnits.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemDiffSpaceUnitByte
-            // 
-            this.toolStripMenuItemDiffSpaceUnitByte.AccessibleDescription = "Choose byte as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitByte.AccessibleName = "value \'byte\' as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitByte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemDiffSpaceUnitByte.AutoToolTip = true;
-            this.toolStripMenuItemDiffSpaceUnitByte.Checked = true;
-            this.toolStripMenuItemDiffSpaceUnitByte.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toolStripMenuItemDiffSpaceUnitByte.Name = "toolStripMenuItemDiffSpaceUnitByte";
-            this.toolStripMenuItemDiffSpaceUnitByte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemDiffSpaceUnitByte.Text = "&byte";
-            this.toolStripMenuItemDiffSpaceUnitByte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitByte_Click);
-            this.toolStripMenuItemDiffSpaceUnitByte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemDiffSpaceUnitByte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemDiffSpaceUnitKilobyte
-            // 
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.AccessibleDescription = "Choose kilobyte as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.AccessibleName = "value \'kilobyte\' as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.AutoToolTip = true;
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.Name = "toolStripMenuItemDiffSpaceUnitKilobyte";
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.Text = "&kilobyte";
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitKilobyte_Click);
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemDiffSpaceUnitKilobyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemDiffSpaceUnitMegabyte
-            // 
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.AccessibleDescription = "Choose megabyte as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.AccessibleName = "value \'megabyte\' as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.AutoToolTip = true;
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.Name = "toolStripMenuItemDiffSpaceUnitMegabyte";
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.Text = "&megabyte";
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitMegabyte_Click);
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemDiffSpaceUnitMegabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemDiffSpaceUnitGigabyte
-            // 
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.AccessibleDescription = "Choose gigabyte as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.AccessibleName = "value \'gigabyte\' as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.AutoToolTip = true;
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.Name = "toolStripMenuItemDiffSpaceUnitGigabyte";
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.Text = "&gigabyte";
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitGigabyte_Click);
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemDiffSpaceUnitGigabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemDiffSpaceUnitTerabyte
-            // 
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.AccessibleDescription = "Choose terabyte as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.AccessibleName = "value \'terabyte\' as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.AutoToolTip = true;
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.Name = "toolStripMenuItemDiffSpaceUnitTerabyte";
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.Text = "&terabyte";
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitTerabyte_Click);
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemDiffSpaceUnitTerabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripMenuItemDiffSpaceUnitPentabyte
-            // 
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.AccessibleDescription = "Choose pentabyte as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.AccessibleName = "value \'pentabyte\' as unit for the diff space";
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.AutoToolTip = true;
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.Name = "toolStripMenuItemDiffSpaceUnitPentabyte";
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.Size = new System.Drawing.Size(127, 22);
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.Text = "&pentabyte";
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.Click += new System.EventHandler(this.ToolStripMenuItemDiffSpaceUnitPentabyte_Click);
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripMenuItemDiffSpaceUnitPentabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // fileSystemWatcher
             // 
@@ -912,7 +486,17 @@
             // 
             this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonInfo});
+            this.toolStripButtonInfo,
+            this.toolStripSeparator1,
+            this.toolStripButtonShowValueInByte,
+            this.toolStripButtonShowValueInKilobyte,
+            this.toolStripButtonShowValueInMegabyte,
+            this.toolStripButtonShowValueInGigabyte,
+            this.toolStripButtonShowValueInTerabyte,
+            this.toolStripButtonShowValueInPentabyte,
+            this.toolStripSeparator2,
+            this.toolStripButtonThousandSeparator,
+            this.toolStripDropDownButtonDecimalSeparator});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -936,6 +520,251 @@
             this.toolStripButtonInfo.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.toolStripButtonInfo.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.AccessibleDescription = "Just a separator";
+            this.toolStripSeparator1.AccessibleName = "Separator";
+            this.toolStripSeparator1.AccessibleRole = System.Windows.Forms.AccessibleRole.Separator;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButtonShowValueInByte
+            // 
+            this.toolStripButtonShowValueInByte.AccessibleDescription = "Show the value in byte";
+            this.toolStripButtonShowValueInByte.AccessibleName = "value in byte";
+            this.toolStripButtonShowValueInByte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripButtonShowValueInByte.Checked = true;
+            this.toolStripButtonShowValueInByte.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toolStripButtonShowValueInByte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonShowValueInByte.Image = global::DisksizeWatcher.Properties.Resources.value_byte_16;
+            this.toolStripButtonShowValueInByte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonShowValueInByte.Name = "toolStripButtonShowValueInByte";
+            this.toolStripButtonShowValueInByte.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonShowValueInByte.Text = "Byte";
+            this.toolStripButtonShowValueInByte.Click += new System.EventHandler(this.ToolStripButtonShowValueInByte_Click);
+            this.toolStripButtonShowValueInByte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripButtonShowValueInByte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripButtonShowValueInKilobyte
+            // 
+            this.toolStripButtonShowValueInKilobyte.AccessibleDescription = "Show the value in kilobyte";
+            this.toolStripButtonShowValueInKilobyte.AccessibleName = "value in kilobyte";
+            this.toolStripButtonShowValueInKilobyte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripButtonShowValueInKilobyte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonShowValueInKilobyte.Image = global::DisksizeWatcher.Properties.Resources.value_kilobyte_16;
+            this.toolStripButtonShowValueInKilobyte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonShowValueInKilobyte.Name = "toolStripButtonShowValueInKilobyte";
+            this.toolStripButtonShowValueInKilobyte.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonShowValueInKilobyte.Text = "Kilobyte";
+            this.toolStripButtonShowValueInKilobyte.Click += new System.EventHandler(this.ToolStripButtonShowValueInKilobyte_Click);
+            this.toolStripButtonShowValueInKilobyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripButtonShowValueInKilobyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripButtonShowValueInMegabyte
+            // 
+            this.toolStripButtonShowValueInMegabyte.AccessibleDescription = "Show the value in megabyte";
+            this.toolStripButtonShowValueInMegabyte.AccessibleName = "value in megabyte";
+            this.toolStripButtonShowValueInMegabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripButtonShowValueInMegabyte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonShowValueInMegabyte.Image = global::DisksizeWatcher.Properties.Resources.value_megabyte_16;
+            this.toolStripButtonShowValueInMegabyte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonShowValueInMegabyte.Name = "toolStripButtonShowValueInMegabyte";
+            this.toolStripButtonShowValueInMegabyte.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonShowValueInMegabyte.Text = "Megabyte";
+            this.toolStripButtonShowValueInMegabyte.Click += new System.EventHandler(this.ToolStripButtonShowValueInMegabyte_Click);
+            this.toolStripButtonShowValueInMegabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripButtonShowValueInMegabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripButtonShowValueInGigabyte
+            // 
+            this.toolStripButtonShowValueInGigabyte.AccessibleDescription = "Show the value in gigabyte";
+            this.toolStripButtonShowValueInGigabyte.AccessibleName = "value in gigabyte";
+            this.toolStripButtonShowValueInGigabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripButtonShowValueInGigabyte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonShowValueInGigabyte.Image = global::DisksizeWatcher.Properties.Resources.value_gigabyte_16;
+            this.toolStripButtonShowValueInGigabyte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonShowValueInGigabyte.Name = "toolStripButtonShowValueInGigabyte";
+            this.toolStripButtonShowValueInGigabyte.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonShowValueInGigabyte.Text = "Gigabyte";
+            this.toolStripButtonShowValueInGigabyte.Click += new System.EventHandler(this.ToolStripButtonShowValueInGigabyte_Click);
+            this.toolStripButtonShowValueInGigabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripButtonShowValueInGigabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripButtonShowValueInTerabyte
+            // 
+            this.toolStripButtonShowValueInTerabyte.AccessibleDescription = "Show the value in terabyte";
+            this.toolStripButtonShowValueInTerabyte.AccessibleName = "value in terabyte";
+            this.toolStripButtonShowValueInTerabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripButtonShowValueInTerabyte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonShowValueInTerabyte.Image = global::DisksizeWatcher.Properties.Resources.value_terabyte_16;
+            this.toolStripButtonShowValueInTerabyte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonShowValueInTerabyte.Name = "toolStripButtonShowValueInTerabyte";
+            this.toolStripButtonShowValueInTerabyte.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonShowValueInTerabyte.Text = "Terabyte";
+            this.toolStripButtonShowValueInTerabyte.Click += new System.EventHandler(this.ToolStripButtonShowValueInTerabyte_Click);
+            this.toolStripButtonShowValueInTerabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripButtonShowValueInTerabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripButtonShowValueInPentabyte
+            // 
+            this.toolStripButtonShowValueInPentabyte.AccessibleDescription = "Show the value in pentabyte";
+            this.toolStripButtonShowValueInPentabyte.AccessibleName = "value in pentabyte";
+            this.toolStripButtonShowValueInPentabyte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripButtonShowValueInPentabyte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonShowValueInPentabyte.Image = global::DisksizeWatcher.Properties.Resources.value_pentabyte_16;
+            this.toolStripButtonShowValueInPentabyte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonShowValueInPentabyte.Name = "toolStripButtonShowValueInPentabyte";
+            this.toolStripButtonShowValueInPentabyte.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonShowValueInPentabyte.Text = "Pentabyte";
+            this.toolStripButtonShowValueInPentabyte.Click += new System.EventHandler(this.ToolStripButtonShowValueInPentabyte_Click);
+            this.toolStripButtonShowValueInPentabyte.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripButtonShowValueInPentabyte.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.AccessibleDescription = "Just a separator";
+            this.toolStripSeparator2.AccessibleName = "Separator";
+            this.toolStripSeparator2.AccessibleRole = System.Windows.Forms.AccessibleRole.Separator;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButtonThousandSeparator
+            // 
+            this.toolStripButtonThousandSeparator.AccessibleDescription = "Enable or disable the thousand separator";
+            this.toolStripButtonThousandSeparator.AccessibleName = "Thousand separator";
+            this.toolStripButtonThousandSeparator.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripButtonThousandSeparator.CheckOnClick = true;
+            this.toolStripButtonThousandSeparator.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonThousandSeparator.Image = global::DisksizeWatcher.Properties.Resources.thousand_separator_16;
+            this.toolStripButtonThousandSeparator.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonThousandSeparator.Name = "toolStripButtonThousandSeparator";
+            this.toolStripButtonThousandSeparator.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonThousandSeparator.Text = "Thousand separator";
+            this.toolStripButtonThousandSeparator.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripButtonThousandSeparator.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripDropDownButtonDecimalSeparator
+            // 
+            this.toolStripDropDownButtonDecimalSeparator.AccessibleDescription = "Choose the value of the decimal separator";
+            this.toolStripDropDownButtonDecimalSeparator.AccessibleName = "Decimal separator";
+            this.toolStripDropDownButtonDecimalSeparator.AccessibleRole = System.Windows.Forms.AccessibleRole.DropList;
+            this.toolStripDropDownButtonDecimalSeparator.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButtonDecimalSeparator.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemDecimalSeparatorTo0,
+            this.toolStripMenuItemDecimalSeparatorTo1,
+            this.toolStripMenuItemDecimalSeparatorTo2,
+            this.toolStripMenuItemDecimalSeparatorTo3,
+            this.toolStripMenuItemDecimalSeparatorTo4,
+            this.toolStripMenuItemDecimalSeparatorTo5,
+            this.toolStripMenuItemDecimalSeparatorTo6});
+            this.toolStripDropDownButtonDecimalSeparator.Image = global::DisksizeWatcher.Properties.Resources.decimal_separator_16;
+            this.toolStripDropDownButtonDecimalSeparator.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonDecimalSeparator.Name = "toolStripDropDownButtonDecimalSeparator";
+            this.toolStripDropDownButtonDecimalSeparator.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButtonDecimalSeparator.Text = "Decimal separator";
+            this.toolStripDropDownButtonDecimalSeparator.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripDropDownButtonDecimalSeparator.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripMenuItemDecimalSeparatorTo0
+            // 
+            this.toolStripMenuItemDecimalSeparatorTo0.AccessibleDescription = "Set the value of the decimal separator to 0";
+            this.toolStripMenuItemDecimalSeparatorTo0.AccessibleName = "Value of the decimal separator is 0";
+            this.toolStripMenuItemDecimalSeparatorTo0.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.toolStripMenuItemDecimalSeparatorTo0.AutoToolTip = true;
+            this.toolStripMenuItemDecimalSeparatorTo0.CheckOnClick = true;
+            this.toolStripMenuItemDecimalSeparatorTo0.Name = "toolStripMenuItemDecimalSeparatorTo0";
+            this.toolStripMenuItemDecimalSeparatorTo0.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo0.Text = "&0";
+            this.toolStripMenuItemDecimalSeparatorTo0.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo0_Click);
+            this.toolStripMenuItemDecimalSeparatorTo0.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripMenuItemDecimalSeparatorTo0.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripMenuItemDecimalSeparatorTo1
+            // 
+            this.toolStripMenuItemDecimalSeparatorTo1.AccessibleDescription = "Set the value of the decimal separator to 1";
+            this.toolStripMenuItemDecimalSeparatorTo1.AccessibleName = "Value of the decimal separator is 1";
+            this.toolStripMenuItemDecimalSeparatorTo1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.toolStripMenuItemDecimalSeparatorTo1.AutoToolTip = true;
+            this.toolStripMenuItemDecimalSeparatorTo1.CheckOnClick = true;
+            this.toolStripMenuItemDecimalSeparatorTo1.Name = "toolStripMenuItemDecimalSeparatorTo1";
+            this.toolStripMenuItemDecimalSeparatorTo1.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo1.Text = "&1";
+            this.toolStripMenuItemDecimalSeparatorTo1.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo1_Click);
+            this.toolStripMenuItemDecimalSeparatorTo1.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripMenuItemDecimalSeparatorTo1.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripMenuItemDecimalSeparatorTo2
+            // 
+            this.toolStripMenuItemDecimalSeparatorTo2.AccessibleDescription = "Set the value of the decimal separator to 2";
+            this.toolStripMenuItemDecimalSeparatorTo2.AccessibleName = "Value of the decimal separator is 2";
+            this.toolStripMenuItemDecimalSeparatorTo2.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.toolStripMenuItemDecimalSeparatorTo2.AutoToolTip = true;
+            this.toolStripMenuItemDecimalSeparatorTo2.CheckOnClick = true;
+            this.toolStripMenuItemDecimalSeparatorTo2.Name = "toolStripMenuItemDecimalSeparatorTo2";
+            this.toolStripMenuItemDecimalSeparatorTo2.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo2.Text = "&2";
+            this.toolStripMenuItemDecimalSeparatorTo2.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo2_Click);
+            this.toolStripMenuItemDecimalSeparatorTo2.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripMenuItemDecimalSeparatorTo2.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripMenuItemDecimalSeparatorTo3
+            // 
+            this.toolStripMenuItemDecimalSeparatorTo3.AccessibleDescription = "Set the value of the decimal separator to 3";
+            this.toolStripMenuItemDecimalSeparatorTo3.AccessibleName = "Value of the decimal separator is 3";
+            this.toolStripMenuItemDecimalSeparatorTo3.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.toolStripMenuItemDecimalSeparatorTo3.AutoToolTip = true;
+            this.toolStripMenuItemDecimalSeparatorTo3.CheckOnClick = true;
+            this.toolStripMenuItemDecimalSeparatorTo3.Name = "toolStripMenuItemDecimalSeparatorTo3";
+            this.toolStripMenuItemDecimalSeparatorTo3.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo3.Text = "&3";
+            this.toolStripMenuItemDecimalSeparatorTo3.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo3_Click);
+            this.toolStripMenuItemDecimalSeparatorTo3.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripMenuItemDecimalSeparatorTo3.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripMenuItemDecimalSeparatorTo4
+            // 
+            this.toolStripMenuItemDecimalSeparatorTo4.AccessibleDescription = "Set the value of the decimal separator to 4";
+            this.toolStripMenuItemDecimalSeparatorTo4.AccessibleName = "Value of the decimal separator is 4";
+            this.toolStripMenuItemDecimalSeparatorTo4.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.toolStripMenuItemDecimalSeparatorTo4.AutoToolTip = true;
+            this.toolStripMenuItemDecimalSeparatorTo4.CheckOnClick = true;
+            this.toolStripMenuItemDecimalSeparatorTo4.Name = "toolStripMenuItemDecimalSeparatorTo4";
+            this.toolStripMenuItemDecimalSeparatorTo4.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo4.Text = "&4";
+            this.toolStripMenuItemDecimalSeparatorTo4.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo4_Click);
+            this.toolStripMenuItemDecimalSeparatorTo4.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripMenuItemDecimalSeparatorTo4.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripMenuItemDecimalSeparatorTo5
+            // 
+            this.toolStripMenuItemDecimalSeparatorTo5.AccessibleDescription = "Set the value of the decimal separator to 5";
+            this.toolStripMenuItemDecimalSeparatorTo5.AccessibleName = "Value of the decimal separator is 5";
+            this.toolStripMenuItemDecimalSeparatorTo5.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.toolStripMenuItemDecimalSeparatorTo5.AutoToolTip = true;
+            this.toolStripMenuItemDecimalSeparatorTo5.CheckOnClick = true;
+            this.toolStripMenuItemDecimalSeparatorTo5.Name = "toolStripMenuItemDecimalSeparatorTo5";
+            this.toolStripMenuItemDecimalSeparatorTo5.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo5.Text = "&5";
+            this.toolStripMenuItemDecimalSeparatorTo5.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo5_Click);
+            this.toolStripMenuItemDecimalSeparatorTo5.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripMenuItemDecimalSeparatorTo5.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripMenuItemDecimalSeparatorTo6
+            // 
+            this.toolStripMenuItemDecimalSeparatorTo6.AccessibleDescription = "Set the value of the decimal separator to 6";
+            this.toolStripMenuItemDecimalSeparatorTo6.AccessibleName = "Value of the decimal separator is 6";
+            this.toolStripMenuItemDecimalSeparatorTo6.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.toolStripMenuItemDecimalSeparatorTo6.AutoToolTip = true;
+            this.toolStripMenuItemDecimalSeparatorTo6.Checked = true;
+            this.toolStripMenuItemDecimalSeparatorTo6.CheckOnClick = true;
+            this.toolStripMenuItemDecimalSeparatorTo6.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toolStripMenuItemDecimalSeparatorTo6.Name = "toolStripMenuItemDecimalSeparatorTo6";
+            this.toolStripMenuItemDecimalSeparatorTo6.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo6.Text = "&6";
+            this.toolStripMenuItemDecimalSeparatorTo6.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo6_Click);
+            this.toolStripMenuItemDecimalSeparatorTo6.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripMenuItemDecimalSeparatorTo6.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
             // MainForm
             // 
             this.AccessibleDescription = "This is the main window.";
@@ -953,12 +782,8 @@
             this.Text = "Disksize Watcher";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
-            this.contextMenuStripFreeSpaceUnits.ResumeLayout(false);
-            this.contextMenuStripTotalSpaceUnits.ResumeLayout(false);
-            this.contextMenuStripUsedSpaceUnits.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            this.contextMenuStripDiffSpaceUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).EndInit();
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
@@ -994,41 +819,30 @@
 		private System.Windows.Forms.ToolStripMenuItem menuitemStayOnTop;
 		private System.Windows.Forms.ToolStripMenuItem menuitemMinimizeToSystemTray;
 		private System.Windows.Forms.ToolTip toolTip;
-		private System.Windows.Forms.ContextMenuStrip contextMenuStripUsedSpaceUnits;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitByte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitKilobyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitMegabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitGigabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitTerabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUsedSpaceUnitPentabyte;
-		private System.Windows.Forms.ContextMenuStrip contextMenuStripFreeSpaceUnits;
-		private System.Windows.Forms.ContextMenuStrip contextMenuStripTotalSpaceUnits;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitByte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitKilobyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitMegabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitGigabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitTerabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFreeSpaceUnitPentabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitByte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitKilobyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitMegabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitGigabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitTerabyte;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTotalSpaceUnitPentabyte;
 		private System.Windows.Forms.Label labelSpaceDiff;
 		private System.Windows.Forms.TextBox textBoxSpaceDiff;
 		private System.Windows.Forms.Label labelSpaceDiffUnit;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStripDiffSpaceUnits;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitByte;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitKilobyte;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitMegabyte;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitGigabyte;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitTerabyte;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDiffSpaceUnitPentabyte;
         private System.IO.FileSystemWatcher fileSystemWatcher;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButtonInfo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonShowValueInByte;
+        private System.Windows.Forms.ToolStripButton toolStripButtonShowValueInKilobyte;
+        private System.Windows.Forms.ToolStripButton toolStripButtonShowValueInMegabyte;
+        private System.Windows.Forms.ToolStripButton toolStripButtonShowValueInGigabyte;
+        private System.Windows.Forms.ToolStripButton toolStripButtonShowValueInTerabyte;
+        private System.Windows.Forms.ToolStripButton toolStripButtonShowValueInPentabyte;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonThousandSeparator;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonDecimalSeparator;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo0;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo6;
     }
 }
 
