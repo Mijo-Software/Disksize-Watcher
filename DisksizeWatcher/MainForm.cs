@@ -151,38 +151,43 @@ namespace DisksizeWatcher
                 {
                     numberFormat = Resources.numberformatN6;
                 }
+                return;
             }
-            else
+            if (toolStripMenuItemDecimalSeparatorTo0.Checked)
             {
-                if (toolStripMenuItemDecimalSeparatorTo0.Checked)
-                {
-                    numberFormat = Resources.numberformatF0;
-                }
-                else if (toolStripMenuItemDecimalSeparatorTo1.Checked)
-                {
-                    numberFormat = Resources.numberformatF1;
-                }
-                else if (toolStripMenuItemDecimalSeparatorTo2.Checked)
-                {
-                    numberFormat = Resources.numberformatF2;
-                }
-                else if (toolStripMenuItemDecimalSeparatorTo3.Checked)
-                {
-                    numberFormat = Resources.numberformatF3;
-                }
-                else if (toolStripMenuItemDecimalSeparatorTo4.Checked)
-                {
-                    numberFormat = Resources.numberformatF4;
-                }
-                else if (toolStripMenuItemDecimalSeparatorTo5.Checked)
-                {
-                    numberFormat = Resources.numberformatF5;
-                }
-                else if (toolStripMenuItemDecimalSeparatorTo6.Checked)
-                {
-                    numberFormat = Resources.numberformatF6;
-                }
+                numberFormat = Resources.numberformatF0;
+                return;
             }
+            if (toolStripMenuItemDecimalSeparatorTo1.Checked)
+            {
+                numberFormat = Resources.numberformatF1;
+                return;
+            }
+            if (toolStripMenuItemDecimalSeparatorTo2.Checked)
+            {
+                numberFormat = Resources.numberformatF2;
+                return;
+            }
+            if (toolStripMenuItemDecimalSeparatorTo3.Checked)
+            {
+                numberFormat = Resources.numberformatF3;
+                return;
+            }
+            if (toolStripMenuItemDecimalSeparatorTo4.Checked)
+            {
+                numberFormat = Resources.numberformatF4;
+                return;
+            }
+            if (toolStripMenuItemDecimalSeparatorTo5.Checked)
+            {
+                numberFormat = Resources.numberformatF5;
+                return;
+            }
+            if (!toolStripMenuItemDecimalSeparatorTo6.Checked)
+            {
+                return;
+            }
+            numberFormat = Resources.numberformatF6;
         }
 
         /// <summary>
@@ -215,77 +220,32 @@ namespace DisksizeWatcher
                 {
                     case (int)SizeUnit.Kilobyte:
                         usedSpace /= 1024;
-                        break;
-                    case (int)SizeUnit.Megabyte:
-                        usedSpace = usedSpace / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Gigabyte:
-                        usedSpace = usedSpace / 1024 / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Terabyte:
-                        usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Pentabyte:
-                        usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024 / 1024;
-                        break;
-                    default:
-                        break;
-                }
-                switch (unitSpace)
-                {
-                    case (int)SizeUnit.Kilobyte:
-                        freeSpace /= 1024;
-                        break;
-                    case (int)SizeUnit.Megabyte:
-                        freeSpace = freeSpace / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Gigabyte:
-                        freeSpace = freeSpace / 1024 / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Terabyte:
-                        freeSpace = freeSpace / 1024 / 1024 / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Pentabyte:
-                        freeSpace = freeSpace / 1024 / 1024 / 1024 / 1024 / 1024;
-                        break;
-                    default:
-                        break;
-                }
-                switch (unitSpace)
-                {
-                    case (int)SizeUnit.Kilobyte:
                         totalSpace /= 1024;
-                        break;
-                    case (int)SizeUnit.Megabyte:
-                        totalSpace = totalSpace / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Gigabyte:
-                        totalSpace = totalSpace / 1024 / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Terabyte:
-                        totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024;
-                        break;
-                    case (int)SizeUnit.Pentabyte:
-                        totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024 / 1024;
-                        break;
-                    default:
-                        break;
-                }
-                switch (unitSpace)
-                {
-                    case (int)SizeUnit.Kilobyte:
+                        freeSpace /= 1024;
                         diffSpace /= 1024;
                         break;
                     case (int)SizeUnit.Megabyte:
+                        usedSpace = usedSpace / 1024 / 1024;
+                        freeSpace = freeSpace / 1024 / 1024;
+                        totalSpace = totalSpace / 1024 / 1024;
                         diffSpace = diffSpace / 1024 / 1024;
                         break;
                     case (int)SizeUnit.Gigabyte:
+                        usedSpace = usedSpace / 1024 / 1024 / 1024;
+                        freeSpace = freeSpace / 1024 / 1024 / 1024;
+                        totalSpace = totalSpace / 1024 / 1024 / 1024;
                         diffSpace = diffSpace / 1024 / 1024 / 1024;
                         break;
                     case (int)SizeUnit.Terabyte:
+                        usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024;
+                        freeSpace = freeSpace / 1024 / 1024 / 1024 / 1024;
+                        totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024;
                         diffSpace = diffSpace / 1024 / 1024 / 1024 / 1024;
                         break;
                     case (int)SizeUnit.Pentabyte:
+                        usedSpace = usedSpace / 1024 / 1024 / 1024 / 1024 / 1024;
+                        freeSpace = freeSpace / 1024 / 1024 / 1024 / 1024 / 1024;
+                        totalSpace = totalSpace / 1024 / 1024 / 1024 / 1024 / 1024;
                         diffSpace = diffSpace / 1024 / 1024 / 1024 / 1024 / 1024;
                         break;
                     default:
@@ -295,7 +255,7 @@ namespace DisksizeWatcher
                 usedSpacePerc = 100 - freeSpacePerc;
                 progressBarPercentage.Value = (int)usedSpacePerc;
                 numberFormat = Resources.numberformatG6;
-                labelSpacePercentageValue.Text = $"{usedSpacePerc.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture)} %";
+                labelSpacePercentageValue.Text = $"{usedSpacePerc.ToString(format: numberFormat, provider: CultureInfo.CurrentCulture)} %";
                 numberFormat = string.Empty;
                 if (HasFraction(number: usedSpace))
                 {
@@ -305,7 +265,7 @@ namespace DisksizeWatcher
                 {
                     SetUpNumberWithoutFraction();
                 }
-                textBoxSpaceUsed.Text = usedSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+                textBoxSpaceUsed.Text = usedSpace.ToString(format: numberFormat, provider: CultureInfo.CurrentCulture);
                 numberFormat = string.Empty;
                 if (HasFraction(number: freeSpace))
                 {
@@ -315,7 +275,7 @@ namespace DisksizeWatcher
                 {
                     SetUpNumberWithoutFraction();
                 }
-                textBoxSpaceFree.Text = freeSpace.ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+                textBoxSpaceFree.Text = freeSpace.ToString(format: numberFormat, provider: CultureInfo.CurrentCulture);
                 numberFormat = string.Empty;
                 if (HasFraction(number: totalSpace))
                 {
@@ -325,9 +285,7 @@ namespace DisksizeWatcher
                 {
                     SetUpNumberWithoutFraction();
                 }
-                textBoxSpaceTotal.Text = totalSpace.ToString(
-                    format: numberFormat,
-                    provider: CultureInfo.InvariantCulture);
+                textBoxSpaceTotal.Text = totalSpace.ToString(format: numberFormat, provider: CultureInfo.CurrentCulture);
                 numberFormat = string.Empty;
                 if (HasFraction(number: diffSpace))
                 {
@@ -359,7 +317,7 @@ namespace DisksizeWatcher
                         break;
                 }
                 textBoxSpaceDiff.Text = Math.Abs(diffSpace - usedSpace)
-                    .ToString(format: numberFormat, provider: CultureInfo.InvariantCulture);
+                    .ToString(format: numberFormat, provider: CultureInfo.CurrentCulture);
             }
         }
         #endregion
@@ -386,7 +344,7 @@ namespace DisksizeWatcher
             notifyIcon.Visible = false;
             if (drive.IsReady)
             {
-                textBoxSpaceTotal.Text = drive.TotalSize.ToString(provider: CultureInfo.InvariantCulture);
+                textBoxSpaceTotal.Text = drive.TotalSize.ToString(provider: CultureInfo.CurrentCulture);
                 fileSystemWatcher.Path = drive.Name;
             }
         }

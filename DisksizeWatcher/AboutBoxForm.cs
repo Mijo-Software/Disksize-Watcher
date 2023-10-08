@@ -22,6 +22,9 @@ namespace DisksizeWatcher
             labelInformation.Text = text;
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public AboutBoxForm()
         {
             InitializeComponent();
