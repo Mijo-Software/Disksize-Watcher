@@ -26,12 +26,42 @@ namespace DisksizeWatcher.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool StayOnTop {
+        public bool StayOnTopUser {
             get {
-                return ((bool)(this["StayOnTop"]));
+                return ((bool)(this["StayOnTopUser"]));
             }
             set {
-                this["StayOnTop"] = value;
+                this["StayOnTopUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool StayOnTopDefault {
+            get {
+                return ((bool)(this["StayOnTopDefault"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MinimizeToTrayUser {
+            get {
+                return ((bool)(this["MinimizeToTrayUser"]));
+            }
+            set {
+                this["MinimizeToTrayUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MinimizeToTrayDefault {
+            get {
+                return ((bool)(this["MinimizeToTrayDefault"]));
             }
         }
     }
