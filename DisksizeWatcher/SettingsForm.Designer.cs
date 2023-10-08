@@ -45,7 +45,6 @@
             this.checkBoxMinimizeToSystemTray.AccessibleDescription = "Click to minimize to system tray";
             this.checkBoxMinimizeToSystemTray.AccessibleName = "minimize to system tray";
             this.checkBoxMinimizeToSystemTray.AccessibleRole = System.Windows.Forms.AccessibleRole.CheckButton;
-            this.checkBoxMinimizeToSystemTray.AutoEllipsis = true;
             this.checkBoxMinimizeToSystemTray.AutoSize = true;
             this.checkBoxMinimizeToSystemTray.Location = new System.Drawing.Point(13, 36);
             this.checkBoxMinimizeToSystemTray.Name = "checkBoxMinimizeToSystemTray";
@@ -142,7 +141,6 @@
             this.checkBoxStayOnTop.AccessibleDescription = "Click to stay on top";
             this.checkBoxStayOnTop.AccessibleName = "stay on top";
             this.checkBoxStayOnTop.AccessibleRole = System.Windows.Forms.AccessibleRole.CheckButton;
-            this.checkBoxStayOnTop.AutoEllipsis = true;
             this.checkBoxStayOnTop.AutoSize = true;
             this.checkBoxStayOnTop.Location = new System.Drawing.Point(13, 12);
             this.checkBoxStayOnTop.Name = "checkBoxStayOnTop";

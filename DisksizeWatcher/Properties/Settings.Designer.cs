@@ -64,5 +64,68 @@ namespace DisksizeWatcher.Properties {
                 return ((bool)(this["MinimizeToTrayDefault"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte SpaceUnitUser {
+            get {
+                return ((byte)(this["SpaceUnitUser"]));
+            }
+            set {
+                this["SpaceUnitUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte SpaceUnitDefault {
+            get {
+                return ((byte)(this["SpaceUnitDefault"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ThousandSeparatorUser {
+            get {
+                return ((bool)(this["ThousandSeparatorUser"]));
+            }
+            set {
+                this["ThousandSeparatorUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ThousandSeparatorDefault {
+            get {
+                return ((bool)(this["ThousandSeparatorDefault"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public byte DecimalSeparatorUser {
+            get {
+                return ((byte)(this["DecimalSeparatorUser"]));
+            }
+            set {
+                this["DecimalSeparatorUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public byte DecimalSeparatorDefault {
+            get {
+                return ((byte)(this["DecimalSeparatorDefault"]));
+            }
+        }
     }
 }
