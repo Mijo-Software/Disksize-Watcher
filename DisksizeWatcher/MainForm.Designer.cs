@@ -50,10 +50,10 @@
             this.textBoxSpaceDiff = new System.Windows.Forms.TextBox();
             this.labelSpaceDiffUnit = new System.Windows.Forms.Label();
             this.fileSystemWatcher = new System.IO.FileSystemWatcher();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSplitButtonSettings2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripSplitButtonSettings = new System.Windows.Forms.ToolStripSplitButton();
             this.menuitemStayOnTop = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemMinimizeToSystemTray = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -75,10 +75,10 @@
             this.toolStripMenuItemDecimalSeparatorTo6 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).BeginInit();
-            this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
+            this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
+            this.toolStripContainer.ContentPanel.SuspendLayout();
+            this.toolStripContainer.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,7 @@
             this.labelSpaceFree.AccessibleName = "free space";
             this.labelSpaceFree.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceFree.AutoEllipsis = true;
+            this.labelSpaceFree.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpaceFree.Location = new System.Drawing.Point(3, 36);
             this.labelSpaceFree.Name = "labelSpaceFree";
             this.labelSpaceFree.Size = new System.Drawing.Size(63, 13);
@@ -147,6 +148,7 @@
             this.labelSpaceTotal.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceTotal.AutoEllipsis = true;
             this.labelSpaceTotal.AutoSize = true;
+            this.labelSpaceTotal.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpaceTotal.Location = new System.Drawing.Point(3, 62);
             this.labelSpaceTotal.Name = "labelSpaceTotal";
             this.labelSpaceTotal.Size = new System.Drawing.Size(66, 13);
@@ -166,6 +168,7 @@
             this.labelSpaceFreeUnit.AutoEllipsis = true;
             this.labelSpaceFreeUnit.AutoSize = true;
             this.labelSpaceFreeUnit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelSpaceFreeUnit.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpaceFreeUnit.Location = new System.Drawing.Point(191, 36);
             this.labelSpaceFreeUnit.Name = "labelSpaceFreeUnit";
             this.labelSpaceFreeUnit.Size = new System.Drawing.Size(32, 13);
@@ -185,6 +188,7 @@
             this.labelSpaceTotalUnit.AutoEllipsis = true;
             this.labelSpaceTotalUnit.AutoSize = true;
             this.labelSpaceTotalUnit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelSpaceTotalUnit.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpaceTotalUnit.Location = new System.Drawing.Point(191, 62);
             this.labelSpaceTotalUnit.Name = "labelSpaceTotalUnit";
             this.labelSpaceTotalUnit.Size = new System.Drawing.Size(32, 13);
@@ -203,6 +207,7 @@
             this.labelSpacePercentage.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpacePercentage.AutoEllipsis = true;
             this.labelSpacePercentage.AutoSize = true;
+            this.labelSpacePercentage.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpacePercentage.Location = new System.Drawing.Point(5, 111);
             this.labelSpacePercentage.Name = "labelSpacePercentage";
             this.labelSpacePercentage.Size = new System.Drawing.Size(65, 13);
@@ -217,6 +222,8 @@
             // progressBarPercentage
             // 
             this.progressBarPercentage.AccessibleDescription = "Show the state of the percentage";
+            this.progressBarPercentage.AccessibleName = "progress bar";
+            this.progressBarPercentage.AccessibleRole = System.Windows.Forms.AccessibleRole.ProgressBar;
             this.progressBarPercentage.Location = new System.Drawing.Point(74, 111);
             this.progressBarPercentage.Name = "progressBarPercentage";
             this.progressBarPercentage.Size = new System.Drawing.Size(111, 13);
@@ -234,6 +241,7 @@
             this.labelSpacePercentageValue.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpacePercentageValue.AutoEllipsis = true;
             this.labelSpacePercentageValue.AutoSize = true;
+            this.labelSpacePercentageValue.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpacePercentageValue.Location = new System.Drawing.Point(191, 111);
             this.labelSpacePercentageValue.Name = "labelSpacePercentageValue";
             this.labelSpacePercentageValue.Size = new System.Drawing.Size(15, 13);
@@ -253,6 +261,7 @@
             this.labelSpaceUsedUnit.AutoEllipsis = true;
             this.labelSpaceUsedUnit.AutoSize = true;
             this.labelSpaceUsedUnit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelSpaceUsedUnit.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpaceUsedUnit.Location = new System.Drawing.Point(191, 10);
             this.labelSpaceUsedUnit.Name = "labelSpaceUsedUnit";
             this.labelSpaceUsedUnit.Size = new System.Drawing.Size(32, 13);
@@ -288,6 +297,7 @@
             this.labelSpaceUsed.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceUsed.AutoEllipsis = true;
             this.labelSpaceUsed.AutoSize = true;
+            this.labelSpaceUsed.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpaceUsed.Location = new System.Drawing.Point(3, 10);
             this.labelSpaceUsed.Name = "labelSpaceUsed";
             this.labelSpaceUsed.Size = new System.Drawing.Size(67, 13);
@@ -328,6 +338,7 @@
             this.labelInformation.AccessibleName = "some information";
             this.labelInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelInformation.AutoToolTip = true;
+            this.labelInformation.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelInformation.Name = "labelInformation";
             this.labelInformation.Size = new System.Drawing.Size(257, 17);
             this.labelInformation.Spring = true;
@@ -343,6 +354,7 @@
             this.labelSpaceDiff.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSpaceDiff.AutoEllipsis = true;
             this.labelSpaceDiff.AutoSize = true;
+            this.labelSpaceDiff.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpaceDiff.Location = new System.Drawing.Point(4, 88);
             this.labelSpaceDiff.Name = "labelSpaceDiff";
             this.labelSpaceDiff.Size = new System.Drawing.Size(58, 13);
@@ -379,6 +391,7 @@
             this.labelSpaceDiffUnit.AutoEllipsis = true;
             this.labelSpaceDiffUnit.AutoSize = true;
             this.labelSpaceDiffUnit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelSpaceDiffUnit.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelSpaceDiffUnit.Location = new System.Drawing.Point(191, 88);
             this.labelSpaceDiffUnit.Name = "labelSpaceDiffUnit";
             this.labelSpaceDiffUnit.Size = new System.Drawing.Size(32, 13);
@@ -400,48 +413,54 @@
             this.fileSystemWatcher.Deleted += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Deleted);
             this.fileSystemWatcher.Renamed += new System.IO.RenamedEventHandler(this.FileSystemWatcher_Renamed);
             // 
-            // toolStripContainer1
+            // toolStripContainer
             // 
+            this.toolStripContainer.AccessibleDescription = "Just a container";
+            this.toolStripContainer.AccessibleName = "Container";
+            this.toolStripContainer.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             // 
-            // toolStripContainer1.BottomToolStripPanel
+            // toolStripContainer.BottomToolStripPanel
             // 
-            this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.statusStrip);
+            this.toolStripContainer.BottomToolStripPanel.Controls.Add(this.statusStrip);
             // 
-            // toolStripContainer1.ContentPanel
+            // toolStripContainer.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceUsed);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceFree);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSpaceFree);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceTotal);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSpaceTotal);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceDiffUnit);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceFreeUnit);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSpaceDiff);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceTotalUnit);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceDiff);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpacePercentage);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpaceUsedUnit);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.progressBarPercentage);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSpaceUsed);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelSpacePercentageValue);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(272, 137);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(272, 184);
-            this.toolStripContainer1.TabIndex = 16;
-            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpaceUsed);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpaceFree);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.textBoxSpaceFree);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpaceTotal);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.textBoxSpaceTotal);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpaceDiffUnit);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpaceFreeUnit);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.textBoxSpaceDiff);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpaceTotalUnit);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpaceDiff);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpacePercentage);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpaceUsedUnit);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.progressBarPercentage);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.textBoxSpaceUsed);
+            this.toolStripContainer.ContentPanel.Controls.Add(this.labelSpacePercentageValue);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(272, 137);
+            this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer.Name = "toolStripContainer";
+            this.toolStripContainer.Size = new System.Drawing.Size(272, 184);
+            this.toolStripContainer.TabIndex = 16;
+            this.toolStripContainer.Text = "toolStripContainer";
             // 
-            // toolStripContainer1.TopToolStripPanel
+            // toolStripContainer.TopToolStripPanel
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip);
+            this.toolStripContainer.TopToolStripPanel.Controls.Add(this.toolStrip);
             // 
             // toolStrip
             // 
+            this.toolStrip.AccessibleDescription = "Just a tool tip";
+            this.toolStrip.AccessibleName = "tool tip";
+            this.toolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolTip;
             this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonInfo,
-            this.toolStripSplitButtonSettings2,
+            this.toolStripSplitButtonSettings,
             this.toolStripSeparator1,
             this.toolStripButtonShowValueInByte,
             this.toolStripButtonShowValueInKilobyte,
@@ -475,23 +494,23 @@
             this.toolStripButtonInfo.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.toolStripButtonInfo.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
-            // toolStripSplitButtonSettings2
+            // toolStripSplitButtonSettings
             // 
-            this.toolStripSplitButtonSettings2.AccessibleDescription = "Click to open the settings";
-            this.toolStripSplitButtonSettings2.AccessibleName = "settings";
-            this.toolStripSplitButtonSettings2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.toolStripSplitButtonSettings2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButtonSettings2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSplitButtonSettings.AccessibleDescription = "Click to open the settings";
+            this.toolStripSplitButtonSettings.AccessibleName = "settings";
+            this.toolStripSplitButtonSettings.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripSplitButtonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButtonSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuitemStayOnTop,
             this.menuitemMinimizeToSystemTray});
-            this.toolStripSplitButtonSettings2.Image = global::DisksizeWatcher.Properties.Resources.fatcow_wrench_16;
-            this.toolStripSplitButtonSettings2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButtonSettings2.Name = "toolStripSplitButtonSettings2";
-            this.toolStripSplitButtonSettings2.Size = new System.Drawing.Size(32, 22);
-            this.toolStripSplitButtonSettings2.Text = "Settings";
-            this.toolStripSplitButtonSettings2.ButtonClick += new System.EventHandler(this.ToolStripSplitButtonSettings_ButtonClick);
-            this.toolStripSplitButtonSettings2.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripSplitButtonSettings2.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.toolStripSplitButtonSettings.Image = global::DisksizeWatcher.Properties.Resources.fatcow_wrench_16;
+            this.toolStripSplitButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButtonSettings.Name = "toolStripSplitButtonSettings";
+            this.toolStripSplitButtonSettings.Size = new System.Drawing.Size(32, 22);
+            this.toolStripSplitButtonSettings.Text = "Settings";
+            this.toolStripSplitButtonSettings.ButtonClick += new System.EventHandler(this.ToolStripSplitButtonSettings_ButtonClick);
+            this.toolStripSplitButtonSettings.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripSplitButtonSettings.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // menuitemStayOnTop
             // 
@@ -673,7 +692,7 @@
             this.toolStripMenuItemDecimalSeparatorTo0.AutoToolTip = true;
             this.toolStripMenuItemDecimalSeparatorTo0.CheckOnClick = true;
             this.toolStripMenuItemDecimalSeparatorTo0.Name = "toolStripMenuItemDecimalSeparatorTo0";
-            this.toolStripMenuItemDecimalSeparatorTo0.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo0.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemDecimalSeparatorTo0.Text = "&0";
             this.toolStripMenuItemDecimalSeparatorTo0.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo0_Click);
             this.toolStripMenuItemDecimalSeparatorTo0.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -687,7 +706,7 @@
             this.toolStripMenuItemDecimalSeparatorTo1.AutoToolTip = true;
             this.toolStripMenuItemDecimalSeparatorTo1.CheckOnClick = true;
             this.toolStripMenuItemDecimalSeparatorTo1.Name = "toolStripMenuItemDecimalSeparatorTo1";
-            this.toolStripMenuItemDecimalSeparatorTo1.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemDecimalSeparatorTo1.Text = "&1";
             this.toolStripMenuItemDecimalSeparatorTo1.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo1_Click);
             this.toolStripMenuItemDecimalSeparatorTo1.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -701,7 +720,7 @@
             this.toolStripMenuItemDecimalSeparatorTo2.AutoToolTip = true;
             this.toolStripMenuItemDecimalSeparatorTo2.CheckOnClick = true;
             this.toolStripMenuItemDecimalSeparatorTo2.Name = "toolStripMenuItemDecimalSeparatorTo2";
-            this.toolStripMenuItemDecimalSeparatorTo2.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemDecimalSeparatorTo2.Text = "&2";
             this.toolStripMenuItemDecimalSeparatorTo2.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo2_Click);
             this.toolStripMenuItemDecimalSeparatorTo2.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -715,7 +734,7 @@
             this.toolStripMenuItemDecimalSeparatorTo3.AutoToolTip = true;
             this.toolStripMenuItemDecimalSeparatorTo3.CheckOnClick = true;
             this.toolStripMenuItemDecimalSeparatorTo3.Name = "toolStripMenuItemDecimalSeparatorTo3";
-            this.toolStripMenuItemDecimalSeparatorTo3.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemDecimalSeparatorTo3.Text = "&3";
             this.toolStripMenuItemDecimalSeparatorTo3.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo3_Click);
             this.toolStripMenuItemDecimalSeparatorTo3.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -729,7 +748,7 @@
             this.toolStripMenuItemDecimalSeparatorTo4.AutoToolTip = true;
             this.toolStripMenuItemDecimalSeparatorTo4.CheckOnClick = true;
             this.toolStripMenuItemDecimalSeparatorTo4.Name = "toolStripMenuItemDecimalSeparatorTo4";
-            this.toolStripMenuItemDecimalSeparatorTo4.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo4.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemDecimalSeparatorTo4.Text = "&4";
             this.toolStripMenuItemDecimalSeparatorTo4.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo4_Click);
             this.toolStripMenuItemDecimalSeparatorTo4.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -743,7 +762,7 @@
             this.toolStripMenuItemDecimalSeparatorTo5.AutoToolTip = true;
             this.toolStripMenuItemDecimalSeparatorTo5.CheckOnClick = true;
             this.toolStripMenuItemDecimalSeparatorTo5.Name = "toolStripMenuItemDecimalSeparatorTo5";
-            this.toolStripMenuItemDecimalSeparatorTo5.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo5.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemDecimalSeparatorTo5.Text = "&5";
             this.toolStripMenuItemDecimalSeparatorTo5.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo5_Click);
             this.toolStripMenuItemDecimalSeparatorTo5.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -759,7 +778,7 @@
             this.toolStripMenuItemDecimalSeparatorTo6.CheckOnClick = true;
             this.toolStripMenuItemDecimalSeparatorTo6.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItemDecimalSeparatorTo6.Name = "toolStripMenuItemDecimalSeparatorTo6";
-            this.toolStripMenuItemDecimalSeparatorTo6.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItemDecimalSeparatorTo6.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemDecimalSeparatorTo6.Text = "&6";
             this.toolStripMenuItemDecimalSeparatorTo6.Click += new System.EventHandler(this.ToolStripMenuItemDecimalSeparatorTo6_Click);
             this.toolStripMenuItemDecimalSeparatorTo6.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -773,7 +792,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(272, 184);
-            this.Controls.Add(this.toolStripContainer1);
+            this.Controls.Add(this.toolStripContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -785,14 +804,14 @@
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).EndInit();
-            this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.ContentPanel.PerformLayout();
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
+            this.toolStripContainer.BottomToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer.BottomToolStripPanel.PerformLayout();
+            this.toolStripContainer.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer.ContentPanel.PerformLayout();
+            this.toolStripContainer.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer.ResumeLayout(false);
+            this.toolStripContainer.PerformLayout();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -820,7 +839,7 @@
 		private System.Windows.Forms.TextBox textBoxSpaceDiff;
 		private System.Windows.Forms.Label labelSpaceDiffUnit;
         private System.IO.FileSystemWatcher fileSystemWatcher;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButtonInfo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -840,7 +859,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo6;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonSettings2;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonSettings;
         private System.Windows.Forms.ToolStripMenuItem menuitemStayOnTop;
         private System.Windows.Forms.ToolStripMenuItem menuitemMinimizeToSystemTray;
     }

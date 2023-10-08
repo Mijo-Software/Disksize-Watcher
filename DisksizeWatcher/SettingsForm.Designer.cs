@@ -130,6 +130,7 @@
             this.labelInformation.AccessibleName = "some information";
             this.labelInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelInformation.AutoToolTip = true;
+            this.labelInformation.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelInformation.Name = "labelInformation";
             this.labelInformation.Size = new System.Drawing.Size(28, 17);
             this.labelInformation.Text = "info";

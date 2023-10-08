@@ -75,7 +75,7 @@ namespace DisksizeWatcher
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.94268F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.84076F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(240, 141);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(240, 116);
             this.tableLayoutPanel.TabIndex = 0;
             // 
             // logoPictureBox
@@ -88,7 +88,7 @@ namespace DisksizeWatcher
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
-            this.logoPictureBox.Size = new System.Drawing.Size(39, 135);
+            this.logoPictureBox.Size = new System.Drawing.Size(39, 110);
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
             this.toolTip.SetToolTip(this.logoPictureBox, "program icon");
@@ -102,11 +102,12 @@ namespace DisksizeWatcher
             this.labelProductName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelProductName.AutoEllipsis = true;
             this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelProductName.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
             this.labelProductName.Location = new System.Drawing.Point(51, 0);
             this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(186, 13);
+            this.labelProductName.Size = new System.Drawing.Size(186, 11);
             this.labelProductName.TabIndex = 0;
             this.labelProductName.Text = "Product name";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,11 +124,12 @@ namespace DisksizeWatcher
             this.labelVersion.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelVersion.AutoEllipsis = true;
             this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelVersion.Location = new System.Drawing.Point(51, 13);
+            this.labelVersion.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            this.labelVersion.Location = new System.Drawing.Point(51, 11);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(186, 13);
+            this.labelVersion.Size = new System.Drawing.Size(186, 11);
             this.labelVersion.TabIndex = 1;
             this.labelVersion.Text = "Version";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,11 +146,12 @@ namespace DisksizeWatcher
             this.labelCopyright.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelCopyright.AutoEllipsis = true;
             this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCopyright.Location = new System.Drawing.Point(51, 26);
+            this.labelCopyright.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            this.labelCopyright.Location = new System.Drawing.Point(51, 22);
             this.labelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(186, 13);
+            this.labelCopyright.Size = new System.Drawing.Size(186, 11);
             this.labelCopyright.TabIndex = 2;
             this.labelCopyright.Text = "Copyright";
             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,11 +168,12 @@ namespace DisksizeWatcher
             this.labelCompanyName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelCompanyName.AutoEllipsis = true;
             this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCompanyName.Location = new System.Drawing.Point(51, 39);
+            this.labelCompanyName.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            this.labelCompanyName.Location = new System.Drawing.Point(51, 33);
             this.labelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(186, 13);
+            this.labelCompanyName.Size = new System.Drawing.Size(186, 11);
             this.labelCompanyName.TabIndex = 3;
             this.labelCompanyName.Text = "Company name";
             this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,13 +189,13 @@ namespace DisksizeWatcher
             this.textBoxDescription.AccessibleName = "Description";
             this.textBoxDescription.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Location = new System.Drawing.Point(51, 55);
+            this.textBoxDescription.Location = new System.Drawing.Point(51, 47);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(186, 45);
+            this.textBoxDescription.Size = new System.Drawing.Size(186, 36);
             this.textBoxDescription.TabIndex = 4;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = "Description";
@@ -211,7 +215,7 @@ namespace DisksizeWatcher
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.Image = global::DisksizeWatcher.Properties.Resources.fatcow_tick_octagon_16;
             this.okButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.okButton.Location = new System.Drawing.Point(162, 115);
+            this.okButton.Location = new System.Drawing.Point(162, 90);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 5;
@@ -253,6 +257,8 @@ namespace DisksizeWatcher
             // 
             // toolStripContainer
             // 
+            this.toolStripContainer.AccessibleDescription = "Just a tool bar";
+            this.toolStripContainer.AccessibleName = "tool bar";
             this.toolStripContainer.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar;
             // 
             // toolStripContainer.BottomToolStripPanel
@@ -262,7 +268,7 @@ namespace DisksizeWatcher
             // toolStripContainer.ContentPanel
             // 
             this.toolStripContainer.ContentPanel.Controls.Add(this.tableLayoutPanel);
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(240, 141);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(240, 116);
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point(9, 9);
             this.toolStripContainer.Name = "toolStripContainer";
