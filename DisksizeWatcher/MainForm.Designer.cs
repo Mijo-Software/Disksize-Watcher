@@ -45,9 +45,6 @@
             this.labelSpaceUsed = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.labelInformation = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripSplitButtonSettings = new System.Windows.Forms.ToolStripSplitButton();
-            this.menuitemStayOnTop = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemMinimizeToSystemTray = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.labelSpaceDiff = new System.Windows.Forms.Label();
             this.textBoxSpaceDiff = new System.Windows.Forms.TextBox();
@@ -56,6 +53,9 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSplitButtonSettings2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.menuitemStayOnTop = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuitemMinimizeToSystemTray = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonShowValueInByte = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonShowValueInKilobyte = new System.Windows.Forms.ToolStripButton();
@@ -307,8 +307,7 @@
             this.statusStrip.AllowItemReorder = true;
             this.statusStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelInformation,
-            this.toolStripSplitButtonSettings});
+            this.labelInformation});
             this.statusStrip.Location = new System.Drawing.Point(0, 0);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.ShowItemToolTips = true;
@@ -330,57 +329,12 @@
             this.labelInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelInformation.AutoToolTip = true;
             this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(225, 17);
+            this.labelInformation.Size = new System.Drawing.Size(257, 17);
             this.labelInformation.Spring = true;
             this.labelInformation.Text = "info";
             this.labelInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelInformation.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.labelInformation.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripSplitButtonSettings
-            // 
-            this.toolStripSplitButtonSettings.AccessibleDescription = "Click to open the settings";
-            this.toolStripSplitButtonSettings.AccessibleName = "settings";
-            this.toolStripSplitButtonSettings.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.toolStripSplitButtonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButtonSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuitemStayOnTop,
-            this.menuitemMinimizeToSystemTray});
-            this.toolStripSplitButtonSettings.Image = global::DisksizeWatcher.Properties.Resources.fatcow_wrench_16;
-            this.toolStripSplitButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButtonSettings.Name = "toolStripSplitButtonSettings";
-            this.toolStripSplitButtonSettings.Size = new System.Drawing.Size(32, 20);
-            this.toolStripSplitButtonSettings.Text = "Settings";
-            this.toolStripSplitButtonSettings.ButtonClick += new System.EventHandler(this.ToolStripSplitButtonSettings_ButtonClick);
-            this.toolStripSplitButtonSettings.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripSplitButtonSettings.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // menuitemStayOnTop
-            // 
-            this.menuitemStayOnTop.AccessibleDescription = "Click to stay on top";
-            this.menuitemStayOnTop.AccessibleName = "stay on top";
-            this.menuitemStayOnTop.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.menuitemStayOnTop.AutoToolTip = true;
-            this.menuitemStayOnTop.CheckOnClick = true;
-            this.menuitemStayOnTop.Name = "menuitemStayOnTop";
-            this.menuitemStayOnTop.Size = new System.Drawing.Size(200, 22);
-            this.menuitemStayOnTop.Text = "&Stay on top";
-            this.menuitemStayOnTop.CheckedChanged += new System.EventHandler(this.MenuitemStayOnTop_CheckedChanged);
-            this.menuitemStayOnTop.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.menuitemStayOnTop.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // menuitemMinimizeToSystemTray
-            // 
-            this.menuitemMinimizeToSystemTray.AccessibleDescription = "Click to minimize to system tray";
-            this.menuitemMinimizeToSystemTray.AccessibleName = "minimize to system tray";
-            this.menuitemMinimizeToSystemTray.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.menuitemMinimizeToSystemTray.AutoToolTip = true;
-            this.menuitemMinimizeToSystemTray.CheckOnClick = true;
-            this.menuitemMinimizeToSystemTray.Name = "menuitemMinimizeToSystemTray";
-            this.menuitemMinimizeToSystemTray.Size = new System.Drawing.Size(200, 22);
-            this.menuitemMinimizeToSystemTray.Text = "&Minimize to system tray";
-            this.menuitemMinimizeToSystemTray.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.menuitemMinimizeToSystemTray.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSpaceDiff
             // 
@@ -487,6 +441,7 @@
             this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonInfo,
+            this.toolStripSplitButtonSettings2,
             this.toolStripSeparator1,
             this.toolStripButtonShowValueInByte,
             this.toolStripButtonShowValueInKilobyte,
@@ -519,6 +474,51 @@
             this.toolStripButtonInfo.Click += new System.EventHandler(this.ToolStripButtonInfo_Click);
             this.toolStripButtonInfo.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.toolStripButtonInfo.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripSplitButtonSettings2
+            // 
+            this.toolStripSplitButtonSettings2.AccessibleDescription = "Click to open the settings";
+            this.toolStripSplitButtonSettings2.AccessibleName = "settings";
+            this.toolStripSplitButtonSettings2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.toolStripSplitButtonSettings2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButtonSettings2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuitemStayOnTop,
+            this.menuitemMinimizeToSystemTray});
+            this.toolStripSplitButtonSettings2.Image = global::DisksizeWatcher.Properties.Resources.fatcow_wrench_16;
+            this.toolStripSplitButtonSettings2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButtonSettings2.Name = "toolStripSplitButtonSettings2";
+            this.toolStripSplitButtonSettings2.Size = new System.Drawing.Size(32, 22);
+            this.toolStripSplitButtonSettings2.Text = "Settings";
+            this.toolStripSplitButtonSettings2.ButtonClick += new System.EventHandler(this.ToolStripSplitButtonSettings_ButtonClick);
+            this.toolStripSplitButtonSettings2.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripSplitButtonSettings2.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // menuitemStayOnTop
+            // 
+            this.menuitemStayOnTop.AccessibleDescription = "Click to stay on top";
+            this.menuitemStayOnTop.AccessibleName = "stay on top";
+            this.menuitemStayOnTop.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.menuitemStayOnTop.AutoToolTip = true;
+            this.menuitemStayOnTop.CheckOnClick = true;
+            this.menuitemStayOnTop.Name = "menuitemStayOnTop";
+            this.menuitemStayOnTop.Size = new System.Drawing.Size(200, 22);
+            this.menuitemStayOnTop.Text = "&Stay on top";
+            this.menuitemStayOnTop.CheckedChanged += new System.EventHandler(this.MenuitemStayOnTop_CheckedChanged);
+            this.menuitemStayOnTop.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.menuitemStayOnTop.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // menuitemMinimizeToSystemTray
+            // 
+            this.menuitemMinimizeToSystemTray.AccessibleDescription = "Click to minimize to system tray";
+            this.menuitemMinimizeToSystemTray.AccessibleName = "minimize to system tray";
+            this.menuitemMinimizeToSystemTray.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.menuitemMinimizeToSystemTray.AutoToolTip = true;
+            this.menuitemMinimizeToSystemTray.CheckOnClick = true;
+            this.menuitemMinimizeToSystemTray.Name = "menuitemMinimizeToSystemTray";
+            this.menuitemMinimizeToSystemTray.Size = new System.Drawing.Size(200, 22);
+            this.menuitemMinimizeToSystemTray.Text = "&Minimize to system tray";
+            this.menuitemMinimizeToSystemTray.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.menuitemMinimizeToSystemTray.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // toolStripSeparator1
             // 
@@ -815,9 +815,6 @@
 		private System.Windows.Forms.Label labelSpaceUsed;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.ToolStripStatusLabel labelInformation;
-		private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonSettings;
-		private System.Windows.Forms.ToolStripMenuItem menuitemStayOnTop;
-		private System.Windows.Forms.ToolStripMenuItem menuitemMinimizeToSystemTray;
 		private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.Label labelSpaceDiff;
 		private System.Windows.Forms.TextBox textBoxSpaceDiff;
@@ -843,6 +840,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecimalSeparatorTo6;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonSettings2;
+        private System.Windows.Forms.ToolStripMenuItem menuitemStayOnTop;
+        private System.Windows.Forms.ToolStripMenuItem menuitemMinimizeToSystemTray;
     }
 }
 
