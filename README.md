@@ -1,2 +1,3 @@
-# Disksize-Watcher
-Lorem ispum
+# Disksize Watcher
+
+Control the disk size
