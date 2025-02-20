@@ -76,6 +76,33 @@ namespace DisksizeWatcher
 			toolStripMenuItemDecimalSeparatorTo4 = new ToolStripMenuItem();
 			toolStripMenuItemDecimalSeparatorTo5 = new ToolStripMenuItem();
 			toolStripMenuItemDecimalSeparatorTo6 = new ToolStripMenuItem();
+			toolStrip1 = new ToolStrip();
+			toolStripButtonDriveA = new ToolStripButton();
+			toolStripButtonDriveB = new ToolStripButton();
+			toolStripButtonDriveC = new ToolStripButton();
+			toolStripButtonDriveD = new ToolStripButton();
+			toolStripButtonDriveE = new ToolStripButton();
+			toolStripButtonDriveF = new ToolStripButton();
+			toolStripButtonDriveG = new ToolStripButton();
+			toolStripButtonDriveH = new ToolStripButton();
+			toolStripButtonDriveI = new ToolStripButton();
+			toolStripButtonDriveJ = new ToolStripButton();
+			toolStripButtonDriveK = new ToolStripButton();
+			toolStripButtonDriveL = new ToolStripButton();
+			toolStripButtonDriveM = new ToolStripButton();
+			toolStripButtonDriveN = new ToolStripButton();
+			toolStripButtonDriveO = new ToolStripButton();
+			toolStripButtonDriveP = new ToolStripButton();
+			toolStripButtonDriveQ = new ToolStripButton();
+			toolStripButtonDriveR = new ToolStripButton();
+			toolStripButtonDriveS = new ToolStripButton();
+			toolStripButtonDriveT = new ToolStripButton();
+			toolStripButtonDriveU = new ToolStripButton();
+			toolStripButtonDriveV = new ToolStripButton();
+			toolStripButtonDriveW = new ToolStripButton();
+			toolStripButtonDriveX = new ToolStripButton();
+			toolStripButtonDriveY = new ToolStripButton();
+			toolStripButtonDriveZ = new ToolStripButton();
 			statusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)fileSystemWatcher).BeginInit();
 			toolStripContainer.BottomToolStripPanel.SuspendLayout();
@@ -83,6 +110,7 @@ namespace DisksizeWatcher
 			toolStripContainer.TopToolStripPanel.SuspendLayout();
 			toolStripContainer.SuspendLayout();
 			toolStrip.SuspendLayout();
+			toolStrip1.SuspendLayout();
 			SuspendLayout();
 			// 
 			// labelSpaceFree
@@ -120,7 +148,7 @@ namespace DisksizeWatcher
 			textBoxSpaceFree.Margin = new Padding(4, 3, 4, 3);
 			textBoxSpaceFree.Name = "textBoxSpaceFree";
 			textBoxSpaceFree.ReadOnly = true;
-			textBoxSpaceFree.Size = new Size(129, 23);
+			textBoxSpaceFree.Size = new Size(130, 23);
 			textBoxSpaceFree.TabIndex = 4;
 			textBoxSpaceFree.TextAlign = HorizontalAlignment.Right;
 			toolTip.SetToolTip(textBoxSpaceFree, "Show the value of the free space");
@@ -138,7 +166,7 @@ namespace DisksizeWatcher
 			textBoxSpaceTotal.Margin = new Padding(4, 3, 4, 3);
 			textBoxSpaceTotal.Name = "textBoxSpaceTotal";
 			textBoxSpaceTotal.ReadOnly = true;
-			textBoxSpaceTotal.Size = new Size(129, 23);
+			textBoxSpaceTotal.Size = new Size(130, 23);
 			textBoxSpaceTotal.TabIndex = 7;
 			textBoxSpaceTotal.TextAlign = HorizontalAlignment.Right;
 			toolTip.SetToolTip(textBoxSpaceTotal, "Show the value of the total space");
@@ -215,7 +243,7 @@ namespace DisksizeWatcher
 			labelSpacePercentage.AutoEllipsis = true;
 			labelSpacePercentage.AutoSize = true;
 			labelSpacePercentage.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-			labelSpacePercentage.Location = new Point(6, 128);
+			labelSpacePercentage.Location = new Point(5, 128);
 			labelSpacePercentage.Margin = new Padding(4, 0, 4, 0);
 			labelSpacePercentage.Name = "labelSpacePercentage";
 			labelSpacePercentage.Size = new Size(69, 15);
@@ -292,7 +320,7 @@ namespace DisksizeWatcher
 			textBoxSpaceUsed.Margin = new Padding(4, 3, 4, 3);
 			textBoxSpaceUsed.Name = "textBoxSpaceUsed";
 			textBoxSpaceUsed.ReadOnly = true;
-			textBoxSpaceUsed.Size = new Size(129, 23);
+			textBoxSpaceUsed.Size = new Size(130, 23);
 			textBoxSpaceUsed.TabIndex = 1;
 			textBoxSpaceUsed.TextAlign = HorizontalAlignment.Right;
 			toolTip.SetToolTip(textBoxSpaceUsed, "Show the value of the used space");
@@ -309,7 +337,7 @@ namespace DisksizeWatcher
 			labelSpaceUsed.AutoEllipsis = true;
 			labelSpaceUsed.AutoSize = true;
 			labelSpaceUsed.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-			labelSpaceUsed.Location = new Point(4, 12);
+			labelSpaceUsed.Location = new Point(5, 12);
 			labelSpaceUsed.Margin = new Padding(4, 0, 4, 0);
 			labelSpaceUsed.Name = "labelSpaceUsed";
 			labelSpaceUsed.Size = new Size(69, 15);
@@ -332,7 +360,7 @@ namespace DisksizeWatcher
 			statusStrip.Location = new Point(0, 0);
 			statusStrip.Name = "statusStrip";
 			statusStrip.ShowItemToolTips = true;
-			statusStrip.Size = new Size(317, 22);
+			statusStrip.Size = new Size(302, 22);
 			statusStrip.SizingGrip = false;
 			statusStrip.TabIndex = 0;
 			statusStrip.TabStop = true;
@@ -351,7 +379,7 @@ namespace DisksizeWatcher
 			labelInformation.AutoToolTip = true;
 			labelInformation.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
 			labelInformation.Name = "labelInformation";
-			labelInformation.Size = new Size(302, 17);
+			labelInformation.Size = new Size(287, 17);
 			labelInformation.Spring = true;
 			labelInformation.Text = "info";
 			labelInformation.TextAlign = ContentAlignment.MiddleLeft;
@@ -387,7 +415,7 @@ namespace DisksizeWatcher
 			textBoxSpaceDiff.Margin = new Padding(4, 3, 4, 3);
 			textBoxSpaceDiff.Name = "textBoxSpaceDiff";
 			textBoxSpaceDiff.ReadOnly = true;
-			textBoxSpaceDiff.Size = new Size(128, 23);
+			textBoxSpaceDiff.Size = new Size(130, 23);
 			textBoxSpaceDiff.TabIndex = 10;
 			textBoxSpaceDiff.TextAlign = HorizontalAlignment.Right;
 			toolTip.SetToolTip(textBoxSpaceDiff, "Show the value of the diff space");
@@ -454,18 +482,19 @@ namespace DisksizeWatcher
 			toolStripContainer.ContentPanel.Controls.Add(textBoxSpaceUsed);
 			toolStripContainer.ContentPanel.Controls.Add(labelSpacePercentageValue);
 			toolStripContainer.ContentPanel.Margin = new Padding(4, 3, 4, 3);
-			toolStripContainer.ContentPanel.Size = new Size(317, 165);
+			toolStripContainer.ContentPanel.Size = new Size(302, 155);
 			toolStripContainer.Dock = DockStyle.Fill;
 			toolStripContainer.Location = new Point(0, 0);
 			toolStripContainer.Margin = new Padding(4, 3, 4, 3);
 			toolStripContainer.Name = "toolStripContainer";
-			toolStripContainer.Size = new Size(317, 212);
+			toolStripContainer.Size = new Size(302, 227);
 			toolStripContainer.TabIndex = 16;
 			toolStripContainer.Text = "toolStripContainer";
 			// 
 			// toolStripContainer.TopToolStripPanel
 			// 
 			toolStripContainer.TopToolStripPanel.Controls.Add(toolStrip);
+			toolStripContainer.TopToolStripPanel.Controls.Add(toolStrip1);
 			// 
 			// toolStrip
 			// 
@@ -477,7 +506,7 @@ namespace DisksizeWatcher
 			toolStrip.Location = new Point(0, 0);
 			toolStrip.Name = "toolStrip";
 			toolStrip.RenderMode = ToolStripRenderMode.System;
-			toolStrip.Size = new Size(317, 25);
+			toolStrip.Size = new Size(302, 25);
 			toolStrip.Stretch = true;
 			toolStrip.TabIndex = 0;
 			toolStrip.TabStop = true;
@@ -793,6 +822,459 @@ namespace DisksizeWatcher
 			toolStripMenuItemDecimalSeparatorTo6.MouseEnter += SetStatusbar_Enter;
 			toolStripMenuItemDecimalSeparatorTo6.MouseLeave += ClearStatusbar_Leave;
 			// 
+			// toolStrip1
+			// 
+			toolStrip1.Dock = DockStyle.None;
+			toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonDriveA, toolStripButtonDriveB, toolStripButtonDriveC, toolStripButtonDriveD, toolStripButtonDriveE, toolStripButtonDriveF, toolStripButtonDriveG, toolStripButtonDriveH, toolStripButtonDriveI, toolStripButtonDriveJ, toolStripButtonDriveK, toolStripButtonDriveL, toolStripButtonDriveM, toolStripButtonDriveN, toolStripButtonDriveO, toolStripButtonDriveP, toolStripButtonDriveQ, toolStripButtonDriveR, toolStripButtonDriveS, toolStripButtonDriveT, toolStripButtonDriveU, toolStripButtonDriveV, toolStripButtonDriveW, toolStripButtonDriveX, toolStripButtonDriveY, toolStripButtonDriveZ });
+			toolStrip1.Location = new Point(0, 25);
+			toolStrip1.Name = "toolStrip1";
+			toolStrip1.RenderMode = ToolStripRenderMode.System;
+			toolStrip1.Size = new Size(302, 25);
+			toolStrip1.Stretch = true;
+			toolStrip1.TabIndex = 1;
+			// 
+			// toolStripButtonDriveA
+			// 
+			toolStripButtonDriveA.AccessibleDescription = "Select the drive A";
+			toolStripButtonDriveA.AccessibleName = "Drive A";
+			toolStripButtonDriveA.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveA.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveA.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveA.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveA.Name = "toolStripButtonDriveA";
+			toolStripButtonDriveA.Size = new Size(23, 22);
+			toolStripButtonDriveA.Tag = "A:\\";
+			toolStripButtonDriveA.Text = "Drive A";
+			toolStripButtonDriveA.ToolTipText = "drive A";
+			toolStripButtonDriveA.Click += ToolStripButtonDriveA_Click;
+			toolStripButtonDriveA.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveA.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveB
+			// 
+			toolStripButtonDriveB.AccessibleDescription = "Select the drive B";
+			toolStripButtonDriveB.AccessibleName = "Drive B";
+			toolStripButtonDriveB.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveB.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveB.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveB.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveB.Name = "toolStripButtonDriveB";
+			toolStripButtonDriveB.Size = new Size(23, 22);
+			toolStripButtonDriveB.Tag = "B:\\";
+			toolStripButtonDriveB.Text = "Drive B";
+			toolStripButtonDriveB.ToolTipText = "drive B";
+			toolStripButtonDriveB.Click += ToolStripButtonDriveB_Click;
+			toolStripButtonDriveB.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveB.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveC
+			// 
+			toolStripButtonDriveC.AccessibleDescription = "Select the drive C";
+			toolStripButtonDriveC.AccessibleName = "Drive C";
+			toolStripButtonDriveC.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveC.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveC.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveC.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveC.Name = "toolStripButtonDriveC";
+			toolStripButtonDriveC.Size = new Size(23, 22);
+			toolStripButtonDriveC.Tag = "C:\\";
+			toolStripButtonDriveC.Text = "Drive C";
+			toolStripButtonDriveC.ToolTipText = "drive C";
+			toolStripButtonDriveC.Click += ToolStripButtonDriveC_Click;
+			toolStripButtonDriveC.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveC.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveD
+			// 
+			toolStripButtonDriveD.AccessibleDescription = "Select the drive D";
+			toolStripButtonDriveD.AccessibleName = "Drive D";
+			toolStripButtonDriveD.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveD.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveD.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveD.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveD.Name = "toolStripButtonDriveD";
+			toolStripButtonDriveD.Size = new Size(23, 22);
+			toolStripButtonDriveD.Tag = "D:\\";
+			toolStripButtonDriveD.Text = "Drive D";
+			toolStripButtonDriveD.ToolTipText = "drive D";
+			toolStripButtonDriveD.Click += ToolStripButtonDriveD_Click;
+			toolStripButtonDriveD.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveD.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveE
+			// 
+			toolStripButtonDriveE.AccessibleDescription = "Select the drive E";
+			toolStripButtonDriveE.AccessibleName = "Drive E";
+			toolStripButtonDriveE.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveE.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveE.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveE.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveE.Name = "toolStripButtonDriveE";
+			toolStripButtonDriveE.Size = new Size(23, 22);
+			toolStripButtonDriveE.Tag = "E:\\";
+			toolStripButtonDriveE.Text = "Drive E";
+			toolStripButtonDriveE.ToolTipText = "drive E";
+			toolStripButtonDriveE.Click += ToolStripButtonDriveE_Click;
+			toolStripButtonDriveE.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveE.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveF
+			// 
+			toolStripButtonDriveF.AccessibleDescription = "Select the drive F";
+			toolStripButtonDriveF.AccessibleName = "Drive F";
+			toolStripButtonDriveF.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveF.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveF.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveF.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveF.Name = "toolStripButtonDriveF";
+			toolStripButtonDriveF.Size = new Size(23, 22);
+			toolStripButtonDriveF.Tag = "F:\\";
+			toolStripButtonDriveF.Text = "Drive F";
+			toolStripButtonDriveF.ToolTipText = "drive F";
+			toolStripButtonDriveF.Click += ToolStripButtonDriveF_Click;
+			toolStripButtonDriveF.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveF.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveG
+			// 
+			toolStripButtonDriveG.AccessibleDescription = "Select the drive G";
+			toolStripButtonDriveG.AccessibleName = "Drive G";
+			toolStripButtonDriveG.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveG.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveG.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveG.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveG.Name = "toolStripButtonDriveG";
+			toolStripButtonDriveG.Size = new Size(23, 22);
+			toolStripButtonDriveG.Tag = "F:\\";
+			toolStripButtonDriveG.Text = "Drive G";
+			toolStripButtonDriveG.ToolTipText = "drive G";
+			toolStripButtonDriveG.Click += ToolStripButtonDriveG_Click;
+			toolStripButtonDriveG.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveG.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveH
+			// 
+			toolStripButtonDriveH.AccessibleDescription = "Select the drive H";
+			toolStripButtonDriveH.AccessibleName = "Drive H";
+			toolStripButtonDriveH.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveH.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveH.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveH.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveH.Name = "toolStripButtonDriveH";
+			toolStripButtonDriveH.Size = new Size(23, 22);
+			toolStripButtonDriveH.Tag = "H:\\";
+			toolStripButtonDriveH.Text = "Drive H";
+			toolStripButtonDriveH.ToolTipText = "drive H";
+			toolStripButtonDriveH.Click += ToolStripButtonDriveH_Click;
+			toolStripButtonDriveH.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveH.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveI
+			// 
+			toolStripButtonDriveI.AccessibleDescription = "Select the drive I";
+			toolStripButtonDriveI.AccessibleName = "Drive I";
+			toolStripButtonDriveI.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveI.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveI.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveI.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveI.Name = "toolStripButtonDriveI";
+			toolStripButtonDriveI.Size = new Size(23, 22);
+			toolStripButtonDriveI.Tag = "I:\\";
+			toolStripButtonDriveI.Text = "Drive I";
+			toolStripButtonDriveI.ToolTipText = "drive I";
+			toolStripButtonDriveI.Click += ToolStripButtonDriveI_Click;
+			toolStripButtonDriveI.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveI.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveJ
+			// 
+			toolStripButtonDriveJ.AccessibleDescription = "Select the drive J";
+			toolStripButtonDriveJ.AccessibleName = "Drive J";
+			toolStripButtonDriveJ.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveJ.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveJ.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveJ.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveJ.Name = "toolStripButtonDriveJ";
+			toolStripButtonDriveJ.Size = new Size(23, 22);
+			toolStripButtonDriveJ.Tag = "J:\\";
+			toolStripButtonDriveJ.Text = "Drive J";
+			toolStripButtonDriveJ.ToolTipText = "drive J";
+			toolStripButtonDriveJ.Click += ToolStripButtonDriveJ_Click;
+			toolStripButtonDriveJ.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveJ.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveK
+			// 
+			toolStripButtonDriveK.AccessibleDescription = "Select the drive K";
+			toolStripButtonDriveK.AccessibleName = "Drive K";
+			toolStripButtonDriveK.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveK.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveK.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveK.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveK.Name = "toolStripButtonDriveK";
+			toolStripButtonDriveK.Size = new Size(23, 22);
+			toolStripButtonDriveK.Tag = "K:\\";
+			toolStripButtonDriveK.Text = "Drive K";
+			toolStripButtonDriveK.ToolTipText = "drive K";
+			toolStripButtonDriveK.Click += ToolStripButtonDriveK_Click;
+			toolStripButtonDriveK.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveK.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveL
+			// 
+			toolStripButtonDriveL.AccessibleDescription = "Select the drive L";
+			toolStripButtonDriveL.AccessibleName = "Drive L";
+			toolStripButtonDriveL.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveL.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveL.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveL.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveL.Name = "toolStripButtonDriveL";
+			toolStripButtonDriveL.Size = new Size(23, 22);
+			toolStripButtonDriveL.Tag = "L:\\";
+			toolStripButtonDriveL.Text = "Drive L";
+			toolStripButtonDriveL.ToolTipText = "drive L";
+			toolStripButtonDriveL.Click += ToolStripButtonDriveL_Click;
+			toolStripButtonDriveL.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveL.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveM
+			// 
+			toolStripButtonDriveM.AccessibleDescription = "Select the drive M";
+			toolStripButtonDriveM.AccessibleName = "Drive M";
+			toolStripButtonDriveM.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveM.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveM.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveM.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveM.Name = "toolStripButtonDriveM";
+			toolStripButtonDriveM.Size = new Size(23, 22);
+			toolStripButtonDriveM.Tag = "M:\\";
+			toolStripButtonDriveM.Text = "Drive M";
+			toolStripButtonDriveM.ToolTipText = "drive M";
+			toolStripButtonDriveM.Click += ToolStripButtonDriveM_Click;
+			toolStripButtonDriveM.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveM.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveN
+			// 
+			toolStripButtonDriveN.AccessibleDescription = "Select the drive N";
+			toolStripButtonDriveN.AccessibleName = "Drive N";
+			toolStripButtonDriveN.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveN.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveN.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveN.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveN.Name = "toolStripButtonDriveN";
+			toolStripButtonDriveN.Size = new Size(23, 22);
+			toolStripButtonDriveN.Tag = "N:\\";
+			toolStripButtonDriveN.Text = "Drive N";
+			toolStripButtonDriveN.ToolTipText = "drive N";
+			toolStripButtonDriveN.Click += ToolStripButtonDriveN_Click;
+			toolStripButtonDriveN.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveN.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveO
+			// 
+			toolStripButtonDriveO.AccessibleDescription = "Select the drive O";
+			toolStripButtonDriveO.AccessibleName = "Drive O";
+			toolStripButtonDriveO.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveO.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveO.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveO.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveO.Name = "toolStripButtonDriveO";
+			toolStripButtonDriveO.Size = new Size(23, 22);
+			toolStripButtonDriveO.Tag = "O:\\";
+			toolStripButtonDriveO.Text = "Drive O";
+			toolStripButtonDriveO.ToolTipText = "drive O";
+			toolStripButtonDriveO.Click += ToolStripButtonDriveO_Click;
+			toolStripButtonDriveO.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveO.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveP
+			// 
+			toolStripButtonDriveP.AccessibleDescription = "Select the drive P";
+			toolStripButtonDriveP.AccessibleName = "Drive P";
+			toolStripButtonDriveP.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveP.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveP.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveP.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveP.Name = "toolStripButtonDriveP";
+			toolStripButtonDriveP.Size = new Size(23, 22);
+			toolStripButtonDriveP.Tag = "P:\\";
+			toolStripButtonDriveP.Text = "Drive P";
+			toolStripButtonDriveP.ToolTipText = "drive P";
+			toolStripButtonDriveP.Click += ToolStripButtonDriveP_Click;
+			toolStripButtonDriveP.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveP.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveQ
+			// 
+			toolStripButtonDriveQ.AccessibleDescription = "Select the drive Q";
+			toolStripButtonDriveQ.AccessibleName = "Drive Q";
+			toolStripButtonDriveQ.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveQ.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveQ.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveQ.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveQ.Name = "toolStripButtonDriveQ";
+			toolStripButtonDriveQ.Size = new Size(23, 22);
+			toolStripButtonDriveQ.Tag = "Q:\\";
+			toolStripButtonDriveQ.Text = "Drive Q";
+			toolStripButtonDriveQ.ToolTipText = "drive Q";
+			toolStripButtonDriveQ.Click += ToolStripButtonDriveQ_Click;
+			toolStripButtonDriveQ.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveQ.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveR
+			// 
+			toolStripButtonDriveR.AccessibleDescription = "Select the drive R";
+			toolStripButtonDriveR.AccessibleName = "Drive R";
+			toolStripButtonDriveR.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveR.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveR.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveR.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveR.Name = "toolStripButtonDriveR";
+			toolStripButtonDriveR.Size = new Size(23, 22);
+			toolStripButtonDriveR.Tag = "R:\\";
+			toolStripButtonDriveR.Text = "Drive R";
+			toolStripButtonDriveR.ToolTipText = "drive R";
+			toolStripButtonDriveR.Click += ToolStripButtonDriveR_Click;
+			toolStripButtonDriveR.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveR.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveS
+			// 
+			toolStripButtonDriveS.AccessibleDescription = "Select the drive S";
+			toolStripButtonDriveS.AccessibleName = "Drive S";
+			toolStripButtonDriveS.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveS.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveS.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveS.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveS.Name = "toolStripButtonDriveS";
+			toolStripButtonDriveS.Size = new Size(23, 22);
+			toolStripButtonDriveS.Tag = "S:\\";
+			toolStripButtonDriveS.Text = "Drive S";
+			toolStripButtonDriveS.ToolTipText = "drive S";
+			toolStripButtonDriveS.Click += ToolStripButtonDriveS_Click;
+			toolStripButtonDriveS.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveS.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveT
+			// 
+			toolStripButtonDriveT.AccessibleDescription = "Select the drive T";
+			toolStripButtonDriveT.AccessibleName = "Drive T";
+			toolStripButtonDriveT.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveT.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveT.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveT.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveT.Name = "toolStripButtonDriveT";
+			toolStripButtonDriveT.Size = new Size(23, 22);
+			toolStripButtonDriveT.Tag = "T:\\";
+			toolStripButtonDriveT.Text = "Drive T";
+			toolStripButtonDriveT.ToolTipText = "drive T";
+			toolStripButtonDriveT.Click += ToolStripButtonDriveT_Click;
+			toolStripButtonDriveT.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveT.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveU
+			// 
+			toolStripButtonDriveU.AccessibleDescription = "Select the drive U";
+			toolStripButtonDriveU.AccessibleName = "Drive U";
+			toolStripButtonDriveU.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveU.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveU.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveU.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveU.Name = "toolStripButtonDriveU";
+			toolStripButtonDriveU.Size = new Size(23, 22);
+			toolStripButtonDriveU.Tag = "U:\\";
+			toolStripButtonDriveU.Text = "Drive U";
+			toolStripButtonDriveU.ToolTipText = "drive U";
+			toolStripButtonDriveU.Click += ToolStripButtonDriveU_Click;
+			toolStripButtonDriveU.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveU.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveV
+			// 
+			toolStripButtonDriveV.AccessibleDescription = "Select the drive V";
+			toolStripButtonDriveV.AccessibleName = "Drive V";
+			toolStripButtonDriveV.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveV.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveV.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveV.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveV.Name = "toolStripButtonDriveV";
+			toolStripButtonDriveV.Size = new Size(23, 22);
+			toolStripButtonDriveV.Tag = "V:\\";
+			toolStripButtonDriveV.Text = "Drive V";
+			toolStripButtonDriveV.ToolTipText = "drive V";
+			toolStripButtonDriveV.Click += ToolStripButtonDriveV_Click;
+			toolStripButtonDriveV.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveV.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveW
+			// 
+			toolStripButtonDriveW.AccessibleDescription = "Select the drive W";
+			toolStripButtonDriveW.AccessibleName = "Drive W";
+			toolStripButtonDriveW.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveW.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveW.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveW.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveW.Name = "toolStripButtonDriveW";
+			toolStripButtonDriveW.Size = new Size(23, 22);
+			toolStripButtonDriveW.Tag = "W:\\";
+			toolStripButtonDriveW.Text = "Drive W";
+			toolStripButtonDriveW.ToolTipText = "drive W";
+			toolStripButtonDriveW.Click += ToolStripButtonDriveW_Click;
+			toolStripButtonDriveW.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveW.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveX
+			// 
+			toolStripButtonDriveX.AccessibleDescription = "Select the drive X";
+			toolStripButtonDriveX.AccessibleName = "Drive X";
+			toolStripButtonDriveX.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveX.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveX.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveX.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveX.Name = "toolStripButtonDriveX";
+			toolStripButtonDriveX.Size = new Size(23, 22);
+			toolStripButtonDriveX.Tag = "X:\\";
+			toolStripButtonDriveX.Text = "Drive X";
+			toolStripButtonDriveX.ToolTipText = "drive X";
+			toolStripButtonDriveX.Click += ToolStripButtonDriveX_Click;
+			toolStripButtonDriveX.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveX.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveY
+			// 
+			toolStripButtonDriveY.AccessibleDescription = "Select the drive Y";
+			toolStripButtonDriveY.AccessibleName = "Drive Y";
+			toolStripButtonDriveY.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveY.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveY.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveY.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveY.Name = "toolStripButtonDriveY";
+			toolStripButtonDriveY.Size = new Size(23, 22);
+			toolStripButtonDriveY.Tag = "Y:\\";
+			toolStripButtonDriveY.Text = "Drive Y";
+			toolStripButtonDriveY.ToolTipText = "drive Y";
+			toolStripButtonDriveY.Click += ToolStripButtonDriveY_Click;
+			toolStripButtonDriveY.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveY.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripButtonDriveZ
+			// 
+			toolStripButtonDriveZ.AccessibleDescription = "Select the drive Z";
+			toolStripButtonDriveZ.AccessibleName = "Drive Z";
+			toolStripButtonDriveZ.AccessibleRole = AccessibleRole.PushButton;
+			toolStripButtonDriveZ.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			toolStripButtonDriveZ.Image = Properties.Resources.fatcow_drive_16;
+			toolStripButtonDriveZ.ImageTransparentColor = Color.Magenta;
+			toolStripButtonDriveZ.Name = "toolStripButtonDriveZ";
+			toolStripButtonDriveZ.Size = new Size(23, 22);
+			toolStripButtonDriveZ.Tag = "Z:\\";
+			toolStripButtonDriveZ.Text = "Drive Z";
+			toolStripButtonDriveZ.ToolTipText = "drive Z";
+			toolStripButtonDriveZ.Click += ToolStripButtonDriveZ_Click;
+			toolStripButtonDriveZ.MouseEnter += SetStatusbar_Enter;
+			toolStripButtonDriveZ.MouseLeave += ClearStatusbar_Leave;
+			// 
 			// MainForm
 			// 
 			AccessibleDescription = "This is the main window.";
@@ -800,7 +1282,7 @@ namespace DisksizeWatcher
 			AccessibleRole = AccessibleRole.Window;
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(317, 212);
+			ClientSize = new Size(302, 227);
 			Controls.Add(toolStripContainer);
 			FormBorderStyle = FormBorderStyle.FixedSingle;
 			Icon = (Icon)resources.GetObject("$this.Icon");
@@ -824,6 +1306,8 @@ namespace DisksizeWatcher
 			toolStripContainer.PerformLayout();
 			toolStrip.ResumeLayout(false);
 			toolStrip.PerformLayout();
+			toolStrip1.ResumeLayout(false);
+			toolStrip1.PerformLayout();
 			ResumeLayout(false);
 		}
 
@@ -872,6 +1356,33 @@ namespace DisksizeWatcher
 		private ToolStripMenuItem menuitemStayOnTop;
 		private ToolStripMenuItem menuitemMinimizeToSystemTray;
 		private ToolStripButton toolStripButtonLicense;
+		private ToolStrip toolStrip1;
+		private ToolStripButton toolStripButtonDriveA;
+		private ToolStripButton toolStripButtonDriveB;
+		private ToolStripButton toolStripButtonDriveC;
+		private ToolStripButton toolStripButtonDriveD;
+		private ToolStripButton toolStripButtonDriveE;
+		private ToolStripButton toolStripButtonDriveF;
+		private ToolStripButton toolStripButtonDriveG;
+		private ToolStripButton toolStripButtonDriveH;
+		private ToolStripButton toolStripButtonDriveI;
+		private ToolStripButton toolStripButtonDriveJ;
+		private ToolStripButton toolStripButtonDriveK;
+		private ToolStripButton toolStripButtonDriveL;
+		private ToolStripButton toolStripButtonDriveM;
+		private ToolStripButton toolStripButtonDriveN;
+		private ToolStripButton toolStripButtonDriveO;
+		private ToolStripButton toolStripButtonDriveP;
+		private ToolStripButton toolStripButtonDriveQ;
+		private ToolStripButton toolStripButtonDriveR;
+		private ToolStripButton toolStripButtonDriveS;
+		private ToolStripButton toolStripButtonDriveT;
+		private ToolStripButton toolStripButtonDriveU;
+		private ToolStripButton toolStripButtonDriveV;
+		private ToolStripButton toolStripButtonDriveW;
+		private ToolStripButton toolStripButtonDriveX;
+		private ToolStripButton toolStripButtonDriveY;
+		private ToolStripButton toolStripButtonDriveZ;
 	}
 }
 
