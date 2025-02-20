@@ -75,6 +75,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BaseForm.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Resources\Disksize-Watcher_logo.ico" />
   </ItemGroup>
 
