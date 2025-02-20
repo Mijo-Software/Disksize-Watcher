@@ -1,13 +1,17 @@
 ﻿using System.Globalization;
+using NLog;
 
 namespace DisksizeWatcher
 {
-	partial class AboutBoxForm : Form
+	/// <summary>
+	/// Provides information about the culture used by the current thread
+	/// </summary>
+	internal partial class AboutBoxForm : Form
 	{
 		/// <summary>
-		/// Culture info
+		/// Logger instance for logging messages and exceptions.
 		/// </summary>
-		private static readonly CultureInfo culture = CultureInfo.CurrentUICulture;
+		private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
 		/// <summary>
 		/// Set a specific text to the status bar
@@ -15,8 +19,15 @@ namespace DisksizeWatcher
 		/// <param name="text">text with some information</param>
 		private void SetStatusbarText(string text)
 		{
-			labelInformation.Enabled = !string.IsNullOrEmpty(value: text);
-			labelInformation.Text = text;
+			try
+			{
+				labelInformation.Enabled = !string.IsNullOrEmpty(value: text);
+				labelInformation.Text = text;
+			}
+			catch (Exception ex)
+			{
+				HandleException(ex: ex, message: "An error occurred while setting the status bar text.");
+			}
 		}
 
 		/// <summary>
@@ -24,74 +35,120 @@ namespace DisksizeWatcher
 		/// </summary>
 		public AboutBoxForm()
 		{
-			InitializeComponent();
-			Text = string.Format(provider: culture, format: "Info about {0}", args: AssemblyInfo.AssemblyTitle);
-			labelProductName.Text = AssemblyInfo.AssemblyProduct;
-			labelVersion.Text = AssemblyInfo.AssemblyVersion;
-			labelCompanyName.Text = AssemblyInfo.AssemblyCompany;
-			labelCopyright.Text = AssemblyInfo.AssemblyCopyright;
-			textBoxDescription.Text = AssemblyInfo.AssemblyDescription;
+			try
+			{
+				InitializeComponent();
+				this.KeyDown += new KeyEventHandler(AboutBoxForm_KeyDown);
+				this.KeyPreview = true; // Ensures the form receives key events before the controls
+				Logger.Info(message: "LicenseForm initialized");
+				CultureInfo culture = CultureInfo.CurrentCulture;
+				Text = string.Format(provider: culture, format: "Info about {0}", args: AssemblyInfo.AssemblyTitle);
+				labelProductName.Text = AssemblyInfo.AssemblyProduct;
+				labelVersion.Text = AssemblyInfo.AssemblyVersion;
+				labelCompanyName.Text = AssemblyInfo.AssemblyCompany;
+				labelCopyright.Text = AssemblyInfo.AssemblyCopyright;
+				textBoxDescription.Text = AssemblyInfo.AssemblyDescription;
+			}
+			catch (Exception ex)
+			{
+				HandleException(ex: ex, message: "An error occurred while initializing the AboutBoxForm.");
+			}
 		}
 
 		/// <summary>
-		/// Load the form
+		/// Initializes a new instance of the <see cref="AboutBoxForm"/> class.
 		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-		private void AboutBoxForm_Load(object sender, EventArgs e) => SetStatusbarText(text: string.Empty);
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+		private void AboutBoxForm_Load(object sender, EventArgs e)
+		{
+			try
+			{
+				SetStatusbarText(text: string.Empty);
+			}
+			catch (Exception ex)
+			{
+				HandleException(ex: ex, message: "An error occurred while loading the AboutBoxForm.");
+			}
+		}
 
 		/// <summary>
 		/// Detect the accessibility description to set as information text in the status bar
 		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
+		/// <param name="sender">The event source.</param>
+		/// <param name="e">The <see cref="KeyEventArgs"/> instance that contains the event data.</param>
 		private void SetStatusbar_Enter(object sender, EventArgs e)
 		{
-			switch (sender)
+			try
 			{
-				case TextBox textBox: SetStatusbarText(text: textBox.AccessibleDescription); break;
-				case Button button: SetStatusbarText(text: button.AccessibleDescription); break;
-				case RadioButton radioButton: SetStatusbarText(text: radioButton.AccessibleDescription); break;
-				case CheckBox checkBox: SetStatusbarText(text: checkBox.AccessibleDescription); break;
-				case DateTimePicker dateTimePicker: SetStatusbarText(text: dateTimePicker.AccessibleDescription); break;
-				case Label label: SetStatusbarText(text: label.AccessibleDescription); break;
-				case PictureBox pictureBox: SetStatusbarText(text: pictureBox.AccessibleDescription); break;
-				case CheckedListBox checkedListBox: SetStatusbarText(text: checkedListBox.AccessibleDescription); break;
-				case ComboBox box: SetStatusbarText(text: box.AccessibleDescription); break;
-				case DataGridView view: SetStatusbarText(text: view.AccessibleDescription); break;
-				case GroupBox group: SetStatusbarText(text: group.AccessibleDescription); break;
-				case ListBox box: SetStatusbarText(text: box.AccessibleDescription); break;
-				case ListView view: SetStatusbarText(text: view.AccessibleDescription); break;
-				case MaskedTextBox box: SetStatusbarText(text: box.AccessibleDescription); break;
-				case NumericUpDown numericUpDown: SetStatusbarText(text: numericUpDown.AccessibleDescription); break;
-				case MonthCalendar monthCalendar: SetStatusbarText(text: monthCalendar.AccessibleDescription); break;
-				case PropertyGrid propertyGrid: SetStatusbarText(text: propertyGrid.AccessibleDescription); break;
-				case RichTextBox richTextBox: SetStatusbarText(text: richTextBox.AccessibleDescription); break;
-				case ScrollBar scrollBar: SetStatusbarText(text: scrollBar.AccessibleDescription); break;
-				case TrackBar trackBar: SetStatusbarText(text: trackBar.AccessibleDescription); break;
-				case WebBrowser webBrowser: SetStatusbarText(text: webBrowser.AccessibleDescription); break;
-				case DomainUpDown domainUpDown: SetStatusbarText(text: domainUpDown.AccessibleDescription); break;
-				case ToolStripButton toolStripButton: SetStatusbarText(text: toolStripButton.AccessibleDescription); break;
-				case ToolStripMenuItem toolStripMenuItem: SetStatusbarText(text: toolStripMenuItem.AccessibleDescription); break;
-				case ToolStripLabel toolStripLabel: SetStatusbarText(text: toolStripLabel.AccessibleDescription); break;
-				case ToolStripComboBox toolStripComboBox: SetStatusbarText(text: toolStripComboBox.AccessibleDescription); break;
-				case ToolStripDropDown toolStripDropDown: SetStatusbarText(text: toolStripDropDown.AccessibleDescription); break;
-				case ToolStripDropDownButton toolStripDropDownButton: SetStatusbarText(text: toolStripDropDownButton.AccessibleDescription); break;
-				case ToolStripDropDownItem toolStripDropDownItem: SetStatusbarText(text: toolStripDropDownItem.AccessibleDescription); break;
-				case ToolStripProgressBar progressBar: SetStatusbarText(text: progressBar.AccessibleDescription); break;
-				case ToolStripSeparator toolStripSeparator: SetStatusbarText(text: toolStripSeparator.AccessibleDescription); break;
-				case ToolStripTextBox toolStripTextBox: SetStatusbarText(text: toolStripTextBox.AccessibleDescription); break;
+				if (sender is Control { AccessibleDescription: { } } control)
+				{
+					SetStatusbarText(text: control.AccessibleDescription);
+				}
+				else if (sender is ToolStripMenuItem { AccessibleDescription: { } } control2)
+				{
+					SetStatusbarText(text: control2.AccessibleDescription);
+				}
+				else if (sender is ToolStripStatusLabel { AccessibleDescription: { } } control3)
+				{
+					SetStatusbarText(text: control3.AccessibleDescription);
+				}
+			}
+			catch (Exception ex)
+			{
+				HandleException(ex: ex, message: "An error occurred while setting the status bar text.");
 			}
 		}
 
 		/// <summary>
 		/// Clear the information text of the status bar
 		/// </summary>
-		/// <param name="sender">object sender</param>
-		/// <param name="e">event arguments</param>
-		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-		private void ClearStatusbar_Leave(object sender, EventArgs e) => SetStatusbarText(text: string.Empty);
+		/// <param name="sender">The event source.</param>
+		/// <param name="e">The <see cref="KeyEventArgs"/> instance that contains the event data.</param>
+		private void ClearStatusbar_Leave(object sender, EventArgs e)
+		{
+			try
+			{
+				SetStatusbarText(text: string.Empty);
+			}
+			catch (Exception ex)
+			{
+				HandleException(ex: ex, message: "An error occurred while clearing the status bar text.");
+			}
+		}
+
+		/// <summary>
+		/// Handles the KeyDown event of the LicenseForm.
+		/// Closes the form when the Escape key is pressed.
+		/// </summary>
+		/// <param name="sender">The event source.</param>
+		/// <param name="e">The <see cref="KeyEventArgs"/> instance that contains the event data.</param>
+		private void AboutBoxForm_KeyDown(object? sender, KeyEventArgs e)
+		{
+			try
+			{
+				if (e.KeyCode == Keys.Escape)
+				{
+					this.Close();
+				}
+			}
+			catch (Exception ex)
+			{
+				HandleException(ex: ex, message: "An error occurred while handling the KeyDown event.");
+			}
+		}
+
+		/// <summary>
+		/// Handles exceptions by logging the error and showing a message box.
+		/// </summary>
+		/// <param name="ex">The exception that occurred.</param>
+		/// <param name="message">The message to log and display.</param>
+		private static void HandleException(Exception ex, string message)
+		{
+			Logger.Error(exception: ex, message: message);
+			_ = MessageBox.Show(text: message, caption: "Error", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+		}
 	}
 }
+
+

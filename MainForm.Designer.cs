@@ -1,4 +1,6 @@
-﻿namespace DisksizeWatcher
+﻿using System.IO;
+
+namespace DisksizeWatcher
 {
 	partial class MainForm
 	{
