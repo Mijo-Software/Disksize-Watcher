@@ -15,6 +15,23 @@ namespace DisksizeWatcher
 		private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
 		/// <summary>
+		/// Handles exceptions by logging the error and showing a message box.
+		/// </summary>
+		/// <param name="ex">The exception that occurred.</param>
+		/// <param name="message">The message to log and display.</param>
+		/// <param name="sender">The source of the event that caused the exception.</param>
+		/// <param name="e">The event data associated with the exception.</param>
+		private static void HandleException(Exception ex, string message, object? sender = null, EventArgs? e = null)
+		{
+			// Implement logging logic here (e.g., log to a file or monitoring system)
+			string msg = $"Error: {ex}\nMessage: {ex.Message}\nStackTrack: {ex.StackTrace}\nSender: {sender}, EventArgs: {e}";
+			Debug.WriteLine(value: msg);
+			Console.WriteLine(value: msg);
+			Logger.Error(exception: ex, message: msg);
+			_ = MessageBox.Show(text: message, caption: "Error", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+		}
+
+		/// <summary>
 		/// Set a specific text to the status bar
 		/// </summary>
 		/// <param name="text">text with some information</param>
@@ -110,7 +127,7 @@ namespace DisksizeWatcher
 			}
 			catch (Exception ex)
 			{
-				HandleException(ex: ex, message: "An error occurred while setting the status bar text.");
+				HandleException(ex: ex, message: "An error occurred while setting the status bar text.", sender: sender, e: e);
 			}
 		}
 
@@ -148,20 +165,8 @@ namespace DisksizeWatcher
 			}
 			catch (Exception ex)
 			{
-				HandleException(ex: ex, message: "An error occurred while handling the KeyDown event.");
+				HandleException(ex: ex, message: "An error occurred while setting the status bar text.", sender: sender, e: e);
 			}
-		}
-
-		/// <summary>
-		/// Handles exceptions by logging the error and showing a message box.
-		/// </summary>
-		/// <param name="ex">The exception that occurred.</param>
-		/// <param name="message">The message to log and display.</param>
-		private static void HandleException(Exception ex, string message)
-		{
-			Debug.WriteLine(value: ex);
-			Logger.Error(exception: ex, message: message);
-			_ = MessageBox.Show(text: message, caption: "Error", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
 		}
 	}
 }

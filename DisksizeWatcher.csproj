@@ -11,7 +11,7 @@
     <ApplicationIcon>Resources\Disksize-Watcher_logo.ico</ApplicationIcon>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Title>Disksize Watcher</Title>
-    <Version>0.8.0.14</Version>
+    <Version>0.8.1.15</Version>
     <Authors>Mijo Software</Authors>
     <Product>Disksize Watcher</Product>
     <Description>Control the disk size</Description>
