@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using DisksizeWatcher.Properties;
 using NLog;
@@ -49,6 +50,23 @@ namespace DisksizeWatcher
 		}
 
 		#region Helpers
+
+		/// <summary>
+		/// Handles exceptions by logging the error and showing a message box.
+		/// </summary>
+		/// <param name="ex">The exception that occurred.</param>
+		/// <param name="message">The message to log and display.</param>
+		/// <param name="sender">The source of the event that caused the exception.</param>
+		/// <param name="e">The event data associated with the exception.</param>
+		private static void HandleException(Exception ex, string message, object? sender = null, EventArgs? e = null)
+		{
+			// Implement logging logic here (e.g., log to a file or monitoring system)
+			string msg = $"Error: {ex}\nMessage: {ex.Message}\nStackTrack: {ex.StackTrace}\nSender: {sender}, EventArgs: {e}";
+			Debug.WriteLine(value: msg);
+			Console.WriteLine(value: msg);
+			Logger.Error(exception: ex, message: msg);
+			_ = MessageBox.Show(text: message, caption: "Error", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+		}
 
 		/// <summary>
 		/// Detects if a float number has a fraction
@@ -154,27 +172,6 @@ namespace DisksizeWatcher
 		/// </summary>
 		private void ListAllDrives()
 		{
-			/*
-			_ = driveTemp.IsReady;
-			if (isReady)
-			{
-				_ = drive.TotalSize;
-				_ = drive.TotalFreeSpace;
-				_ = drive.AvailableFreeSpace;
-			}
-			_ = drive.DriveFormat;
-			_ = drive.DriveType;
-			_ = drive.Name;
-			_ = drive.VolumeLabel;
-			_ = drive.RootDirectory;
-			_ = drive.IsReady;
-			_ = drive.DriveType;
-			_ = drive.DriveType == DriveType.Network;
-			_ = drive.DriveType == DriveType.CDRom;
-			_ = drive.DriveType == DriveType.Removable;
-			_ = drive.DriveType == DriveType.Ram;
-			_ = drive.DriveType == DriveType.Unknown;
-			 */
 			try
 			{
 				DriveInfo[] allDrives = DriveInfo.GetDrives();
@@ -501,14 +498,14 @@ namespace DisksizeWatcher
 					catch (Exception ex)
 					{
 						// Log the exception for the current drive
-						Logger.Error(ex, $"Error processing drive {driveTemp.Name}");
+						HandleException(ex: ex, message: $"Error processing drive {driveTemp.Name}");
 					}
 				}
 			}
 			catch (Exception ex)
 			{
 				// Log the exception for the entire method
-				Logger.Error(ex, "Error listing all drives");
+				HandleException(ex: ex, message: $"Error listing all drives");
 			}
 		}
 
@@ -526,7 +523,7 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error setting status bar text");
+				HandleException(ex: ex, message: "Error setting status bar text");
 			}
 		}
 
@@ -550,7 +547,7 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error setting up number with fraction");
+				HandleException(ex: ex, message: "Error setting up number with fraction");
 			}
 		}
 
@@ -569,7 +566,7 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error setting up number without fraction");
+				HandleException(ex: ex, message: "Error setting up number without fraction");
 			}
 		}
 
@@ -593,7 +590,7 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error showing value in unit");
+				HandleException(ex: ex, message: "Error showing value in unit");
 			}
 		}
 
@@ -623,10 +620,9 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error updating decimal separator");
+				HandleException(ex: ex, message: "Error updating decimal separator");
 			}
 		}
-
 
 		/// <summary>
 		/// Update the information of the disk space
@@ -762,14 +758,26 @@ namespace DisksizeWatcher
 
 					textBoxSpaceDiff.Text = Math.Abs(value: diffSpace - usedSpace).ToString(format: numberFormat, provider: CultureInfo.CurrentCulture);
 				}
+
+				switch (freeSpacePerc)
+				{
+					case < 10:
+						ProgressBarEx.SetState(pBar: progressBarPercentage, state: ProgressBarEx.ProgressBarStateEnum.Error);
+						break;
+					case < 20:
+						ProgressBarEx.SetState(pBar: progressBarPercentage, state: ProgressBarEx.ProgressBarStateEnum.Paused);
+						break;
+					default:
+						ProgressBarEx.SetState(pBar: progressBarPercentage, state: ProgressBarEx.ProgressBarStateEnum.Normal);
+						break;
+				}
 			}
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error updating space information");
+				HandleException(ex: ex, message: "Error updating space information");
 			}
 		}
-
 
 		#endregion
 
@@ -813,10 +821,9 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error loading main form");
+				HandleException(ex: ex, message: "Error loading main form");
 			}
 		}
-
 
 		#endregion
 
@@ -863,7 +870,7 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error setting status bar text on enter");
+				HandleException(ex: ex, message: "Error setting status bar text on enter", sender: sender, e: e);
 			}
 		}
 
@@ -980,9 +987,17 @@ namespace DisksizeWatcher
 		/// <param name="e">The <see cref="EventArgs"/> instance that contains the event data.</param>
 		private void ToolStripButtonInfo_Click(object sender, EventArgs e)
 		{
-			using AboutBoxForm aboutBoxForm = new();
-			aboutBoxForm.TopMost = TopMost;
-			_ = aboutBoxForm.ShowDialog();
+			try
+			{
+				using AboutBoxForm aboutBoxForm = new();
+				aboutBoxForm.TopMost = TopMost;
+				_ = aboutBoxForm.ShowDialog();
+			}
+			catch (Exception ex)
+			{
+				// Log the exception
+				HandleException(ex: ex, message: "Error opening the program information window");
+			}
 		}
 
 		/// <summary>
@@ -992,9 +1007,17 @@ namespace DisksizeWatcher
 		/// <param name="e">The <see cref="EventArgs"/> instance that contains the event data.</param>
 		private void ToolStripButtonLicense_Click(object sender, EventArgs e)
 		{
-			using LicenseForm licenseForm = new();
-			licenseForm.TopMost = TopMost;
-			_ = licenseForm.ShowDialog();
+			try
+			{
+				using LicenseForm licenseForm = new();
+				licenseForm.TopMost = TopMost;
+				_ = licenseForm.ShowDialog();
+			}
+			catch (Exception ex)
+			{
+				// Log the exception
+				HandleException(ex: ex, message: "Error opening the license window");
+			}
 		}
 
 		/// <summary>
@@ -1346,24 +1369,32 @@ namespace DisksizeWatcher
 		/// <param name="e">The <see cref="EventArgs"/> instance that contains the event data.</param>
 		private void ToolStripSplitButtonSettings_ButtonClick(object sender, EventArgs e)
 		{
-			if (menuitemStayOnTop.Checked)
+			try
 			{
-				TopMost = false;
-			}
-			using (SettingsForm settingsForm = new())
-			{
-				settingsForm.StayOnTop = menuitemStayOnTop.Checked;
-				settingsForm.MinimizeToSystemTray = menuitemMinimizeToSystemTray.Checked;
-				DialogResult dialogResult = settingsForm.ShowDialog();
-				if (dialogResult == DialogResult.OK)
+				if (menuitemStayOnTop.Checked)
 				{
-					menuitemStayOnTop.Checked = settingsForm.StayOnTop;
-					menuitemMinimizeToSystemTray.Checked = settingsForm.MinimizeToSystemTray;
+					TopMost = false;
+				}
+				using (SettingsForm settingsForm = new())
+				{
+					settingsForm.StayOnTop = menuitemStayOnTop.Checked;
+					settingsForm.MinimizeToSystemTray = menuitemMinimizeToSystemTray.Checked;
+					DialogResult dialogResult = settingsForm.ShowDialog();
+					if (dialogResult == DialogResult.OK)
+					{
+						menuitemStayOnTop.Checked = settingsForm.StayOnTop;
+						menuitemMinimizeToSystemTray.Checked = settingsForm.MinimizeToSystemTray;
+					}
+				}
+				if (menuitemStayOnTop.Checked)
+				{
+					TopMost = true;
 				}
 			}
-			if (menuitemStayOnTop.Checked)
+			catch (Exception ex)
 			{
-				TopMost = true;
+				// Log the exception
+				HandleException(ex: ex, message: "Error opening the settings window");
 			}
 		}
 
@@ -1387,7 +1418,7 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error handling notify icon double click");
+				HandleException(ex: ex, message: "Error handling notify icon double click");
 			}
 		}
 
@@ -1445,10 +1476,9 @@ namespace DisksizeWatcher
 			catch (Exception ex)
 			{
 				// Log the exception
-				Logger.Error(ex, "Error handling form resize");
+				HandleException(ex: ex, message: "Error handling form resize");
 			}
 		}
-
 
 		#endregion
 
